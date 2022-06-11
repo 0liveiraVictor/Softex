@@ -1,0 +1,53 @@
+___________________________________________________________COMPETIÇÃO DE PERGUNTAS__________________________________________________________
+
+Aristóteles, Sócrates e Platão estavam disputando uma competição de perguntas nas disciplinas de Física, Matemática e Química. Cada um obteve um primeiro lugar, um segundo lugar e um terceiro lugar.
+
+Sabendo que: 
+- Aristóteles não ficou em primeiro em Química;                 (primeiro critério)
+- Sócrates perdeu para Platão em Física;                        (segundo critério)
+- Platão acertou mais que Aristóteles em Matemática.            (terceiro critério)
+
+Informe quem ficou em 1º, 2º e 3º lugar em cada disciplina.
+____________________________________________________________________________________________________________________________________________
+
+SOLUÇÃO:
+
+A CONDIÇÃO BASE do enunciado informa que cada competidor obteve um primeiro, um segundo e um terceiro lugar em cada disciplina. Isso indica que não houve repetição de colocação em disciplinas distintas. Sabendo disse, analisemos cada situação:
+
+
+1 - Aristóteles não ficou em primeiro na competição em Química (primeiro critério).
+
+2 - Aristóteles não ficou em primeiro na competição em Matemática, pois, nesse caso, não haveria possibilidade dele ter acertado menos que Platão (terceiro critério)
+
+3 - Atendendo à CONDIÇÃO BASE, Aristóteles só pode ter obtido a primeira colocação em Física.
+
+4 - Sócrates perdeu para Platão em Física (segundo critério). Sendo assim, na disciplina da Física, Platão ficou em segundo lugar e Sócrates em terceiro lugar, tendo em vista que a primeira colocação já está ocupada pelo Aristóteles.
+
+5 - Respeitando os critérios da CONDIÇÃO BASE, Platão só poderia assumir a primeira ou terceira colocação nas outras disciplinas (Química e Matemática).  
+
+6 - Como na disciplina de Matemática Platão acertou mais que Aristóteles (terceiro critério), seria inconsistente ele assumir a terceira colocação. Sendo assim, Platão conquistou a primeira colocação em Matemática.   
+
+7 - Haja visto a terceira colocação de Sócrates na disciplina de Física e por respeito a CONDIÇÃO BASE, Sócrates só poderia assumir a segunda colocação na disciplina de Matemática.
+
+8 - Por consequência, Aristóteles ficou em terceiro lugar na disciplina de Matemática.
+
+9 - Por eliminação e respeitando a CONDIÇÃO BASE, a disciplina de Química teve Sócrates em primeiro, Aristóteles em segundo e Platão em terceiro colocado. 
+____________________________________________________________________________________________________________________________________________
+
+RESPOSTA:
+
+---------Física---------
+1 - Aristóteles
+2 - Platão
+3 - Sócrates
+
+-------Matemática-------
+1 - Platão
+2 - Sócrates
+3 - Aristóteles
+
+---------Química---------
+1 - Sócrates
+2 - Aristóteles
+3 - Platão
+____________________________________________________________________________________________________________________________________________
