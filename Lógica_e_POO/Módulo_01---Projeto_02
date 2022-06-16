@@ -1,0 +1,31 @@
+___________________________________________________________DISCIPLINAS NA SALA DE AULA__________________________________________________________
+
+Em uma sala de aula, há vinte e cinco alunos.
+Entre eles, existem os grupos dos que gostam de Português (P) e os que gostam de Matemática (M).
+Eles são divididos conforme a ilustração 1 em anexo.
+
+Depois de um tempo, chegaram mais onze alunos nessa turma e o professor organizou-a conforme a ilustração 2 em anexo.
+
+No entanto, o professor se ausentou da sala por cinco minutos e, ao voltar, percebeu que um aluno que gosta de uma das disciplinas havia trocado de lugar com alguém que prefere a outra, e a turma ficou organizada conforme a ilustração 3 em anexo.
+
+Sabendo que o professor tem dificuldade de memorizar, informe como ele descobriu a cadeira em que houve a troca de alunos e qual a disciplina de cada um. 
+________________________________________________________________________________________________________________________________________________
+
+SOLUÇÃO:
+
+A primeira verificação foi feita sobre a linha 5|coluna 5. Nessa posição (da ilustração 2 para a 3) foi observado que houve uma permuta da escolha da disciplina, havendo uma troca de matemática para português. Entretanto, não há possibilidade do aluno dessa posição ter modificado sua escolha de disciplina, tendo em vista à clareza do enunciado em citar que "um aluno que gosta de uma das disciplinas havia trocado de lugar com alguém que prefere a outra". Sendo assim, houve uma troca de posição entre alunos, os quais possuíam gostos por disciplinas distintas. Sabendo disso, pode-se afirmar que ocorreu (na linha 5|coluna 5) a troca de posição desse aluno, com gosto na disciplina de matématica, para uma posição (desconhecida [?]) de um outro aluno, com gosto na disciplina de português. 
+
+Com a troca das posições entre os alunos, existiria duas permutas no quatro de ilustração (de 2 -> 3), o que na verdade não aconteceu. Isso significa que o aluno que assumiu a posição linha 5|coluna 5 manteve sua escolha de gosto na disciplina de português, enquanto que o aluno de gosto em matemática "trocou" sua opinião sobre seu próprio gosto, assumindo após esse reposicionamento o português como disciplina de maior gosto. Foi essa alteração na escolha desse aluno que fez com que não houvessem duas permutas na passagem da ilustração 2 para 3.
+
+Tendo em vista que houve apenas uma permuta de gosto entre as duas disciplinas, por parte de um aluno (da matemática -> português), o balanço total de alunos que gostam de matemática e português foi alterado. Foi essa diferença no total que fez com que o professor pudesse descobrir onde ocorreu a troca de posição (mesmo com sua dificuldade de memorização). O entendimento partiu da localização da posição original (cadeira) do aluno que teve sua escolha de gosto modificada, como foi o caso da linha 5|coluna 5.   
+________________________________________________________________________________________________________________________________________________
+
+RESPOSTA:
+
+Cadeira de troca = linha 5 | coluna 5
+linha 5 | coluna 5 = Matemática (ilust. 2) -> Português (ilust. 3)
+linha ? | coluna ? = Português (ilust. 2) -> Português (ilust. 3)
+
+Como ocorreu a descoberta da cadeira onde houve a troca? Avaliando o balanço total de alunos que gostam de português e matemática, e verificando qual foi o aluno que gerou o efeito de permuta da ilustração 2 para a ilustração 3.
+________________________________________________________________________________________________________________________________________________
+
