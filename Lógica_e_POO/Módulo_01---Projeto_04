@@ -1,0 +1,84 @@
+___________________________________________________________CADASTRO DE USUÁRIO__________________________________________________________
+
+Elabore um algoritmo que representa um cadastro. Ele deve ler os seguintes dados fornecidos pelo usuário:
+
+- Nome
+- Endereço
+- Cidade
+- CPF
+- RG
+- Idade
+- Nome do pai
+- Nome da mãe
+- Peso
+- Renda bruta
+
+Apresente as informações solicitadas no final do cadastro.
+________________________________________________________________________________________________________________________________________
+
+SOLUÇÃO:
+
+_____Declaração das variáveis_____
+caractere Nome; 
+caractere Endereco;
+caractere Cidade;
+caractere CPF;
+caractere RG;
+inteiro Idade;
+caractere NomePai;
+caractere NomeMae;
+real Peso;
+real Renda;
+
+_____Leitura dos dados de entrada_____
+escreva("Digite o seu nome:")
+leia(Nome)
+
+escreva("Digite o seu endereço:")
+leia(Endereco)
+
+escreva("Digite a sua cidade:")
+leia(Cidade)
+
+escreva("Digite o seu CPF:")
+leia(CPF)
+
+escreva("Digite o seu RG:")
+leia(RG)
+
+escreva("Digite a sua idade (em anos):")
+leia(Idade)
+
+escreva("Digite o nome do seu pai:")
+leia(NomePai)
+
+escreva("Digite o nome da sua mãe:")
+leia(NomeMae)
+
+escreva("Digite o seu peso (em Kg):")
+leia(Peso)
+
+escreva("Digite a quantia de sua renda bruta (em R$):")
+leia(Renda)
+
+_____Escrita dos dados de saída_____
+escreva("Você se chama:", Nome)
+
+escreva("O seu endereço é:", Endereco)
+
+escreva("Você vive em:", Cidade)
+
+escreva("Numeração do CPF:", CPF)
+
+escreva("Numeração do RG:", RG)
+
+escreva("Atualmente sua idade (em anos) é de:", Idade)
+
+escreva("O nome do seu pai é:", NomePai)
+
+escreva("O nome da sua mãe é:", NomeMae)
+
+escreva("O seu peso (em Kg) é de:", Peso)
+
+escreva("A quantia de sua renda bruta (em R$) é de:", Renda)
+________________________________________________________________________________________________________________________________________
