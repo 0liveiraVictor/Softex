@@ -1,0 +1,202 @@
+___________________________________________________________MEIOS DE TRANSPORTE__________________________________________________________
+
+Elabore um algoritmo que possa descobrir, através de perguntas e respostas, qual meio de transporte o usuário está pensando.
+O usuário deverá escolher uma das seguintes opções:
+
+- Trator
+- Moto
+- Bicicleta
+- Trem
+- Carro
+- Caminhão
+- Ônibus
+- Paraquedas
+- Balão
+- Avião
+- Helicóptero
+- Submarino
+- Barco
+- Navio
+- Lancha
+
+Para chegar ao resultado, só devem ser usadas perguntas que retornem "Sim" ou "Não".
+
+Exemplo:
+É terrestre? Sim.
+Cabe apenas uma pessoa? Sim.
+É pesado? Não.
+Tem pedal? Sim.
+Então, o transporte escolhido foi a bicicleta.
+
+Para chegar ao resultado de cada uma das opções, use o modelo ilustrado na imagem em anexo. 
+________________________________________________________________________________________________________________________________________
+
+SOLUÇÃO:
+
+_____Declaração das variáveis_____
+caractere varLogica;
+
+_____Estrutura de dados_____
+escreva("Pense em um meio de transporte, podendo ele ser: Trator, Moto, Bicicleta, Trem, Carro, Caminhão, Ônibus, Paraquedas, 
+		Balão, Avião, Helicóptero, Submarino, Barco, Navio ou Lancha")
+
+escreva("Agora, responda sempre as questionamentos solicitados apenas com um Sim ou um Não. Ok?")
+
+escreva("Vamos lá!")
+
+escreva("Esse meio de transporte é terrestre?")
+leia(varLogica)
+
+se (varLogica = Sim) então
+
+	escreva("Cabe apenas uma pessoa?")
+	leia(varLogica)
+
+	se (varLogica = Sim) então
+
+		escreva("É pesado?")
+		leia(varLogica)
+
+		se (varLogica = Sim) então
+
+			escreva("Você pensou no TRATOR!")
+
+		senão
+
+			escreva("Você pensou na BICICLETA!")
+
+		fimse
+
+	senão
+
+		escreva("Usa capacete?")
+		leia(varLogica)
+
+		se (varLogica = Sim) então
+
+			escreva("Você pensou na MOTO!")
+
+		senão
+
+			escreva("Usa trilho?")
+			leia(varLogica)
+
+			se (varLogica = Sim) então
+
+				escreva("Você pensou no TREM!")
+
+			senão
+
+				escreva("É veículo leve?")
+				leia(varLogica)
+
+				se (varLogica = Sim) então
+
+					escreva("Você pensou no CARRO!")
+
+				senão
+
+					escreva("Pode ter cobrador?")
+					leia(varLogica)
+
+					se (varLogica = Sim) então
+
+						escreva("Você pensou no ÔNIBUS!")
+
+					senão
+
+						escreva("Você pensou no CAMINHÃO!")
+
+					fimse
+
+				fimse
+                   
+			fimse
+
+		fimse
+
+	fimse
+
+senão     
+
+	escreva("Esse meio de transporte é aéreo?")
+	leia(varLogica)
+
+	se (varLogica = Sim) então
+
+		escreva("Precisa pular?")
+		leia(varLogica)
+
+		se (varLogica = Sim) então
+
+			escreva("Você pensou no PARAQUEDAS!")
+
+		senão
+
+			escreva("É devagar?")
+			leia(varLogica)	
+
+			se (varLogica = Sim) então
+
+				escreva("Você pensou no BALÃO!")
+
+			senão
+
+				escreva("Possui asas fixas?")
+				leia(varLogica)	
+
+				se (varLogica = Sim) então
+
+					escreva("Você pensou no AVIÃO!")
+
+				senão
+
+					escreva("Você pensou no HELICÓPTERO!")
+
+				fimse
+
+			fimse
+
+		fimse
+
+	senão 
+
+		escreva("É coberto de água?")
+		leia(varLogica)
+
+		se (varLogica = Sim) então
+
+			escreva("Você pensou no SUBMARINO!")
+
+		senão
+
+			escreva("Possui vela?")
+			leia(varLogica)	
+
+			se (varLogica = Sim) então
+
+				escreva("Você pensou no BARCO!")
+
+			senão
+
+				escreva("Possui grande porte e altura?")
+				leia(varLogica)	
+
+				se (varLogica = Sim) então
+
+					escreva("Você pensou no NAVIO!")
+
+				senão
+
+					escreva("Você pensou no LANCHA")
+
+				fimse
+
+			fimse
+
+		fimse
+
+	fimse
+
+fimse	
+________________________________________________________________________________________________________________________________________
