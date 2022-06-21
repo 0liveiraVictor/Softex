@@ -1,0 +1,205 @@
+___________________________________________________________PROVA DE VESTIBULAR___________________________________________________________
+
+Após uma prova de vestibular, uma escola quer identificar quantos dos seus alunos foram aprovados em cada turma de formandos. Ela quer saber qual aluno teve a maior nota e de qual turma ele é. Nessa escola, há quatro turmas (A, B, C e D) com vinte e cinco alunos cada.
+
+Elabore um algoritmo que solicite o nome e a nota do vestibular aos alunos. Depois, informe quantos deles foram aprovados, de que turma são, qual a maior nota em cada turma e qual aluno teve a maior nota de todas.
+
+Para que o aluno seja aprovado no vestibular, ele deverá obter nota maior ou igual a 7.
+
+ATENÇÃO: As notas por turma não podem se repetir.
+________________________________________________________________________________________________________________________________________
+
+SOLUÇÃO:
+
+_____Declaração das variáveis_____
+caractere Nm1, Nm2, Nm3, ..., Nm100;                         ###Nome do aluno###
+real Nt1, Nt2, Nt3, ..., Nt100;                              ###Nota do aluno###  
+caractere T1, T2, T3, ..., T100;                             ###Turma do aluno###
+inteiro i, j;                                                ####Contador###
+
+real MNtT1, MNtT2, MNtT3, MNtT4, MNtG;                       ###Maiores notas dos alunos das turmas A, B, C, D e geral, respectivamente###
+caractere NmMNtT1, NmMNtT2, NmMNtT3, NmMNtT4, NmMNtG;        ###Nome dos alunos com as maiores notas das turmas A, B, C, D e geral, respectivamente###
+caractere TMNtT1, TMNtT2, TMNtT3, TMNtT4, TMNtG;             ###Turma dos alunos com as maiores notas das turmas A, B, C, D e geral, respectivamente###
+
+_____Estrutura de dados_____
+
+###DADOS DE ENTRADA DOS 100 ALUNOS###
+
+i <- 1
+
+repita
+
+	escreva("Qual seu nome?")
+	leia(Nmi)
+
+	escreva("Qual o valor de sua nota no vestibular?")
+	leia(Nti)
+
+	escreva("Qual sua turma na escola? (A, B, C ou D)")
+	leia(Ti)
+
+	i <- i + 1
+
+ate(i > 100)
+
+###LEITURA DAS INFORMAÇÕES DOS ALUNOS DA TURMA A###
+
+i <- 1
+j <- 0
+MNtT1 <- 0
+
+repita
+
+	se (Ti = "A") então
+
+		se (Nti >= 7) então
+
+			j <- j + 1
+
+			se (Nti > MNtT1) então
+
+				MNtT1 <- Nti
+				NmMNtT1 <- Nmi
+				TMNtT1 <- Ti
+
+			fimse
+
+		fimse
+
+	fimse
+
+	i <- i + 1
+
+ate(i > 100)
+
+escreva("_____RELAÇÃO DE APROVAÇÃO DOS ALUNOS DA TURMA A_____")
+escreva("A quantidade de alunos, da turma A, aprovados no vestibular foi de", j)
+escreva("A maior nota do aluno da turma A aprovado no vestibular foi de:", MNtT1)
+
+###LEITURA DAS INFORMAÇÕES DOS ALUNOS DA TURMA B###
+
+i <- 1
+j <- 0
+MNtT2 <- 0
+
+repita
+
+	se (Ti = "B") então
+
+		se (Nti >= 7) então
+
+			j <- j + 1
+
+			se (Nti > MNtT2) então
+
+				MNtT2 <- Nti
+				NmMNtT2 <- Nmi
+				TMNtT2 <- Ti
+
+			fimse
+
+		fimse
+
+	fimse
+
+	i <- i + 1
+
+ate(i > 100)
+
+escreva("_____RELAÇÃO DE APROVAÇÃO DOS ALUNOS DA TURMA B_____")
+escreva("A quantidade de alunos, da turma B, aprovados no vestibular foi de", j)
+escreva("A maior nota do aluno da turma B aprovado no vestibular foi de:", MNtT2)
+
+###LEITURA DAS INFORMAÇÕES DOS ALUNOS DA TURMA C###
+
+i <- 1
+j <- 0
+MNtT3 <- 0
+
+repita
+
+	se (Ti = "C") então
+
+		se (Nti >= 7) então
+
+			j <- j + 1
+
+			se (Nti > MNtT3) então
+
+				MNtT3 <- Nti
+				NmMNtT3 <- Nmi
+				TMNtT3 <- Ti
+
+			fimse
+
+		fimse
+
+	fimse
+
+	i <- i + 1
+
+ate(i > 100)
+
+escreva("_____RELAÇÃO DE APROVAÇÃO DOS ALUNOS DA TURMA C_____")
+escreva("A quantidade de alunos, da turma C, aprovados no vestibular foi de", j)
+escreva("A maior nota do aluno da turma C aprovado no vestibular foi de:", MNtT3)
+
+###LEITURA DAS INFORMAÇÕES DOS ALUNOS DA TURMA D###
+
+i <- 1
+j <- 0
+MNtT4 <- 0
+
+repita
+
+	se (Ti = "D") então
+
+		se (Nti >= 7) então
+
+			j <- j + 1
+
+			se (Nti > MNtT4) então
+
+				MNtT4 <- Nti
+				NmMNtT4 <- Nmi
+				TMNtT4 <- Ti
+
+			fimse
+
+		fimse
+
+	fimse
+
+	i <- i + 1
+
+ate(i > 100)
+
+escreva("_____RELAÇÃO DE APROVAÇÃO DOS ALUNOS DA TURMA D_____")
+escreva("A quantidade de alunos, da turma D, aprovados no vestibular foi de", j)
+escreva("A maior nota do aluno da turma D aprovado no vestibular foi de:", MNtT4)
+
+###LEITURA DAS INFORMAÇÕES DO ALUNO COM MAIOR NOTA GERAL###
+
+i <- 1
+MNtG <- 0
+NmMNtG <- "vazio"
+TMNtG <- "vazio"
+
+enquanto (i < 5) faça
+
+	se (MNtTi > MNtG) então
+
+		MNtG <- MNtTi
+		NmMNtG <- NmMNtTi
+		TMNtG <- TMNtTi
+
+	fimse
+
+	i <- i + 1
+
+fimenquanto
+
+escreva("_____INFORMAÇÕES SOBRE O(A) ALUNO(A), DA ESCOLA, MAIS BEM COLOCADO(A) NO VESTIBULAR_____")
+escreva("O(A) aluno(a) aprovado(a) mais bem classificado(a) no vestibular foi:", NmMNtG)
+escreva("Sua turma dos formandos foi a turma:", TMNtG)
+________________________________________________________________________________________________________________________________________
