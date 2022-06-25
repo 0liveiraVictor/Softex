@@ -18,67 +18,72 @@ ________________________________________________________________________________
 
 SOLUÇÃO:
 
-_____Declaração das variáveis_____
-caractere Nome; 
-caractere Endereco;
-caractere Cidade;
-caractere CPF;
-caractere RG;
-inteiro Idade;
-caractere NomePai;
-caractere NomeMae;
-real Peso;
-real Renda;
+algoritmo "cadastro_de_usuário"
 
-_____Leitura dos dados de entrada_____
-escreva("Digite o seu nome:")
-leia(Nome)
+var
+        Nome, Endereco, Cidade, CPF, RG, NomePai, NomeMae: caractere
+        Idade: inteiro
+        Peso, Renda: real
 
-escreva("Digite o seu endereço:")
-leia(Endereco)
+inicio
 
-escreva("Digite a sua cidade:")
-leia(Cidade)
-
-escreva("Digite o seu CPF:")
-leia(CPF)
-
-escreva("Digite o seu RG:")
-leia(RG)
-
-escreva("Digite a sua idade (em anos):")
-leia(Idade)
-
-escreva("Digite o nome do seu pai:")
-leia(NomePai)
-
-escreva("Digite o nome da sua mãe:")
-leia(NomeMae)
-
-escreva("Digite o seu peso (em Kg):")
-leia(Peso)
-
-escreva("Digite a quantia de sua renda bruta (em R$):")
-leia(Renda)
-
-_____Escrita dos dados de saída_____
-escreva("Você se chama:", Nome)
-
-escreva("O seu endereço é:", Endereco)
-
-escreva("Você vive em:", Cidade)
-
-escreva("Numeração do CPF:", CPF)
-
-escreva("Numeração do RG:", RG)
-
-escreva("Atualmente sua idade (em anos) é de:", Idade)
-
-escreva("O nome do seu pai é:", NomePai)
-
-escreva("O nome da sua mãe é:", NomeMae)
-
-escreva("O seu peso (em Kg) é de:", Peso)
-
-escreva("A quantia de sua renda bruta (em R$) é de:", Renda)
+        //_____Leitura dos dados de entrada_____
+        escreval("--------------------FAÇA SEU CADASTRO--------------------")
+        escreval("Digite o seu nome:")
+        leia(Nome)
+        escreval(" ")
+        escreval("Digite o seu endereço:")
+        leia(Endereco)
+        escreval(" ")
+        escreval("Digite a sua cidade:")
+        leia(Cidade)
+        escreval(" ")
+        escreval("Digite o seu CPF:")
+        leia(CPF)
+        escreval(" ")
+        escreval("Digite o seu RG:")
+        leia(RG)
+        escreval(" ")
+        escreval("Digite a sua idade (em anos):")
+        leia(Idade)
+        escreval(" ")
+        escreval("Digite o nome do seu pai:")
+        leia(NomePai)
+        escreval(" ")
+        escreval("Digite o nome da sua mãe:")
+        leia(NomeMae)
+        escreval(" ")
+        escreval("Digite o seu peso (em Kg):")
+        leia(Peso)
+        escreval(" ")
+        escreval("Digite a quantia de sua renda bruta (em R$):")
+        leia(Renda)
+        escreval(" ")
+        escreval(" ")
+        escreval(" ")
+       
+        //_____Escrita dos dados de saída_____
+        escreval("--------------------SEUS DADOS CADASTRAL--------------------")
+        escreval("Você se chama:", Nome)
+        escreval(" ")
+        escreval("O seu endereço é:", Endereco)
+        escreval(" ")
+        escreval("Você vive em:", Cidade)
+        escreval(" ")
+        escreval("Numeração do CPF:", CPF)
+        escreval(" ")
+        escreval("Numeração do RG:", RG)
+        escreval(" ")
+        escreval("Atualmente sua idade (em anos) é de:", Idade)
+        escreval(" ")
+        escreval("O nome do seu pai é:", NomePai)
+        escreval(" ")
+        escreval("O nome da sua mãe é:", NomeMae)
+        escreval(" ")
+        escreval("O seu peso (em Kg) é de:", Peso)
+        escreval(" ")
+        escreval("A quantia de sua renda bruta (em R$) é de:", Renda)
+        escreval(" ")
+        
+fimalgoritmo
 ________________________________________________________________________________________________________________________________________
