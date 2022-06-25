@@ -32,11 +32,11 @@ var
 
 inicio
 
-        Nome <- José Almeida da Silva
-        CPF <- 12345678900
-        RG <- 9517530
+        Nome <- "José Almeida da Silva"
+        CPF <- "12345678900"
+        RG <- "9517530"
         Altura <- 1,78
-        Endereco <- Rua A, 380 – Centro – Recife/PE
+        Endereco <- "Rua A, 380 – Centro – Recife/PE"
         
 fimalgoritmo
 _______________________________________________________________________________________________________________________________________
