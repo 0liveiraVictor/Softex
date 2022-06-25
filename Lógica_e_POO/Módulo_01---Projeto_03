@@ -16,20 +16,27 @@ ________________________________________________________________________________
 
 SOLUÇÃO:
 
-Referente aos dados de inscrição do usuário, segue a estrura do algoritmo:
+algoritmo "dados_cadastrais"
 
-___Proposta das variáveis___
-Serão utilizadas cinco variáveis, cada uma referente a um tipo de dado que será fornecida pelo usuário no momento da inscrição, são eles: 
-Nome, CPF, RG, Altura e Endereço.
+//___Proposta das variáveis___
+//Serão utilizadas cinco variáveis, cada uma referente a um tipo de dado que será fornecida pelo usuário no momento da inscrição, 
+//são eles: Nome, CPF, RG, Altura e Endereço.
 
-___Declaração das variáveis e comandos de atribuição___
-Tendo em vista os dados já declarados pelo usuário, o comando de atribuição é executado para cada variável a fim de armazenar à informação nessa variável.
-Dessa forma, temos:
+var
+        Nome, CPF, RG, Endereco: caractere
+        Altura: real
 
-caractere Nome >_ José Almeida da Silva; 
-inteiro CPF >_ 12345678900;
-inteiro RG >_ 9517530;
-real Altura >_ 1,78;
-caractere Endereço >_ Rua A, 380 – Centro – Recife/PE;
+//___Comandos de atribuição___
+//Tendo em vista os dados já declarados pelo usuário, o comando de atribuição é executado para cada variável a fim de armazenar à 
+//informação nessa variável. Dessa forma, temos:
+
+inicio
+
+        Nome <- José Almeida da Silva
+        CPF <- 12345678900
+        RG <- 9517530
+        Altura <- 1,78
+        Endereco <- Rua A, 380 – Centro – Recife/PE
+        
+fimalgoritmo
 _______________________________________________________________________________________________________________________________________
-
