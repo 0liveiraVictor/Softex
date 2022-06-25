@@ -1,0 +1,97 @@
+_________________________________________________________ALGORITMO INSERTION SORT_______________________________________________________
+
+Faça um algoritmo de ordenação utilizando o método insertion sort.
+Crie um método que execute as seguintes operações:
+
+- Tamanho do vetor: 30;
+- Utilize números ímpares;
+- Opere em ordem crescente.
+________________________________________________________________________________________________________________________________________
+
+SOLUÇÃO:
+
+algoritmo "ordenamento_por_insertion_sort"
+
+var
+	i, j, k, n, vectAUX: inteiro
+	vect: vetor[1..30] de inteiro
+
+inicio
+
+	n <- 30
+
+	//___VETOR COM 30 ELEMENTOS (ÍMPARES)___	
+	vect[1] <- 31
+	vect[2] <- 5
+	vect[3] <- 29
+	vect[4] <- 11
+	vect[5] <- 5
+	vect[6] <- 45
+	vect[7] <- 23
+	vect[8] <- 9
+	vect[9] <- 37
+	vect[10] <- 33
+	vect[11] <- 15
+	vect[12] <- 47
+	vect[13] <- 57
+	vect[14] <- 37
+	vect[15] <- 29
+	vect[16] <- 15
+	vect[17] <- 25
+	vect[18] <- 43
+	vect[19] <- 45
+	vect[20] <- 33
+	vect[21] <- 9
+	vect[22] <- 41
+	vect[23] <- 17
+	vect[24] <- 21
+	vect[25] <- 13
+	vect[26] <- 7
+	vect[27] <- 29
+	vect[28] <- 27
+	vect[29] <- 1
+	vect[30] <- 3
+	//______________________________________
+
+	escreval("___VETOR PRINCIPAL___")
+	escreval(" ")
+
+	para k <- 1 ate n faca
+
+		escreval("vetor[", k, "] = ", vect[k])
+
+	fimpara
+
+	escreval(" ")
+	escreval(" ")
+	escreval(" ")
+
+	//_______APLICAÇÃO DO MÉTODO INSERTION SORT_______
+	para i <- 2 ate n
+
+		j <- i
+
+		enquanto (j > 1 e vect[j] < vect[j-1]) faca
+
+			vectAUX <- vect[j]
+			vect[j] <- vect[j-1]
+			vect[j-1] <- vectAUX
+
+			j <- j-1
+
+		fimenquanto
+
+	fimpara
+	//________________________________________________
+
+	escreval("___VETOR ORDENADO VIA MÉTODO INSERTION SORT___")
+	escreval(" ")
+
+	para k <- 1 ate n faca
+
+		escreval("vetor[", k, "] = ", vect[k])
+
+	fimpara
+
+fimalgoritmo
+________________________________________________________________________________________________________________________________________
