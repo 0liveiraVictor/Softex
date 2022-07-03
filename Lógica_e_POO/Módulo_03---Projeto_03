@@ -1,0 +1,35 @@
+______________________________________________________CONTAGEM REGRESSIVA DE BOMBA______________________________________________________
+
+Faça um código que execute a contagem regressiva de uma bomba, informando o número de segundos para explodir. 
+Ele deverá mostrar a mensagem “iniciando contagem regressiva”, os segundos passados e, no final, a mensagem “BUM!”.
+
+Não é necessário, mas, caso deseje tornar o sistema mais realista para que o tempo realmente passe em segundos, você pode usar a 
+função time.sleep() que existe na Python (acesse o link em anexo). No entanto, é preciso adicionar uma biblioteca antes de executá-la. 
+________________________________________________________________________________________________________________________________________
+
+SOLUÇÃO:
+
+####################################################---CÓDIGO ESCRITO EM PYTHON---####################################################
+
+import time
+
+print("Iniciando Contagem Regressiva\n")
+
+time.sleep(1)
+print(".")
+time.sleep(1)
+print(".")
+time.sleep(1)
+print(".")
+
+for i in range(60, 0, -1):
+    time.sleep(1)
+    print("{0}s".format(i))
+
+time.sleep(1)
+print(".")
+print(".")
+print(".")
+
+print("\nBUM!")
+________________________________________________________________________________________________________________________________________
