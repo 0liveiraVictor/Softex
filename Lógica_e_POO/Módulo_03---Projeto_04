@@ -1,0 +1,50 @@
+___________________________________________________________FUNÇÃO CALCULADORA___________________________________________________________
+
+Faça uma função calculadora de dois números com três parâmetros: os dois primeiros serão os números da operação e o terceiro será a 
+entrada que definirá a operação a ser executada. Considera a seguinte definição:
+
+1. Soma
+2. Subtração
+3. Multiplicação
+4. Divisão
+
+Caso seja inserido um número de operação que não exista, o resultado deverá ser 0.
+________________________________________________________________________________________________________________________________________
+
+SOLUÇÃO:
+
+####################################################---CÓDIGO ESCRITO EM PYTHON---####################################################
+
+### Definição da função Calculadora(número UM de operação, número DOIS de operação, número da OPÇÃO de operação básica)
+def Calculadora(n1, n2, op):
+    
+    ## Opções de operação básicas definidas:
+    # 1. Soma
+    # 2. Subtração
+    # 3. Multiplicação
+    # 4. Divisão
+    
+    if (op==1):
+        soma = n1 + n2
+        return soma
+    
+    elif(op==2):
+        subtracao = n1 - n2
+        return subtracao
+
+    elif(op==3):
+        multiplicacao = n1 * n2
+        return multiplicacao
+        
+    elif(op==4):
+        # EVITANDO executar a indeterminação no denominador (denominador = 0)
+        if (n2!=0):
+            divisao = n1 / n2
+            return divisao
+        
+        else:
+            return "Cálculo indeterminado!"
+        
+    else:
+        return 0
+________________________________________________________________________________________________________________________________________
