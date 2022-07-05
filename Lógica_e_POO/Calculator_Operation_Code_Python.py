@@ -3,7 +3,6 @@
 
 # In[ ]:
 
-
 print("--------------------------------CALCULADORA-------------------------------- \n")
 
 ### Definição da função Calculadora(número UM de operação, número DOIS de operação, número da OPÇÃO de operação básica)
@@ -43,7 +42,6 @@ print("Opções de operações básicas: \n\n1: Soma \n2: Subtração \n3: Multi
 opcao = int(input("Digite sua opção (1, 2, 3, 4 ou 0): "))
 
 while (opcao != 0):
-
     if (opcao > 4) or (opcao < 0):
         print("\nEssa opção NÃO EXISTE! VERIFIQUE a opção digitada e TENTE NOVAMENTE.")
         print("\n---------------------------------------------------------------------------")
@@ -75,8 +73,7 @@ while (opcao != 0):
             divi = Calculadora(num1, num2, opcao)
             print("\nO resultado da DIVISÃO dos números é:", divi)
             
-        print("\n---------------------------------------------------------------------------")
-        
+        print("\n---------------------------------------------------------------------------")      
         
         print("\nDESEJA MAIS ALGUMA OPERAÇÃO? \n\nOpções de operações básicas: \n\n1: Soma \n2: Subtração \n3: Multiplicação \n4: Divisão \n")    
         print("Caso deseje SAIR, digite 0.")
