@@ -1,0 +1,54 @@
+_______________________________________________COMPLETANDO IDADE EM 2022 (temporary code)_______________________________________________
+
+Desenvolva um programa que recebe do usuário nome completo e ano de nascimento que seja entre 1922 e 2021. A partir dessas 
+informações, o sistema mostrará o nome do usuário e a idade que completou, ou completará, no ano atual (2022).
+
+Caso o usuário não digite um número ou apareça um inválido no campo do ano, o sistema informará o erro e continuará perguntando 
+até que um valor correto seja preenchido.
+________________________________________________________________________________________________________________________________________
+
+SOLUÇÃO:
+
+####################################################---CÓDIGO ESCRITO EM PYTHON---####################################################
+
+print("--------------------------------IDADE EM 2022-------------------------------- \n")
+
+try:
+
+    nome = input("Digite seu nome completo: ")
+    ano = int(input("Digite seu ano de nascimento (entre 1922 e 2021): "))
+
+    if (ano >= 1922) and (ano <= 2021):
+    
+        idade = (2022 - ano)
+    
+        print("\nSr(a). ", nome)
+        print("Você, em 2022, completou (ou completará) " + str(idade) + " anos de idade.")
+        print("-----------------------------------------------------------------------------")
+    
+    else:
+        
+        control = True
+    
+        while (control == True):
+    
+            print("\nERRO: Você digitou um número INVÁLIDO (FORA do limite definido!).")
+            print("Por favor, TENTE NOVAMENTE!")
+            print("-----------------------------------------------------------------------------")
+            ano = int(input("\nDigite um ano de nascimento VÁLIDO entre 1922 e 2021: "))
+    
+            if (ano >= 1922) and (ano <= 2021):
+            
+                control = False
+        
+        idade = (2022 - ano)
+    
+        print("\nSr(a). ", nome)
+        print("Você, em 2022, completou (ou completará) " + str(idade) + " anos de idade.")
+        print("-----------------------------------------------------------------------------")
+        
+except Exception as error:
+    
+    print("\nERRO: ", error)
+    print("-----------------------------------------------------------------------------")
+________________________________________________________________________________________________________________________________________
