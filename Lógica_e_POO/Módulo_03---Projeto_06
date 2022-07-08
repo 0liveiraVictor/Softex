@@ -1,4 +1,4 @@
-_______________________________________________COMPLETANDO IDADE EM 2022 (temporary code)_______________________________________________
+_______________________________________________________COMPLETANDO IDADE EM 2022________________________________________________________
 
 Desenvolva um programa que recebe do usuário nome completo e ano de nascimento que seja entre 1922 e 2021. A partir dessas 
 informações, o sistema mostrará o nome do usuário e a idade que completou, ou completará, no ano atual (2022).
@@ -13,42 +13,51 @@ SOLUÇÃO:
 
 print("--------------------------------IDADE EM 2022-------------------------------- \n")
 
-try:
+nome = input("Digite seu nome completo: ")
 
-    nome = input("Digite seu nome completo: ")
-    ano = int(input("Digite seu ano de nascimento (entre 1922 e 2021): "))
+#Variável condicionante para manter o lop 'while' em caso de anotação incorreta do ano de nascimento.
+op = True
 
-    if (ano >= 1922) and (ano <= 2021):
+while (op == True):
+
+    try:
     
-        idade = (2022 - ano)
+        ano = int(input("Digite seu ano de nascimento (entre 1922 e 2021): "))
+
+        if (ano >= 1922) and (ano <= 2021):
     
-        print("\nSr(a). ", nome)
-        print("Você, em 2022, completou (ou completará) " + str(idade) + " anos de idade.")
-        print("-----------------------------------------------------------------------------")
+            idade = (2022 - ano)
     
-    else:
-        
-        control = True
-    
-        while (control == True):
-    
-            print("\nERRO: Você digitou um número INVÁLIDO (FORA do limite definido!).")
-            print("Por favor, TENTE NOVAMENTE!")
-            print("-----------------------------------------------------------------------------")
-            ano = int(input("\nDigite um ano de nascimento VÁLIDO entre 1922 e 2021: "))
-    
-            if (ano >= 1922) and (ano <= 2021):
+            print("\nSr(a). ", nome)
+            print("Você, em 2022, completou (ou completará) " + str(idade) + " anos de idade.")
             
-                control = False
-        
-        idade = (2022 - ano)
+            op = False
     
-        print("\nSr(a). ", nome)
-        print("Você, em 2022, completou (ou completará) " + str(idade) + " anos de idade.")
-        print("-----------------------------------------------------------------------------")
-        
-except Exception as error:
+        else:
     
-    print("\nERRO: ", error)
-    print("-----------------------------------------------------------------------------")
+            while True:
+    
+                print("\nVocê digitou um ano INVÁLIDO (fora do limite definido!).")
+                print("Por favor, TENTE NOVAMENTE!")
+                print("-----------------------------------------------------------------------------")
+                
+                ano = int(input("\nDigite um ano de nascimento VÁLIDO entre 1922 e 2021): "))
+    
+                if (ano >= 1922) and (ano <= 2021):
+            
+                    idade = (2022 - ano)
+    
+                    print("\nSr(a). ", nome)
+                    print("Você, em 2022, completou (ou completará) " + str(idade) + " anos de idade.")
+                    
+                    op = False
+                    break
+                
+    except ValueError:
+            
+                print("\nERRO: Caracteres são INVÁLIDOS!")
+                print("Por favor, verifique os limites numéricos de ano definido e TENTE NOVAMENTE.")
+                print("-----------------------------------------------------------------------------")
+
+print("-----------------------------------------------------------------------------")
 ________________________________________________________________________________________________________________________________________
