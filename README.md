@@ -65,8 +65,8 @@ O curso é dividido em 6 blocos com 4 módulos cada, sendo esses:
 		- [x] Projeto 02 - [Algoritmo Insertion Sort](https://github.com/0liveiraVictor/Softex/blob/main/L%C3%B3gica_e_POO/M%C3%B3dulo_02---Projeto_02)
 		- [x] Projeto 03 - [Ponteiro e Alocação Dinâmica](https://github.com/0liveiraVictor/Softex/blob/main/L%C3%B3gica_e_POO/M%C3%B3dulo_02---Projeto_03)
 		- [x] Projeto 04 - [Números Complexos e Operações](https://github.com/0liveiraVictor/Softex/blob/main/L%C3%B3gica_e_POO/M%C3%B3dulo_02---Projeto_04)
-		- [ ] Projeto 05 - []()
-		- [ ] Projeto 06 - []()
+		- [x] Projeto 05 - [Pesquisa sobre Grafos](https://github.com/0liveiraVictor/Softex/blob/main/L%C3%B3gica_e_POO/M%C3%B3dulo_02---Projeto_05)
+		- [x] Projeto 06 - [Listas e Árvores](https://github.com/0liveiraVictor/Softex/blob/main/L%C3%B3gica_e_POO/M%C3%B3dulo_02---Projeto_06)
 		
 	* Módulo 3 - Introdução a Programação
 	
