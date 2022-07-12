@@ -1,0 +1,28 @@
+__________________________________________________________PESQUISA SOBRE GRAFOS_________________________________________________________
+
+Pesquise sobre os grafos e apresente dois exemplos de como são utilizados no contexto tecnológico.
+________________________________________________________________________________________________________________________________________
+
+SOLUÇÃO:
+
+Por definição, grafos são estruturas matemáticas que permitem codificar relacionamentos entre pares de objetos. Esses objetos são 
+definidos por vértices (ou nós) do grafo, enquanto que o relacionamento entre seus pares são representados pelas arestas do grafo.
+
+No âmbito tecnológico, é possível citar diversos exemplos que fazem uso do conceito de grafos em suas aplicações, as quais podem ser
+destacadas: sistemas de recomendação de produtos, pessoas e filmes (facebook, instagram, linkedin, amazon, mercado livre, netflix e
+etc.), e sistema de logística para o transporte de produtos e pessoas com a geolocalização (waze, google maps, mapquest e etc.).
+
+Com relação aos sistemas de recomendação, as empresas que fazem uso desse mecanismo personalizam um tipo de produto, catálogo de filmes 
+ou indicam pessoas potenciais, para novas amizades, baseando-se apenas em buscas de produtos ou compras já efetivadas, filmes vistos (na 
+própria plataforma) em momentos anteriores e fazendo uso do recurso 'amigos em comum' para indicar novos amigos (como que entrelaçados 
+por um rede que conecta uns aos outros). Essa estrutura é exatamente como que definida pelo conceito dos grafos. Os produtos de lojas, 
+filmes e pessoas podem ser entendidos como os vértices, enquanto que as buscas nos site e as compras dos produtos, buscas nas plataformas 
+por filmes, ou filmes já visto, e a sua rede de amigos podem ser encaradas como os relacionamentos (arestas).   
+
+Já os sistemas logísticos (para geolocalização), as empresas usam desses recursos para otimizar o escoamento de produtos de um ponto 
+(vértice) a outro (vértice) das cidades ou até mesmo estados. De modo semelhante, os aplicativos de transporte (uber, 99taxis, maxim, 
+indriver e etc.) utilizam desse mesmo príncipio para levar pessoas de um lugar a outro dos bairros ou cidades, a todo momento. De modo 
+semelhante, ambos os processos avaliam sempre o melhor caminho (arestas) a ser traçado, levantando dados em tempo real do fluxo de 
+pessoas, veículos, avaliando possíveis casos de acidentes, enchentes, congestionamento e tanto outros fatores que podem ser prejudiciais 
+ao dinamismo e velocidade que o mundo moderno nos proporciona.
+________________________________________________________________________________________________________________________________________
