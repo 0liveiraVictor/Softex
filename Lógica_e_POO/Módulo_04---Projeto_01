@@ -1,0 +1,66 @@
+___________________________________________________CLASSIFICAÇÃO DE OBJETOS EM CLASSES__________________________________________________
+
+Classifique dois objetos materiais e dois abstratos. Insira, no mínimo, três métodos e três atributos para cada.
+________________________________________________________________________________________________________________________________________
+
+SOLUÇÃO:
+
+Instânciando os objetos Televisão e Paraquedas como materiais e Conta Bancária e Viagem como abstratos, temos:
+
+Objeto: Televisão
+
+_Atributos_
+Modelo: 43S615
+Tamanho: 43"
+Resolução: Full HD
+
+_Métodos_
+Ligar
+Desligar
+Mudar
+Conectar
+Desconectar
+**************************************
+
+Objeto: Paraquedas
+
+_Atributos_
+Cor: Azul, Cinza, Vermelho e Amarelo
+Marca: RedBull
+Dimensões: 3,5 m x 7 m
+
+_Métodos_
+Saltar
+Monitorar
+Acionar
+**************************************
+
+Objeto: Conta Bancária
+
+_Atributos_
+Banco: 123
+Nº de Conta: 12345-6
+Agência: 1234-5
+
+_Métodos_
+Pagar
+Depositar
+Sacar
+Transacionar
+**************************************
+
+Objeto: Viagem
+
+_Atributos_
+Origem: Abu Dhabi
+Destino: Doha
+Distância: 550 km
+Meio de Transporte: Carro 
+
+_Métodos_
+Partir
+Descansar
+Comer
+Chegar
+Explorar
+________________________________________________________________________________________________________________________________________
