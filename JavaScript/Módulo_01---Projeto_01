@@ -1,0 +1,96 @@
+______________________________________________________INSPEÇÃO DE CÓDIGO JAVASCRIPT_____________________________________________________
+
+Acesse pelo menos dois sites de sua preferência e os inspecione com o botão direito do mouse na página web.
+Com o código fonte aberto você deve: 
+
+Verificar no código algum elemento que utilize JavaScript; 
+Marcar alguns elementos do site; 
+Explicar como ele se comporta. Exemplo: entrar no site do Google, inspecionar o botão de pesquisa, verificar o código e explicar qual 
+a finalidade do botão. 
+________________________________________________________________________________________________________________________________________
+
+SOLUÇÃO:
+
+O primeiro exemplo de aplicação lógica do JavaScript em um site foi averiguado em http://ferrazcon.com/. A página apresenta na tela um 
+menu de opções iniciais (Home, Sobre, Serviços, Portfólio e Contato), além de ter recurso de design responsivo (para larguras menores 
+que 947 px).
+
+Considerando o estilo de página para ambiente mobile, tem-se que o menu da tela principal fica oculto em um botão de exibição de opções
+(vide imagem1 pelo link abaixo).
+
+	imagem1 ---> (https://github.com/0liveiraVictor/Softex/blob/main/JavaScript/DOC---M%C3%B3dulo_01---Projeto_01/imagem1.png)
+
+Na imagem1, é possível ver a figura do botão localizada na parte superior direita da página (bloco esquerdo). No código fonte, bloco 
+direito, o 'menubar' definido como id da divisão da página encontra-se fechado ('close') imediatamente antes de qualquer possível 
+'clique'. Todas as opções do menu não são exibidas até que se 'clique'. Isso é definido no código fonte da página em:
+
+	<div id="menubar" class="close"> == $0                    (linha 83 - código fonte)
+
+Quando o botão de opções do menu é clicado, o 'menubar' contido como id da divisão da página é modificado e o 'close' é removido, 
+exibindo assim as opções: Home, Sobre, Serviços, Portfólio e Contato (vide imagem2 pelo link abaixo).
+
+	imagem2 ---> (https://github.com/0liveiraVictor/Softex/blob/main/JavaScript/DOC---M%C3%B3dulo_01---Projeto_01/imagem2.png)
+
+A função de 'clique' para abrir e fechar o menu de navegação foi definido dentro do arquivo navbar.js:   
+
+	var btnmenu = document.getElementById('btnmenu');
+	var menubar = document.getElementById('menubar');
+	var menuclose = document.getElementById('menuclose');
+
+	btnmenu.addEventListener('click',function(){
+   	if(menubar.classList.contains('close')){ 
+    	menubar.classList.remove('close');
+
+	}			
+    	else{
+        	menubar.classList.add('close');
+    	}
+	})
+
+De modo geral, foram definidos as variáveis e uma função. Botão de menu, barra de menu e o fechamento de menu são as variáveis. Para o 
+botão menu, toda vez que for "escutado" um evento de 'clique' a função será executada. Se o 'menubar' estiver fechado, o 'close' será 
+removido e as opções do menu serão exibidas, senão (caso esteja aberta) o 'close' será adicionado e as opções do menu serão ocultadas.
+
+****************************************************************************************************************************************
+
+Um segundo exemplo de aplicação lógica do JavaScript foi para o site https://www.computerhope.com/issues/ch002254.htm. A página apresenta
+uma estrutura básica de web site com conteúdo qualitativo. À medida que se avança ao longo da página, surge um botão de 'clique' nomeado
+como 'Back to Top' (vide imagem3 pelo link abaixo).  
+
+	imagem3 ---> (https://github.com/0liveiraVictor/Softex/blob/main/JavaScript/DOC---M%C3%B3dulo_01---Projeto_01/imagem3.png)
+
+Na imagem3, é possível ver a página (bloco esquerdo da imagem) e o código fonte (bloco direito da imagem). Na página, na parte inferior 
+direita, temos o botão 'Back to Top' e, no código fonte, temos o arquivo ch.js linkado por fonte dentro do script do código HTML, o qual 
+define a função de operação do botão 'Back to Top'.
+
+	<script async src="https://www.computerhope.com/ch.js"></script>                    (linha 238 - código fonte)
+
+No código do arquivo ch.js, temos:
+
+	document.getElementById("tt").innerHTML="<a onclick=\"totop()\" id=\"totop\">Back to Top</a>";window.onscroll=function(){if(pageYOffset>=1000){document.getElementById('totop').style.visibility="visible";}else{document.getElementById('totop').style.visibility="hidden";}}
+	function totop(){document.body.scrollTop=0;document.documentElement.scrollTop=0;} ...
+
+No documento, é definido um elemento 'tt', no qual a ação de 'clique' ativa a função com identificador 'totop'. A função tem o objetivo 
+de manipular a barra de rolagem da página. Se a barra de rolagem estiver localizada após ou igual a posição (Y) 1000, o botão 'Back to 
+Top' é exibido para 'clique'. Caso esteja em posição anterior a 1000, o botão fica escondido (não permitindo possibilidade de 'clique'). 
+Quando o botão está exibido e o 'clique' ocorre, a função é executada e o corpo do documento é realocado para a posição (Y) igual a 0
+(definido como topo da página). Em resumo, o botão 'Back to Top' faz a barra de rolagem rolar para o topo da página.  
+
+Por fim, esse dois exemplos citados nos mostram um panorama geral de como funciona a linguagem JavaScript em operações web, o qual 
+possibilita a interação usuário e navegador. A linguagem opera na estrutura lógica da navegação, sendo responsável por dar a resposta 
+para o 'lado cliente' após qualquer operação que ele eventualmente realize.
+
+
+
+######################################################################################################################################
+######################################################################################################################################
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code navbar.js (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/JavaScript/DOC---M%C3%B3dulo_01---Projeto_01/navbar.js
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code ch.js (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/JavaScript/DOC---M%C3%B3dulo_01---Projeto_01/ch.js
+################## -------------------------------------------------------------------------------------------------------------------
+######################################################################################################################################
+######################################################################################################################################
+________________________________________________________________________________________________________________________________________
