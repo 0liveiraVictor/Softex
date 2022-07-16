@@ -1,0 +1,32 @@
+{   
+    //'basic config' (zoom de página e tamanho de fonte)//
+    "workbench.startupEditor": "none",
+    "window.zoomLevel": 1,
+    "editor.fontSize": 16,
+
+    //-----snippets-----//
+
+    //'Material Icon Theme config'//
+    "workbench.iconTheme": "material-icon-theme",
+    "material-icon-theme.folders.theme": "specific",
+    "material-icon-theme.opacity": 1,
+    "material-icon-theme.saturation": 1,
+
+    //'ESLint config'//
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+
+    //'Identicator config'//
+    "indenticator.showIndentGuide": true,
+    "indenticator.color.dark": "#888",
+    "indenticator.width": 1.6,
+    "indenticator.style": "dashed",
+    "code-runner.clearPreviousOutput": true,
+
+    //'Code Runner config'//
+    "code-runner.executorMap": {
+        "javascript": "node",
+        "python": "python"
+    }    
+}

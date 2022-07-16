@@ -1,0 +1,2 @@
+console.log("Olá, meu nome é Victor Oliveira e estou dando meus primeiros passos na linguagem JavaScript.");
+console.log("O ambiente de desenvolvimento em uso é o vscode e suas configurações encontram-se concluídas.");
