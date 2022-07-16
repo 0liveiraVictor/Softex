@@ -1,0 +1,49 @@
+_____________________________________________________CONFIGURAÇÃO DE IDE JAVASCRIPT_____________________________________________________
+
+Atividade proposta: Com ajuda da leitura complementar, você deve configurar o seu ambiente de desenvolvimento JavaScript. Esse ambiente 
+pode ser uma IDE ou um editor de código-fonte. Para isso, você deve levar em consideração alguns pontos: 
+
+O seu ambiente precisa programar na linguagem JavaScript; 
+Se necessário, configure seu ambiente; 
+Deixe ele pronto para uso, ou seja, sem mais configurações. 
+
+Escreva, no mínimo, um parágrafo mostrando seu ambiente configurado, explique sua escolha. 
+________________________________________________________________________________________________________________________________________
+
+SOLUÇÃO:
+
+O ambiente para desenvolvimento adotado foi o editor Visual Studio Code (vscode). O vscode é amplamento difundido e muito versátil para
+quem deseja trabalhar com mais de uma linguagem. Apresenta um software leve e que permite você trabalhar com diferentes ferramentas (a 
+depender da sua necessidade). Para configuração, foi realizado a instalação do Code Runner (para executar arquivos de diferentes 
+linguagens), DotENV (ferramenta de adição de sintaxe para variáveis de ambiente, especialmente para NodeJS), EditorConfig (para definir 
+e manter estilos de codificação consistentes entre os diferentes editores), ESLint (padronização do código e análise de problemas), 
+Identicator (organização visual para identação) e Material Icon Theme (para variedade de temas de ícones e padronização de pastas) (vide 
+imagem1 pelo link abaixo).
+
+	imagem1 ---> (https://github.com/0liveiraVictor/Softex/blob/main/JavaScript/DOC---M%C3%B3dulo_01---Projeto_02/imagem1.png)
+
+A imagem1 mostra as extensões citadas já instaladas no editor vscode, além de apresentar as configurações que foram definidas no arquivo 
+'settings.json'. 
+
+Um pequeno programa foi escrito no editor (arquivo de teste 'console.js') para demonstrar a aplicação da linguagem JavaScript (vide 
+imagem2 pelo link abaixo).
+
+	imagem2 ---> (https://github.com/0liveiraVictor/Softex/blob/main/JavaScript/DOC---M%C3%B3dulo_01---Projeto_02/imagem2.png)
+
+Todas as configurações primárias do editor foram efetuadas e o programa apresentou boa funcionalidade para essa linguagem. Novos 
+plugins poderão ser adicionados à medida que forem exigidos no tratamento de problemas mais complexos. 
+
+
+
+######################################################################################################################################
+######################################################################################################################################
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code settings.json (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/JavaScript/DOC---M%C3%B3dulo_01---Projeto_02/settings.json
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code console_test.js (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/JavaScript/DOC---M%C3%B3dulo_01---Projeto_02/console_test.js
+################## -------------------------------------------------------------------------------------------------------------------
+######################################################################################################################################
+######################################################################################################################################
+________________________________________________________________________________________________________________________________________
