@@ -81,7 +81,7 @@ O curso é dividido em 6 blocos com 4 módulos cada, sendo esses:
 		
 	* Módulo 4 - Programação Orientada a Objetos
 	
-		- [ ] Projeto 01 - []()
+		- [x] Projeto 01 - [Classificação de Objetos em Classes](https://github.com/0liveiraVictor/Softex/blob/main/L%C3%B3gica_e_POO/M%C3%B3dulo_04---Projeto_01)
 		- [ ] Projeto 02 - []()
 		- [ ] Projeto 03 - []()
 		- [ ] Projeto 04 - []()
