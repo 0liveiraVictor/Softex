@@ -1,0 +1,83 @@
+________________________________________________________SISTEMA ESCOLAR DE NOTAS________________________________________________________
+
+Crie dois códigos de sistema de notas para uma escola. O primeiro código deve ser um programa que informa se o aluno reprovou, ou não, 
+com base nas três notas que ele adicionou ao programa. Utilize, no mínimo, um operador de atribuição e um operador ternário. 
+O segundo código é um programa que o aluno deve escrever duas notas e o retorno informa a nota mínima que ele deve tirar na próxima 
+prova para poder passar com nota sete.
+________________________________________________________________________________________________________________________________________
+
+SOLUÇÃO:
+
+PRIMEIRO CÓDIGO: sistema de avaliação ('evaluation_system.js') de aprovação ou reprovação do aluno.
+
+//importando o módulo 'prompt-sync' (para uma constante) para executar modo leitura de dados no console
+const promptSync = require('prompt-sync')({sigint: true});
+
+//declarando as três variáveis das três notas, soma total e média das notas
+var nota1, nota2, nota3, soma, media;
+
+console.log("----------------------------------- SISTEMA DE AVALIAÇÃO ESCOLAR -----------------------------------");
+console.log(" ");
+
+//leitura das três notas do aluno
+nota1 = parseFloat(promptSync("Digite sua PRIMEIRA nota (entre 0 e 10): "));
+nota2 = parseFloat(promptSync("Digite sua SEGUNDA nota (entre 0 e 10): "));
+nota3 = parseFloat(promptSync("Digite sua TERCEIRA nota (entre 0 e 10): "));
+
+//manipulação dos dados de entrada e cálculo da média
+soma = (nota1 + nota2 + nota3);
+media = soma/3;
+
+//definição do resultado mediante uso do OPERADOR TERNÁRIO
+var resultado = (media >= 7) ? 'Você foi APROVADO.' : 'Você foi REPROVADO.'
+
+//exibição do resultado para o aluno
+console.log(" ");
+console.log(resultado);
+console.log(" ");
+
+console.log("----------------------------------------------------------------------------------------------------");
+****************************************************************************************************************************************
+
+SEGUNDO CÓDIGO: obtenção da nota mínima ('minimum_grade.js') necessária para aprovação do aluno.
+
+//importando o módulo 'prompt-sync' (para uma constante) para executar modo leitura de dados no console
+const promptSync = require('prompt-sync')({sigint: true});
+
+//declarando as três variáveis das três notas
+var nota1, nota2, nota3;
+
+console.log("----------------------------------- SISTEMA DE AVALIAÇÃO ESCOLAR -----------------------------------");
+console.log(" ");
+
+//leitura das duas primeiras notas do aluno
+nota1 = parseFloat(promptSync("Digite sua PRIMEIRA nota (entre 0 e 10): "));
+nota2 = parseFloat(promptSync("Digite sua SEGUNDA nota (entre 0 e 10): "));
+
+//cálculo da terceira nota (mínima) necessário para aprovação
+nota3 = 21 - (nota1 + nota2)
+
+/* OBS:. Vale lembrar que se o aluno necessitar obter uma nota MAIOR que 10 para terceira nota, ele estará condicionalmente REPROVADO.
+Essa abordagem, nesse caso, não será avaliada. Tratamentos mais detalhados devem ser revisados em problemas mais específicos. */
+
+//exibição do resultado para o aluno
+console.log(" ");
+console.log("A nota mínima necessária para sua APROVAÇÃO é: " + nota3);
+console.log(" ");
+
+console.log("----------------------------------------------------------------------------------------------------");
+
+
+
+######################################################################################################################################
+######################################################################################################################################
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code evaluation_system.js (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/JavaScript/DOC---M%C3%B3dulo_02---Projeto_03/evaluation_system.js
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code minimum_grade.js (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/JavaScript/DOC---M%C3%B3dulo_02---Projeto_03/minimum_grade.js
+################## -------------------------------------------------------------------------------------------------------------------
+######################################################################################################################################
+######################################################################################################################################
+________________________________________________________________________________________________________________________________________
