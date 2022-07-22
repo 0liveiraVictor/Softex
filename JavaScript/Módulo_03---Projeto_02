@@ -1,0 +1,56 @@
+__________________________________________________________FUNÇÕES E SEUS TIPOS__________________________________________________________
+
+Crie um programa que contenha os seguintes tipos de funções:
+
+1. uma função tradicional com a palavra reservada “Function” e sem nenhum parâmetro;
+2. uma função tradicional com parâmetros e um retorno de valor;
+3. uma arrow function com parâmetros e que retorne um valor.
+
+Crie um programa que utilize essas três funções de forma lógica, por exemplo: um programa de calculadora.
+________________________________________________________________________________________________________________________________________
+
+SOLUÇÃO:
+
+//função tradicional sem parâmetro (FUNÇÃO 1)
+function exibeCalculadora() {
+
+    return "--------------------------------- FUNÇÃO CALCULADORA INICIALIZADA... ---------------------------------";
+
+}
+
+//função tradicional com parâmetros (FUNÇÃO 2)
+function Calcula(n1, n2) {
+
+    return n1 ** n2;
+
+}
+
+//arrow function com parâmetros (FUNÇÃO 3)
+const arrowCalcula = (n3, n4) => n3 - n4;
+
+//inicializando a calculadora com a FUNÇÃO 1
+console.log(exibeCalculadora());
+
+//realizando operação de potência com a FUNÇÃO 2 (ex. operação na base 2)
+resultado1 = Calcula(2, 6);
+console.log("\n___Operação de Potência na Base 2___");
+console.log("2^6 = " + resultado1.toString());
+
+//realizando operação de subtração com a FUNÇÃO 3
+resultado2 = arrowCalcula(300, 541)
+console.log("\n___Operação de Subtração___");
+console.log("300 - 541 = " + resultado2.toString());
+
+console.log("------------------------------------------------------------------------------------------------------");
+
+
+
+######################################################################################################################################
+######################################################################################################################################
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code functions_types.js (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/JavaScript/DOC---M%C3%B3dulo_03---Projeto_02/functions_types.js
+################## -------------------------------------------------------------------------------------------------------------------
+######################################################################################################################################
+######################################################################################################################################
+________________________________________________________________________________________________________________________________________
