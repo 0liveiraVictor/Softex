@@ -1,0 +1,35 @@
+____________________________________________________________PACOTES E CLASSES___________________________________________________________
+
+Crie dois pacotes baseados nas atribuições de uma empresa e inclua classes neles. Lembre-se de trabalhar com os padrões Java.
+________________________________________________________________________________________________________________________________________
+
+SOLUÇÃO:
+
+//PRIMEIRO PACOTE
+//criação do pacote de classes da empresa 'Receita Federal' (seguindo o padrão da Sun: ex. br.com.nomedaempresa.nomedoprojeto)
+package br.com.receitafederal.cpf;
+
+//classe do pacote 'br.com.receitafederal.cpf' com os atributos de cada certificado de pessoa física (cpf)
+public class Pessoa {
+
+    //... atributos e métodos referentes aos dados cadastrais das pessoas registradas
+
+}
+****************************************************************************************************************************************
+
+//SEGUNDO PACOTE
+/*criação do pacote de classes da empresa 'Receita Federal' (pacote de classes referente as informações de registro de imposto de renda 
+por cada cpf)*/
+package br.com.receitafederal.ir;
+
+/*importando a classe 'Pessoa', definida em outra localização (pacote: 'br.com.receitafederal.cpf'), para utilizar suas propriedades e 
+funções no pacote 'br.com.receitafederal.ir'*/
+import br.com.receitafederal.cpf.Pessoa; //importando apenas a classe Pessoa
+
+public class DeclaracaoIR {
+
+    /*... os atributos e métodos da classe "acessarão", sem mais problemas, as informações pessoais atribuídas na classe 'Pessoa' do 
+    pacote 'br.com.receitafederal.cpf'*/
+
+}
+________________________________________________________________________________________________________________________________________
