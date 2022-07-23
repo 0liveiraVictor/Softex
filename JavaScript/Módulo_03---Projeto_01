@@ -1,0 +1,42 @@
+_______________________________________________________EXECUÇÃO index.js VIA NODE_______________________________________________________
+
+Escolha algum código executável em JavaScript feito em atividades passadas e o coloque no Node.js. Para isso, você deve ter o Node.js 
+instalado. Após fazer essa migração, coloque seu código no arquivo "index.js", teste e tire um print.
+________________________________________________________________________________________________________________________________________
+
+SOLUÇÃO:
+
+A atividade realizada anteriormente (com código executável em JavaScript) escolhida para o teste de execução, via ambiente Node.js, foi 
+a do projeto 2 - módulo 2 (Calculadora e suas Operações). Para essa avaliação, foi necessário, primeiramente, instalar o Node.js em minha 
+máquina Linux (distribuição Ubuntu). Realizado esta etapa, fiz alguns testes com operadores básicos a fim de avaliar se o ambiente node 
+estava executando de forma correta. Para isso, realizei operações de soma, subtração, multiplicação e divisão (vide imagem1 pelo link 
+abaixo):
+
+	imagem1 ---> (https://github.com/0liveiraVictor/Softex/blob/main/JavaScript/DOC---M%C3%B3dulo_03---Projeto_01/imagem1.png)
+
+Como se pode visualizar pelo print de tela, o ambiente node foi configurado de modo correto e encontra-se funcional.
+
+Após a configuração do ambiente node, o código base do projeto 2 - módulo 2 foi salvo no arquivo index.js. Esse arquivo foi executado no
+ambiente node via linha de comando no terminal: 
+
+	node index.js	 
+
+Para demonstrar a funcionalidade do programa criado, executei duas vezes o arquivo para as operações de soma e subtração (vide imagem2), 
+respectivamente, e mais outras duas vezes para as operações de multiplicação e divisão (vide imagem3), nessa ordem. Abaixo, encontra-se 
+os links dos prints de tela das execuções:
+
+	imagem2 ---> (https://github.com/0liveiraVictor/Softex/blob/main/JavaScript/DOC---M%C3%B3dulo_03---Projeto_01/imagem2.png)
+
+	imagem3 ---> (https://github.com/0liveiraVictor/Softex/blob/main/JavaScript/DOC---M%C3%B3dulo_03---Projeto_01/imagem3.png)
+
+
+
+######################################################################################################################################
+######################################################################################################################################
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code index.js (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/JavaScript/DOC---M%C3%B3dulo_03---Projeto_01/index.js
+################## -------------------------------------------------------------------------------------------------------------------
+######################################################################################################################################
+######################################################################################################################################
+________________________________________________________________________________________________________________________________________
