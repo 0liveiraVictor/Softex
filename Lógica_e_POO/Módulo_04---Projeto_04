@@ -5,6 +5,8 @@ ________________________________________________________________________________
 
 SOLUÇÃO:
 
+#####################################################---CÓDIGO ESCRITO EM JAVA---#####################################################
+
 //PRIMEIRO PACOTE
 //criação do pacote de classes da empresa 'Receita Federal' (seguindo o padrão da Sun: ex. br.com.nomedaempresa.nomedoprojeto)
 package br.com.receitafederal.cpf;
