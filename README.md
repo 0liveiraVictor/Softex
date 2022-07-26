@@ -82,10 +82,10 @@ O curso é dividido em 6 blocos com 4 módulos cada, sendo esses:
 	* Módulo 4 - Programação Orientada a Objetos
 	
 		- [x] Projeto 01 - [Classificação de Objetos em Classes](https://github.com/0liveiraVictor/Softex/blob/main/L%C3%B3gica_e_POO/M%C3%B3dulo_04---Projeto_01)
-		- [ ] Projeto 02 - []()
-		- [ ] Projeto 03 - []()
-		- [ ] Projeto 04 - []()
-		- [ ] Projeto 05 - []()
+		- [x] Projeto 02 - [Classe, Atributos e Métodos](https://github.com/0liveiraVictor/Softex/blob/main/L%C3%B3gica_e_POO/M%C3%B3dulo_04---Projeto_02)
+		- [x] Projeto 03 - [Métodos Get, Set e Construtor](https://github.com/0liveiraVictor/Softex/blob/main/L%C3%B3gica_e_POO/M%C3%B3dulo_04---Projeto_03)
+		- [x] Projeto 04 - [Pacotes e Classes](https://github.com/0liveiraVictor/Softex/blob/main/L%C3%B3gica_e_POO/M%C3%B3dulo_04---Projeto_04)
+		- [x] Projeto 05 - [Manipulação de Strings](https://github.com/0liveiraVictor/Softex/blob/main/L%C3%B3gica_e_POO/M%C3%B3dulo_04---Projeto_05)
 		- [ ] Projeto 06 - []()
 		- [ ] Projeto 07 - []()
 		- [ ] Projeto 08 - []()
