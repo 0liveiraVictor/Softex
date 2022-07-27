@@ -1,0 +1,38 @@
+______________________________________________________PADRÃO DE PROJETO (SINGLETON)_____________________________________________________
+
+Escolha e descreva um padrão de projetos.
+________________________________________________________________________________________________________________________________________
+
+SOLUÇÃO:
+
+Padrões de projeto são soluções reutilizáveis que podem ser aplicadas em problemas recorrentes em projetos de softwares. Esses modelos
+foram desenvolvidos, testados e padronizados para auxiliar qualquer desenvolvedor na construção de seus novos projetos. Alguns de seus 
+benefícios incluem: soluções comprovadas, facilidade de reutilização (adaptável para atender as necessidades do projeto) e expressividade 
+(capacidade de expressar soluções extensas de uma forma mais elegante).
+
+Os padrões de projetos são divididas em três categorias: criacional, estrutural e comportamental. Particularmente, a categoria 
+criacional é responsável pela instânciação de classes, tanto para padrões de criação de classes como de criação de objetos (ajudando a 
+tornar um sistema independente). Nessa categoria, em especial, pode ser destacado o padrão 'singleton'.
+
+O singleton é o padrão que especifica apenas uma instância de um objeto em uma classe; sendo essa instância utilizada por toda a 
+aplicação (provida a partir de um meio global de acesso). Dessa forma, é possível ter maior controle sobre o acesso às propriedades e 
+métodos da classe (garantindo que não haja outras instâncias). Esse controle permite que se reduza o consumo de memória  no sistema, 
+tendo em vista que não haverá outras instâncias para alocar novos endereços de memória. Alguns exemplos de uso desse padrão incluem: 
+controle de acesso a recursos compartilhados, conexão a um banco de dados (com acesso de qualquer ponto do programa), implementação de 
+um sistema operacional com gerenciador de janelas e etc.
+
+
+
+######################################################################################################################################
+######################################################################################################################################
+################## -------------------------------------------------------------------------------------------------------------------
+################## References (Link):
+################## 1: https://github.com/fhferreira/aprendendo-padroes-de-projeto-javascript
+################## 2: http://jordankobellarz.github.io/javascript/2015/01/30/guia-rapido-de-padroes-de-projeto-javascript.html
+################## 3: https://www.devmedia.com.br/conheca-os-padroes-de-projeto/957
+################## 4: https://www.opus-software.com.br/singleton-design-pattern/
+################## 5: https://www.youtube.com/watch?v=glRKfsJStPY
+################## -------------------------------------------------------------------------------------------------------------------
+######################################################################################################################################
+######################################################################################################################################
+________________________________________________________________________________________________________________________________________
