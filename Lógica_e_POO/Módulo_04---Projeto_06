@@ -1,0 +1,206 @@
+______________________________________________________SERIALIZAÇÃO E DESSERIALIZAÇÃO____________________________________________________
+
+Crie um exemplo de como funcionam a serialização e a desserialização de um sistema qualquer. Utilize as classes, os objetos e métodos 
+padrões da Java e insira um endereço físico fictício.
+________________________________________________________________________________________________________________________________________
+
+SOLUÇÃO:
+
+Os exemplos do processo de serialização e desserialização foram realizados pautando-se em um objeto pré-definido (nesse caso, a instância
+de uma classe criada 'Animal_class', na qual foram definidos o tipo de animal, nome, raça e idade). A classe 'Animal_class', usada como 
+base para a instância, foi definida no arquivo 'Animal_class.java'. 
+
+O primeiro passo realizado foi o de serialização do objeto. O arquivo 'SerializableApp.java' implementou esse processo. No código, foi
+estabelecido a instanciação do objeto (pertencente a classe 'Animal_class') e posteriormente realizado a transformação desse objeto em 
+um fluxo de bytes (arquivo de saída denominado 'dogCedric.flow').
+
+No segundo passo (desserialização), realizou-se o processo inverso do primeiro passo, sendo sua implementação definida pelo arquivo
+'DeserializableApp.java'. Nesse caso, o fluxo de bytes (dados do arquivo 'dogCedric.flow') foi transformado novamente em objeto (de 
+classe original 'Animal_class'), em que seus dados foram lidos e exibidos em tela.
+
+Os códigos abaixo são referentes aos arquivos 'Animal_class.java', 'SerializableApp.java' e 'DeserializableApp.java', nessa ordem.
+
+#####################################################---CÓDIGO ESCRITO EM JAVA---#####################################################
+
+//definindo o pacote da classe 'Animal_class'
+package classe;
+
+//implementando a interface java 'Serializable' no código
+import java.io.Serializable;
+
+//definindo a classe 'Animal_class' e implementando a interface 'Serializable'(a fim de torna a classe serializável)
+public class Animal_class implements Serializable{
+
+    //atributos (tipo de animal, nome, raça e idade)
+    private String animal;
+    private String nome;
+    private String raca;
+    private int idade;
+
+    //administrador de versão da classe (modificador)
+    private static final long serialVersionUID = 1l;
+
+    //construtor padrão da classe 'Animal_class' (método explícito) (instância dos objetos para o programa principal)
+    public Animal_class(){};
+
+    //construtor da classe 'Animal_class' (método implícito)
+    public Animal_class(String animal, String nome, String raca, int idade){
+
+        this.animal = animal;
+        this.nome = nome;
+        this.raca = raca;
+        this.idade = idade;
+
+    }
+
+    //método 'get' do atributo 'animal'
+    public String getAnimal(){
+
+        return animal;
+
+    }
+
+    //método 'set' do atributo 'animal'
+    public void setAnimal(String animal){
+
+        this.animal = animal;
+
+    }
+
+    //método 'get' do atributo 'nome'
+    public String getNome(){
+
+        return nome;
+
+    }
+
+    //método 'set' do atributo 'nome'
+    public void setNome(String nome){
+
+        this.nome = nome;
+
+    }
+
+    //método 'get' do atributo 'raca'
+    public String getRaca(){
+
+        return raca;
+
+    }
+
+    //método 'set' do atributo 'raca'
+    public void setRaca(String raca){
+
+        this.raca = raca;
+
+    }
+
+    //método 'get' do atributo 'idade'
+    public int getIdade(){
+
+        return idade;
+
+    }
+
+    //método 'set' do atributo 'idade'
+    public void setIdade(int idade){
+
+        this.idade = idade;
+
+    }
+
+}
+****************************************************************************************************************************************
+
+//import dos módulos 'java.io' e da classe 'Animal_class' do pacote 'classe'
+import java.io.*;
+import classe.Animal_class;
+
+//classe de serialização
+public class SerializableApp{
+
+    //programa principal de serialização
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
+
+        //instanciando o objeto 'dogCedric' da classe 'Animal_class' criada
+        Animal_class dogCedric = new Animal_class("cachorro", "cedric", "chihuahua", 10);
+
+        //instanciando um arquivo de saída 'arqOutput' com nome dogCedric.flow (endereçado no diretório 'classe')
+        FileOutputStream arqOutput = new FileOutputStream("classe/dogCedric.flow");
+
+        //instanciando um objeto da classe 'ObjectOutputStream' para manipular o fluxo da saída de dados para o arquivo de destino 'arqOutput'
+        ObjectOutputStream objOutput = new ObjectOutputStream(arqOutput);
+
+        //escrevendo os dados do objeto 'dogCedric' no objeto 'fluxo de saída' e consequentemente no arquivo de saída 'arqOutput'
+        objOutput.writeObject(dogCedric);
+
+        //finalizando conexão
+        objOutput.close();
+        
+        /*A execução cria o arquivo 'dogCedric.flow' com os dados do objeto cachorro cedric*/
+        
+    }
+
+}
+****************************************************************************************************************************************
+
+//import dos módulos 'java.io' e da classe 'Animal_class' do pacote 'classe'
+import java.io.*;
+import classe.Animal_class;
+
+//classe de desserialização
+public class DeserializableApp{
+
+    //programa principal de desserialização
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
+
+        //instanciando um arquivo de entrada 'arqInput' para armazenamento dos dados do arquivo 'dogCedric.flow' (endereçado no diretório 'classe')
+        FileInputStream arqInput = new FileInputStream("classe/dogCedric.flow");
+
+        //instanciando um objeto da classe 'ObjectInputStream' para manipular o fluxo da entrada de dados no arquivo 'arqInput'
+        ObjectInputStream objInput = new ObjectInputStream(arqInput);
+
+        //casting da classe 'Animal_class' e leitura dos dados do 'objInput' (which_animal -> Qual é o animal?)
+        Animal_class which_animal = (Animal_class) objInput.readObject();
+
+        //finalizando conexão
+        objInput.close();
+
+        //leitura dos dados do objeto instanciado 'which_animal' armazenados originalmente no arquivo 'dogCedric.flow'
+        System.out.println("----------------------------------------ANIMAL INSTANCIADO----------------------------------------\n");
+        System.out.println("Tipo: " + which_animal.getAnimal());
+        System.out.println("Nome: " + which_animal.getNome());
+        System.out.println("Raça: " + which_animal.getRaca());
+        System.out.println("Idade (ano(s)): " + which_animal.getIdade());
+        System.out.println("\n-------------------------------------------------------------------------------------------------");
+        
+    }
+
+}
+
+/*Por fim, percebeu-se que no processo de transformação (serialização e desserialização) os dados não foram perdidos. O objeto que é 
+lido após toda a transformação em fluxo de dados continua preservado. Ou seja, no final, o objeto 'dogCedric' existe! (assim como o 
+'ser' cedric também existe! :D vide imagem1 pelo link abaixo).		
+
+	imagem1 ---> (https://github.com/0liveiraVictor/Softex/blob/main/L%C3%B3gica_e_POO/DOC---M%C3%B3dulo_04---Projeto_06/imagem1.jpeg)*/
+
+
+
+######################################################################################################################################
+######################################################################################################################################
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code Animal_class.java (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/L%C3%B3gica_e_POO/DOC---M%C3%B3dulo_04---Projeto_06/classe/Animal_class.java
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code SerializableApp.java (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/L%C3%B3gica_e_POO/DOC---M%C3%B3dulo_04---Projeto_06/SerializableApp.java
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code DeserializableApp.java (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/L%C3%B3gica_e_POO/DOC---M%C3%B3dulo_04---Projeto_06/DeserializableApp.java
+################## -------------------------------------------------------------------------------------------------------------------
+################## Data flow dogCedric.flow (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/L%C3%B3gica_e_POO/DOC---M%C3%B3dulo_04---Projeto_06/classe/dogCedric.flow
+################## -------------------------------------------------------------------------------------------------------------------
+######################################################################################################################################
+######################################################################################################################################
+________________________________________________________________________________________________________________________________________
