@@ -16,10 +16,10 @@ O curso é dividido em 6 blocos com 4 módulos cada, sendo esses:
 
 	1. Lógica Imperativa
 	2. Algoritmo e Estrutura de Dados
-	3. Introdução a Programação
+	3. Introdução a Programação		
 	4. Programação Orientada a Objetos
 	
-2. JavaScript - (Javascript)
+2. JavaScript - [(Javascript)](https://github.com/0liveiraVictor/Softex/tree/main/JavaScript)
 
 	1. Manipulação de Dados em JavaScript
 	2. Estrutura e Variáveis em JavaScript
@@ -48,7 +48,7 @@ O curso é dividido em 6 blocos com 4 módulos cada, sendo esses:
 	
 ***
 ### Projetos de Estudo de Desenvolvimento Back-End
-* Bloco de Curso 1 - [Lógica_e_POO](https://github.com/0liveiraVictor/Softex/tree/main/L%C3%B3gica_e_POO) ..............................🚧 *Em desenvolvimento...* 🚧
+* Bloco de Curso 1 - [Lógica_e_POO](https://github.com/0liveiraVictor/Softex/tree/main/L%C3%B3gica_e_POO)
 
 	* Módulo 1 - Lógica Imperativa
 	
@@ -86,29 +86,29 @@ O curso é dividido em 6 blocos com 4 módulos cada, sendo esses:
 		- [x] Projeto 03 - [Métodos Get, Set e Construtor](https://github.com/0liveiraVictor/Softex/blob/main/L%C3%B3gica_e_POO/M%C3%B3dulo_04---Projeto_03)
 		- [x] Projeto 04 - [Pacotes e Classes](https://github.com/0liveiraVictor/Softex/blob/main/L%C3%B3gica_e_POO/M%C3%B3dulo_04---Projeto_04)
 		- [x] Projeto 05 - [Manipulação de Strings](https://github.com/0liveiraVictor/Softex/blob/main/L%C3%B3gica_e_POO/M%C3%B3dulo_04---Projeto_05)
-		- [ ] Projeto 06 - []()
-		- [ ] Projeto 07 - []()
-		- [ ] Projeto 08 - []()
+		- [x] Projeto 06 - [Serialização e Desserialização](https://github.com/0liveiraVictor/Softex/blob/main/L%C3%B3gica_e_POO/M%C3%B3dulo_04---Projeto_06)
+		- [x] Projeto 07 - [Exceção Try/Catch](https://github.com/0liveiraVictor/Softex/blob/main/L%C3%B3gica_e_POO/M%C3%B3dulo_04---Projeto_07)
+		- [x] Projeto 08 - [Padrão de Projeto (Singleton)](https://github.com/0liveiraVictor/Softex/blob/main/L%C3%B3gica_e_POO/M%C3%B3dulo_04---Projeto_08)
 <br/>
 
-* Bloco de Curso 2 - JavaScript []()..............................🚧 *Em desenvolvimento...* 🚧
+* Bloco de Curso 2 - [JavaScript](https://github.com/0liveiraVictor/Softex/tree/main/JavaScript)..............................🚧 *Em desenvolvimento...* 🚧
 
 	* Módulo 1 - Manipulação de Dados em JavaScript
 	
-		- [ ] Projeto 01 - []()
-		- [ ] Projeto 02 - []() 
-		- [ ] Projeto 03 - []()
+		- [x] Projeto 01 - [Inspeção de Código Javascript](https://github.com/0liveiraVictor/Softex/blob/main/JavaScript/M%C3%B3dulo_01---Projeto_01)
+		- [x] Projeto 02 - [Configuração de IDE Javascript](https://github.com/0liveiraVictor/Softex/blob/main/JavaScript/M%C3%B3dulo_01---Projeto_02) 
+		- [x] Projeto 03 - [Dados e suas Vertentes](https://github.com/0liveiraVictor/Softex/blob/main/JavaScript/M%C3%B3dulo_01---Projeto_03)
 		
 	* Módulo 2 - Estruturas e Variáveis em JavaScript
 	
 		- [ ] Projeto 01 - []()
-		- [ ] Projeto 02 - []()
-		- [ ] Projeto 03 - []()
+		- [x] Projeto 02 - [Calculadora e suas Operações](https://github.com/0liveiraVictor/Softex/blob/main/JavaScript/M%C3%B3dulo_02---Projeto_02)
+		- [x] Projeto 03 - [Sistema Escolar de Notas](https://github.com/0liveiraVictor/Softex/blob/main/JavaScript/M%C3%B3dulo_02---Projeto_03)
 		
 	* Módulo 3 - Utilizando Padrões
 	
-		- [ ] Projeto 01 - []()
-		- [ ] Projeto 02 - []()
+		- [x] Projeto 01 - [Execução index.js Via Node](https://github.com/0liveiraVictor/Softex/blob/main/JavaScript/M%C3%B3dulo_03---Projeto_01)
+		- [x] Projeto 02 - [Funções e seus Tipos](https://github.com/0liveiraVictor/Softex/blob/main/JavaScript/M%C3%B3dulo_03---Projeto_02)
 		
 	* Módulo 4 - Desenvolvimento Web, Loops e Bibliotecas
 	
