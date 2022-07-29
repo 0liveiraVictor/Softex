@@ -1,0 +1,82 @@
+____________________________________________________________EXCEÇÃO TRY/CATCH___________________________________________________________
+
+Crie uma situação em que ocorra uma exceção dentro de um código. Utilize try/catch para realizar a captura e tratamento dessa exceção. 
+________________________________________________________________________________________________________________________________________
+
+SOLUÇÃO:
+
+O código desse programa se refere a um sistema de cadastro de usuário, no qual o cliente é responsável por definir o seu nome, idade e 
+cpf. Na declaração dos dados foi atribuído o tipo 'String', 'int' e 'long' para as variáveis 'nome', 'idade' e 'cpf', respectivamente. 
+A situação das exceções surgiu no momento em que foi definido qualquer tipo de caractere nas variáveis 'idade' ou 'cpf' (no momento da 
+leitura do dados via teclado). Sendo assim, implementou-se a estrutura try/catch para adicionar uma simples exceção na leitura desses 
+dados (InputMismatchException) e efetuar o seu tratamento.  
+
+#####################################################---CÓDIGO ESCRITO EM JAVA---#####################################################
+
+//import da classe 'Scanner' (leitura de dados de entrada pelo teclado) e 'InputMismatchException' (tratamento de exceções da leitura dos dados)
+import java.util.Scanner;
+import java.util.InputMismatchException;
+
+//classe try/catch (exception)
+public class Try_catch_exception {
+
+    //programa principal
+    public static void main(String[] args) {
+
+        //declaração das variáveis 
+        String nome;
+        int idade;
+        long cpf; 
+
+        //instanciando o objeto 'input' (para leitura dos dados de entrada no teclado)
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("-------------------SISTEMA DE CADASTRO DE USUÁRIO-------------------\n\n");
+
+        //início da leitura dos dados do usuário
+        System.out.print("Digite seu nome completo: ");
+        nome = input.nextLine();
+
+        //bloco de avaliação das exceções
+        try{             
+
+            System.out.print("\nDigite sua idade (anos): ");
+            idade = input.nextInt();
+
+            System.out.print("\nDigite seu CPF (apenas números. ex. 99999999999): ");
+            cpf = input.nextLong();
+
+            System.out.println("\n--------------------------------------------------------------------");
+        
+            //fechamento da conexão do objeto de leitura 'input'
+            input.close();
+
+            //impressão dos dados cadastrados
+            System.out.print("\n\n------------------------------------------------------------------------DADOS CADASTRAIS----------------------------------------------------------------------------");
+            System.out.print("\n\nOlá, Sr(a) " + nome + " (" + Integer.toString(idade) + " anos), portador(a) do CPF: " + Long.toString(cpf) + ", seu cadastro foi efetuado com sucesso!");
+            System.out.print("\n\n--------------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
+    
+        //tratamento da exceção do tipo 'InputMismatchException'
+        } catch(InputMismatchException erro){
+
+            System.out.println("\nERRO: caracteres não são válidos, apenas números.");
+            System.out.println("Por favor, execute novamente e tente mais uma vez.");
+            System.out.println("\n--------------------------------------------------------------------");
+
+        }   
+   
+    }
+    
+}
+
+
+
+######################################################################################################################################
+######################################################################################################################################
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code Try_catch_exception.java (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/L%C3%B3gica_e_POO/DOC---M%C3%B3dulo_04---Projeto_07/Try_catch_exception.java
+################## -------------------------------------------------------------------------------------------------------------------
+######################################################################################################################################
+######################################################################################################################################
+________________________________________________________________________________________________________________________________________
