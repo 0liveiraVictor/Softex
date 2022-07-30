@@ -73,14 +73,14 @@ ntAlunos.to_csv('./alunos_situacao.csv')
 ######################################################################################################################################
 ######################################################################################################################################
 ################## -------------------------------------------------------------------------------------------------------------------
-################## Full code of situação escolar in Jupyter Notebook (Link):
-################## https://github.com/0liveiraVictor/Softex/blob/main/L%C3%B3gica_e_POO/Notas_e_Situacao/Situacao_Escolar_Code_Python.py
+################## Full code school_situation.py (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/L%C3%B3gica_e_POO/DOC---M%C3%B3dulo_03---Projeto_08/school_situation.py
 ################## -------------------------------------------------------------------------------------------------------------------
 ################## notas_alunos.csv file (Link):
-################## https://github.com/0liveiraVictor/Softex/blob/main/L%C3%B3gica_e_POO/Notas_e_Situacao/notas_alunos.csv
+################## https://github.com/0liveiraVictor/Softex/blob/main/L%C3%B3gica_e_POO/DOC---M%C3%B3dulo_03---Projeto_08/notas_alunos.csv
 ################## -------------------------------------------------------------------------------------------------------------------
 ################## alunos_situacao.csv file (Link):
-################## https://github.com/0liveiraVictor/Softex/blob/main/L%C3%B3gica_e_POO/Notas_e_Situacao/alunos_situacao.csv
+################## https://github.com/0liveiraVictor/Softex/blob/main/L%C3%B3gica_e_POO/DOC---M%C3%B3dulo_03---Projeto_08/alunos_situacao.csv
 ################## -------------------------------------------------------------------------------------------------------------------
 ######################################################################################################################################
 ######################################################################################################################################
