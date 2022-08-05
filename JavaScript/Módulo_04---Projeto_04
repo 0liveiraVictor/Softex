@@ -1,0 +1,81 @@
+________________________________________________________CONEXÃO COM O SGBD MYSQL________________________________________________________
+
+Implemente e trate uma conexão com o seu banco de dados, usando JavaScript. Caso a conexão com o banco tenha sucesso, ele deve retornar 
+uma frase positiva. Se isso não ocorrer, retorne uma frase informando o erro.
+________________________________________________________________________________________________________________________________________
+
+SOLUÇÃO:
+
+Para estabelecer uma conexão com o banco de dados foi necessário, primeiramente, a instalação de algum sistema de gerenciamento. Nesse
+caso, por uma escolha mais oportuna (tendo em vista sua forte disseminação), o SGBD adotado foi o MySQL. Foram instalados na máquina 
+(linux Ubuntu) o MySQL e o MySQL Workbench (GUI de usuário para MySQL). A imagem1 (vide link abaixo) mostra esses dois sistemas ativos 
+e operantes no sistema operacional:
+
+	imagem1 ---> (https://github.com/0liveiraVictor/Softex/blob/main/JavaScript/DOC---M%C3%B3dulo_04---Projeto_04/imagem1.png)
+
+Como observado na imagem1, no quadro do lado esquerdo, é possível verificar a ativação do MySQL no sistema (terminal) e consulta dos 
+bancos de dados dentro do SGBD. No SGBD existem alguns bancos (bases) do próprio MySQL e o banco 'softex_projects', o qual já havia 
+sido previamente criado. Já no quadro do lado direito, a imagem mostra o MySQL Workbench e apenas uma instância de conexão (local). 
+Nessa instância, as propriedades de usuário, localização e porta são as padrões. Essa instância de conexão ('root', 'host', 'port') e o 
+banco de dados 'softex_projects' foram utilizados para estabelecer a comunicação do NODE.JS com o SGBD MySQL.
+
+A implementação da conexão com o banco de dados foi realizado pelo código do arquivo 'mysql_connection.js', definido abaixo:
+
+//carregando o 'Sequelize' a partir do pacote instalado <npm i sequelize mysql2>
+const Sequelize = require('sequelize');
+
+/*instanciando o objeto 'sequelize' a partir da classe carregada 'Sequelize' e passando como parâmetros
+('nome_do_banco_de_dados', 'usuario_de_acesso', 'senha_de_acesso', {opções})*/
+const sequelize = new Sequelize('softex_projects', 'root', '4M00pQ3Y2n', {
+
+    //{opções} -> {dialect: 'SGBD', host: 'localizacao', port: nº_de_porta}
+    dialect: 'mysql',
+    host: 'localhost',
+    port: 3306
+
+})
+
+//função 'authenticate' (verificação de conexão ao banco de dados)
+sequelize.authenticate().then(function(){
+
+    console.log('\n-------------------------------------------------------------------------------------------------');
+    console.log('Conexão efetuada com sucesso!');
+    console.log('-------------------------------------------------------------------------------------------------\n');
+
+   //tratamento em caso de falha na conexão 
+}).catch(function(error){
+
+    console.log('\n-------------------------------------------------------------------------------------------------');
+    console.log(`Falha na conexão! ERRO >>> ${error}`);
+    console.log('-------------------------------------------------------------------------------------------------\n');
+
+})
+
+//exportando o objeto sequelize
+module.exports = sequelize;
+****************************************************************************************************************************************
+
+As imagens 'imagem2' e 'imagem3' (vide links abaixo) ilustram as tentativas de conexão com o banco de dados 'softex_projects' do SGBD 
+MySQL:
+
+	imagem2 ---> (https://github.com/0liveiraVictor/Softex/blob/main/JavaScript/DOC---M%C3%B3dulo_04---Projeto_04/imagem2.png)
+
+	imagem3 ---> (https://github.com/0liveiraVictor/Softex/blob/main/JavaScript/DOC---M%C3%B3dulo_04---Projeto_04/imagem3.png)
+
+Na imagem2, o programa do arquivo 'mysql_connection.js' estabeleceu as propriedades: 'nome_do_banco_de_dados', 'usuario_de_acesso', 
+'senha_de_acesso', 'SGBD', 'localizacao' e nº_de_porta condizentes com os dados de instância da conexão, o que resultou em um retorno 
+de conexão positiva. Já na imagem3, o código teve a propriedade nº_de_porta alterada para um valor não padrão (apenas para ilustração 
+de erro de conexão). Nesse caso, a conexão foi recusada (por apresentar dados diferentes da instância de conexão padrão no MySQL) e o 
+erro apresentado em tela. 
+
+
+
+######################################################################################################################################
+######################################################################################################################################
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code mysql_connection.js (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/JavaScript/DOC---M%C3%B3dulo_04---Projeto_04/sequelize-mysql/mysql_connection.js
+################## -------------------------------------------------------------------------------------------------------------------
+######################################################################################################################################
+######################################################################################################################################
+________________________________________________________________________________________________________________________________________
