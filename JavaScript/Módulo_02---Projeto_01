@@ -1,0 +1,55 @@
+______________________________________________________PADRÃO DE PROJETO (STRATEGY)______________________________________________________
+
+Pesquise sobre padrões de projeto e escolha um para apresentar e descrever o seu funcionamento. Além disso, explique quais as vantagens 
+e desvantagens comparados a outros e mostre suas referências.
+________________________________________________________________________________________________________________________________________
+
+SOLUÇÃO:
+
+O padrão de projeto ‘Strategy’ encontra-se incluído na categoria comportamental dos 'Design Patterns'. Essa categoria é voltada aos 
+algoritmos e trata da comunicação e atribuição da responsabilidade dos vários objetos (que se comunicam e trocam responsabilidades entre 
+si). Por definição, o ‘Strategy’ é um padrão de projeto que define uma família de algoritmos, no qual cada algoritmo é encapsulado (como 
+uma classe) e podem ser trocados entre si (intercambiáveis). 
+
+Supondo um exemplo: foi criado uma aplicação e, ao longo do tempo, foram sendo incorporadas funcionalidades dentro da classe principal 
+do programa. À medida que essas funcionalidades foram desenvolvidas e incorporadas a esse sistema, acarretou no “inchaço” de toda a 
+estrutura de aplicação. Qualquer eventual ajuste ou modificação no programa poderá ocasionar à criação de erros grosseiros no código já 
+existente. 
+
+Uma forma de contornar esse problema (oriundo da definição das várias rotinas em uma mesma classe principal) é utilizando o padrão 
+‘Strategy’. A classe principal (original) é denominada ‘contexto’. Ela deverá apresentar um campo para armazenar uma referência para as 
+classes definidas como ‘estratégias’. As ‘estratégias’, por sua vez, são classes que definem um algoritmo específico, o qual ficarão 
+separados da classe ‘contexto’. Nesse caso, as ‘estratégias’ podem ser entendidas como as rotinas implementadas dentro do sistema da 
+aplicação; para cada rotina, teremos uma classe ‘estratégia’ (ou ‘estratégia concreta’) diferente, todas separadas da classe originária 
+(‘contexto’) e independentes entre si (mas comunicáveis). O cliente é o responsável por passar a estratégia (escolha do algoritmo) para 
+o ‘contexto’, esse, no que lhe concerne, não executa a chamada da ‘estratégia concreta’, mas delega o trabalho de execução para um 
+‘objeto estratégia’. Essa comunicação do ‘objeto estratégia’ com a ‘estratégia concreta’ ocorre a partir de uma interface genérica, a 
+qual trabalha com todos os algoritmos definidos pelo programa em suas classes separadas. A interface expõe um método único que aciona o 
+algoritmo encapsulado (‘estratégia concreta’) a partir da escolha da estratégia definida pelo cliente. É nessa circunstâncias que o 
+‘contexto’ se torna independente das ‘estratégias concretas’; em que é possível adicionar e modificar qualquer algoritmo sem alterar a 
+classe originária e as outras classes ‘estratégias concretas’. 
+
+As principais vantagens do padrão ‘Strategy’ incluem: trocar o algoritmo usado dentro de um objeto no ato de execução; incluir novas 
+‘estratégias concretas’ sem mudar o ‘contexto’ (independência das classes); facilidade em testar as unidades de cada algoritmo (as 
+classes ‘estratégias concretas’ são independente entre si); evitar o uso de estruturas condicionais dentro de uma classe principal 
+(‘estratégias concretas’ separadas do ‘contexto’) e etc. Já as desvantagens, incluem: maior promoção no número de classes dentro da 
+aplicação (mais classes ‘estratégias’ separadas); conhecimento prévio, por parte do cliente, das estratégias definidas na aplicação (a 
+fim de ser capaz de selecionar a adequada); criação e manutenção de dois objetos ao invés de um (a aplicação configura o ‘contexto’ e 
+o ‘objeto estratégia’, necessário para o sistema) e etc.
+
+
+
+######################################################################################################################################
+######################################################################################################################################
+################## -------------------------------------------------------------------------------------------------------------------
+################## References (Link):
+################## 1: https://www.alura.com.br/conteudo/php-design-pattern-comportamental
+################## 2: https://pt.wikipedia.org/wiki/Strategy
+################## 3: https://refactoring.guru/pt-br/design-patterns/strategy
+################## 4: https://www.youtube.com/watch?v=u8JG3YVQ06I
+################## 5: https://github.com/fhferreira/aprendendo-padroes-de-projeto-javascript
+################## 6: https://github.com/0liveiraVictor/Softex/blob/main/L%C3%B3gica_e_POO/M%C3%B3dulo_04---Projeto_08
+################## -------------------------------------------------------------------------------------------------------------------
+######################################################################################################################################
+######################################################################################################################################
+________________________________________________________________________________________________________________________________________
