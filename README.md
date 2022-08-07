@@ -91,7 +91,7 @@ O curso é dividido em 6 blocos com 4 módulos cada, sendo esses:
 		- [x] Projeto 08 - [Padrão de Projeto (Singleton)](https://github.com/0liveiraVictor/Softex/blob/main/L%C3%B3gica_e_POO/M%C3%B3dulo_04---Projeto_08)
 <br/>
 
-* Bloco de Curso 2 - [JavaScript](https://github.com/0liveiraVictor/Softex/tree/main/JavaScript)..............................🚧 *Em desenvolvimento...* 🚧
+* Bloco de Curso 2 - [JavaScript](https://github.com/0liveiraVictor/Softex/tree/main/JavaScript)
 
 	* Módulo 1 - Manipulação de Dados em JavaScript
 	
@@ -101,7 +101,7 @@ O curso é dividido em 6 blocos com 4 módulos cada, sendo esses:
 		
 	* Módulo 2 - Estruturas e Variáveis em JavaScript
 	
-		- [ ] Projeto 01 - []()
+		- [x] Projeto 01 - [Padrão de Projeto (Strategy)](https://github.com/0liveiraVictor/Softex/blob/main/JavaScript/M%C3%B3dulo_02---Projeto_01)
 		- [x] Projeto 02 - [Calculadora e suas Operações](https://github.com/0liveiraVictor/Softex/blob/main/JavaScript/M%C3%B3dulo_02---Projeto_02)
 		- [x] Projeto 03 - [Sistema Escolar de Notas](https://github.com/0liveiraVictor/Softex/blob/main/JavaScript/M%C3%B3dulo_02---Projeto_03)
 		
@@ -112,10 +112,10 @@ O curso é dividido em 6 blocos com 4 módulos cada, sendo esses:
 		
 	* Módulo 4 - Desenvolvimento Web, Loops e Bibliotecas
 	
-		- [ ] Projeto 01 - []()
-		- [ ] Projeto 02 - []()
-		- [ ] Projeto 03 - []()
-		- [ ] Projeto 04 - []()
+		- [x] Projeto 01 - [Conta Bancária](https://github.com/0liveiraVictor/Softex/blob/main/JavaScript/M%C3%B3dulo_04---Projeto_01)
+		- [x] Projeto 02 - [Express e Rotas](https://github.com/0liveiraVictor/Softex/blob/main/JavaScript/M%C3%B3dulo_04---Projeto_02)
+		- [x] Projeto 03 - [Funções, Loops, Objetos e Arrays](https://github.com/0liveiraVictor/Softex/blob/main/JavaScript/M%C3%B3dulo_04---Projeto_03)
+		- [x] Projeto 04 - [Conexão com o SGBD MySQL](https://github.com/0liveiraVictor/Softex/blob/main/JavaScript/M%C3%B3dulo_04---Projeto_04)
 		
 <br/>
 
