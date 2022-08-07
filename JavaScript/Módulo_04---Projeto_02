@@ -1,0 +1,77 @@
+____________________________________________________________EXPRESS E ROTAS_____________________________________________________________
+
+Crie um código JavaScript no back-end utilizando o Node.JS. No código, você deverá elaborar uma ou mais rotas, que podem ser de qualquer 
+tipo (get, put etc). Depois, faça um teste em aplicações de rota, como o Postman ou o Insomnia, para confirmar se o retorno está coerente 
+com o que você programou.
+________________________________________________________________________________________________________________________________________
+
+SOLUÇÃO:
+
+Em primeiro momento foi instalado o módulo e as sub-rotinas (adicionais) 'express' na pasta raiz do projeto ('src') (vide 'imagem1' pelo
+link baixo), para posteriormente fazer seu requerimento e utilização dentro do programa principal:
+
+	imagem1 ---> (https://github.com/0liveiraVictor/Softex/blob/main/JavaScript/DOC---M%C3%B3dulo_04---Projeto_02/imagem1.png)
+
+A implementação do código com o requerimento do 'express' e elaboração das rotas está definida no arquivo 'http_express_communication.js', 
+descrito abaixo:
+
+//carregando o módulo 'express' instalado
+const express = require('express');
+
+//definindo uma instância para a variável 'conn' a partir da função de criação do módulo 'express' ('express()')
+const conn = express();
+
+//rota principal da aplicação (exibe apenas o sucesso de conexão cliente-servidor) - método 'get'
+conn.get('/', function(request, response){
+
+    return response.send("<h1>Conexão Cliente-Servidor estabelecida com sucesso!</h1>");
+
+});
+
+//rota secundária da aplicação com uso de parâmetros (obtendo dados do cliente a partir de requisições) - método 'get'
+conn.get('/softex/:nome/:profissao', function(request, response){
+
+    return response.send("<h1>---------- Bem-Vindo a Softex Recife ----------</h1>" + "<h2>Oi, " + request.params.nome + ".</h2>" + "<h2>Você está trabalhando com " + request.params.profissao + ".</2>" + "<h2>Sucesso!</h2>" + "<h1>---------------------------------------------------------</h1>");
+
+});
+
+//número da porta de conexão -> http://localhost:9811
+conn.listen(9811, function(){
+
+    console.log("\n----------------------------------------------------------------------------------------");
+    console.log("\nServidor conectado ... ");
+    console.log("\nURL: http://localhost:9811");
+    console.log("\n----------------------------------------------------------------------------------------");
+
+});
+****************************************************************************************************************************************
+
+No código, foram estabelecidas duas rotas (ambas com o método http 'get'); uma principal (em que é exibido uma conexão positiva entre o 
+cliente e o servidor), definida por '/', e outra secundária (no qual o cliente repassa dois parâmetros e recebe do servidor novas 
+informações), definida por '/softex/:nome/:profissao'. A imagem 'imagem2' (vide link abaixo) exibe o estabelecimento da conexão do 
+servidor local (via 'nodemon' no terminal) e a criação da URL: 
+
+	imagem2 ---> (https://github.com/0liveiraVictor/Softex/blob/main/JavaScript/DOC---M%C3%B3dulo_04---Projeto_02/imagem2.png)
+
+Para confirmar o retorno das rotas foi utilizado o Insomnia. As duas rotas: principal e secundária foram testadas (método 'get'), e
+ambas estão exibidas nas imagens 'imagem3' e 'imagem4' dos links abaixo, respectivamente:
+
+	imagem3 ---> (https://github.com/0liveiraVictor/Softex/blob/main/JavaScript/DOC---M%C3%B3dulo_04---Projeto_02/imagem3.png)
+
+	imagem4 ---> (https://github.com/0liveiraVictor/Softex/blob/main/JavaScript/DOC---M%C3%B3dulo_04---Projeto_02/imagem4.png)
+
+Como se pode verificar, a rota principal foi definida em 'http://localhost:9811/', o qual exibiu o sucesso da conexão cliente-servidor.
+Já na rota secundária, definida em 'http://localhost:9811/softex/Victor_Oliveira/Desenvolvimento_Back-end', foi exibido uma tela de
+boas-vindas, o nome do cliente e a profissão de atuação do mesmo. Em ambas as rotas, o retorno estava coerente com o que foi programado.
+
+
+
+######################################################################################################################################
+######################################################################################################################################
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code http_express_communication.js (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/JavaScript/DOC---M%C3%B3dulo_04---Projeto_02/src/http_express_communication.js
+################## -------------------------------------------------------------------------------------------------------------------
+######################################################################################################################################
+######################################################################################################################################
+________________________________________________________________________________________________________________________________________
