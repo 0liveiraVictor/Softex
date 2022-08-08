@@ -10,37 +10,42 @@ O programa da Softex Recife tem como objetivo formar desenvolvedores em programa
 
 ### Curso de Desenvolvimento Back-End
 
-O curso é dividido em 6 blocos com 4 módulos cada, sendo esses:
+Ao todo, o curso é dividido em 6 blocos de ensino (cada um organizado em módulos), sendo esses:
 <br/>
-1. Lógica de Programação e Orientação a Objetos - [(Lógica_e_POO)](https://github.com/0liveiraVictor/Softex/tree/main/L%C3%B3gica_e_POO)
+<br/>
+**1. Lógica de Programação e Orientação a Objetos - [(Lógica_e_POO)](https://github.com/0liveiraVictor/Softex/tree/main/L%C3%B3gica_e_POO)**
 
 	1. Lógica Imperativa
 	2. Algoritmo e Estrutura de Dados
 	3. Introdução a Programação		
 	4. Programação Orientada a Objetos
 	
-2. JavaScript - [(Javascript)](https://github.com/0liveiraVictor/Softex/tree/main/JavaScript)
+**2. JavaScript - [(Javascript)](https://github.com/0liveiraVictor/Softex/tree/main/JavaScript)**
 
 	1. Manipulação de Dados em JavaScript
 	2. Estrutura e Variáveis em JavaScript
 	3. Utilizando Padrões
 	4. Desenvolvimento Web, Loops e Bibliotecas
 	
-3. Padrões de Desenvolvimento de Software - (PDS)
+**3. Padrões de Desenvolvimento de Software - (PDS)**
+<br/>
+<br/>Missão: *Fernando é dono da padaria "É Docê", que está na família a várias gerações de padeiros. Fernando, atualmente, está sofrendo com a crise inflacionária, por isso resolveu utilizar seus conhecimentos em computação para alavancar sua padaria, tornando assim "É Docê" a padaria mais renomada da região.*
 
-	1.  🚧 *Em desenvolvimento...* 🚧
+	1. Qual seria a melhor forma de Fernando fazer os bolos para que atenda todos os seus clientes diariamente?
+	2. Fernando conseguiu atender satisfatoriamente os seus clientes. Como ele deve organizar seus trabalhos na loja para aumentar a venda dos outros produtos?
+	3. Depois de aumentar as vendas da padaria, Fernando gostaria de atender as sugestões de melhoria dos clientes. Como ele deve lidar com as sugestões?
 	
-4. Noções de Banco de Dados - (Database)
+**4. Noções de Banco de Dados - (Database)**
 
-	1.  🚧 *Em desenvolvimento...* 🚧
+	🚧 Em desenvolvimento... 🚧
 	
-5. Introdução a Web Services - (Web_Service)
+**5. Introdução a Web Services - (Web_Service)**
 
-	1.  🚧 *Em desenvolvimento...* 🚧
+	🚧 Em desenvolvimento... 🚧
 	
-6. Node JS - (Node_JS)
+**6. Node JS - (Node_JS)**
 
-	1.  🚧 *Em desenvolvimento...* 🚧
+	🚧 Em desenvolvimento... 🚧
 
 <br/>
 
@@ -120,6 +125,21 @@ O curso é dividido em 6 blocos com 4 módulos cada, sendo esses:
 <br/>
 
 * Bloco de Curso 3 - PDS []()..............................🚧 *Em desenvolvimento...* 🚧
+
+	* Módulo 1 - Qual seria a melhor forma de Fernando fazer os bolos para que atenda todos os seus clientes diariamente?
+	
+		- [ ] Projeto 01 - []()
+		- [ ] Projeto 02 - []() 
+		
+	* Módulo 2 - Fernando conseguiu atender satisfatoriamente os seus clientes. Como ele deve organizar seus trabalhos na loja para aumentar a venda dos outros produtos?
+	
+		- [ ] Projeto 01 - []()
+		- [ ] Projeto 02 - []()
+		
+	* Módulo 3 - Depois de aumentar as vendas da padaria, Fernando gostaria de atender as sugestões de melhoria dos clientes. Como ele deve lidar com as sugestões?
+	
+		- [ ] Projeto 01 - []()
+		- [ ] Projeto 02 - []()
 
 <br/>
 
