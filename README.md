@@ -2,11 +2,10 @@
 
 **Sobre**:
 <br/>
-<br/>
-A Softex é uma associação de empresas (sem fins lucrativos) de Tecnologia da Informação e Comunicação (TIC) criada em 8 de novembro de 1994. Foi o sexto núcleo criado no país e atualmente é tido como centro de excelência em tecnologia de software do Recife. Tem como principal missão, incrementar o sistema de negócios de TIC no estado de Pernambuco, promovendo a integração, capacitação e certificação empresarial, apoiando a inserção competitiva das empresas no mercado a fim de aumentar os seus resultados.
+<p align = "Justify">A Softex é uma associação de empresas (sem fins lucrativos) de Tecnologia da Informação e Comunicação (TIC) criada em 8 de novembro de 1994. Foi o sexto núcleo criado no país e atualmente é tido como centro de excelência em tecnologia de software do Recife. Tem como principal missão, incrementar o sistema de negócios de TIC no estado de Pernambuco, promovendo a integração, capacitação e certificação empresarial, apoiando a inserção competitiva das empresas no mercado a fim de aumentar os seus resultados.</p>
 
 ## Programa de Formação Acelerada em Programação
-O programa da Softex Recife tem como objetivo formar desenvolvedores em programação nas áreas Front-end e Back-end, aliando conhecimentos teóricos e práticos. No curso de Front-end serão desenvolvidas habilidades para construção em interfaces gráficas (ricas em visual e interação com usuário). Já o curso de Back-end, será desenvolvido habilidades na construção da arquitetura de servidor (que interagem com aplicações web). Ao todo, serão 276 horas de aulas, com um período de 24 semanas, sendo: 180 horas em EAD e 96 horas presencial.
+<p align = "Justify">O programa da Softex Recife tem como objetivo formar desenvolvedores em programação nas áreas Front-end e Back-end, aliando conhecimentos teóricos e práticos. No curso de Front-end serão desenvolvidas habilidades para construção em interfaces gráficas (ricas em visual e interação com usuário). Já o curso de Back-end, será desenvolvido habilidades na construção da arquitetura de servidor (que interagem com aplicações web). Ao todo, serão 276 horas de aulas, com um período de 24 semanas, sendo: 180 horas em EAD e 96 horas presencial.</p>
 
 ### Curso de Desenvolvimento Back-End
 
@@ -28,8 +27,7 @@ Ao todo, o curso é dividido em 6 blocos de ensino (cada um organizado em módul
 	4. Desenvolvimento Web, Loops e Bibliotecas
 	
 **3. Padrões de Desenvolvimento de Software - (PDS)**
-<br/>
-<br/>Missão: *Fernando é dono da padaria "É Docê", que está na família a várias gerações de padeiros. Fernando, atualmente, está sofrendo com a crise inflacionária, por isso resolveu utilizar seus conhecimentos em computação para alavancar sua padaria, tornando assim "É Docê" a padaria mais renomada da região.*
+<br/><p align = "Justify">**Missão:** *Fernando é dono da padaria "É Docê", que está na família a várias gerações de padeiros. Fernando, atualmente, está sofrendo com a crise inflacionária, por isso resolveu utilizar seus conhecimentos em computação para alavancar sua padaria, tornando assim "É Docê" a padaria mais renomada da região.*</p>
 
 	1. Qual seria a melhor forma de Fernando fazer os bolos para que atenda todos os seus clientes diariamente?
 	2. Fernando conseguiu atender satisfatoriamente os seus clientes. Como ele deve organizar seus trabalhos na loja para aumentar a venda dos outros produtos?
@@ -49,11 +47,15 @@ Ao todo, o curso é dividido em 6 blocos de ensino (cada um organizado em módul
 
 <br/>
 
-**OBS:. Nesse repositório constarão TODOS os projetos de estudos do curso de desenvolvimento Back-end**
+***
+
+**OBS:. Nesse repositório constarão TODOS os projetos de estudos do curso de desenvolvimento back-end**
 	
 ***
-### Projetos de Estudo de Desenvolvimento Back-End
-* Bloco de Curso 1 - [Lógica_e_POO](https://github.com/0liveiraVictor/Softex/tree/main/L%C3%B3gica_e_POO)
+<br/>
+
+## Projetos de Estudo de Desenvolvimento Back-End
+* **Bloco de Ensino 1 - [Lógica_e_POO](https://github.com/0liveiraVictor/Softex/tree/main/L%C3%B3gica_e_POO)**
 
 	* Módulo 1 - Lógica Imperativa
 	
@@ -96,7 +98,7 @@ Ao todo, o curso é dividido em 6 blocos de ensino (cada um organizado em módul
 		- [x] Projeto 08 - [Padrão de Projeto (Singleton)](https://github.com/0liveiraVictor/Softex/blob/main/L%C3%B3gica_e_POO/M%C3%B3dulo_04---Projeto_08)
 <br/>
 
-* Bloco de Curso 2 - [JavaScript](https://github.com/0liveiraVictor/Softex/tree/main/JavaScript)
+* **Bloco de Ensino 2 - [JavaScript](https://github.com/0liveiraVictor/Softex/tree/main/JavaScript)**
 
 	* Módulo 1 - Manipulação de Dados em JavaScript
 	
@@ -124,34 +126,34 @@ Ao todo, o curso é dividido em 6 blocos de ensino (cada um organizado em módul
 		
 <br/>
 
-* Bloco de Curso 3 - PDS []()..............................🚧 *Em desenvolvimento...* 🚧
+* **Bloco de Ensino 3 - PDS []()**..............................🚧 *Em desenvolvimento...* 🚧
 
-	* Módulo 1 - Qual seria a melhor forma de Fernando fazer os bolos para que atenda todos os seus clientes diariamente?
+	* <p align = "Justify">Módulo 1 - Qual seria a melhor forma de Fernando fazer os bolos para que atenda todos os seus clientes diariamente?</p>
 	
 		- [ ] Projeto 01 - []()
 		- [ ] Projeto 02 - []() 
 		
-	* Módulo 2 - Fernando conseguiu atender satisfatoriamente os seus clientes. Como ele deve organizar seus trabalhos na loja para aumentar a venda dos outros produtos?
+	* <p align = "Justify">Módulo 2 - Fernando conseguiu atender satisfatoriamente os seus clientes. Como ele deve organizar seus trabalhos na loja para aumentar a venda dos outros produtos?</p>
 	
 		- [ ] Projeto 01 - []()
 		- [ ] Projeto 02 - []()
 		
-	* Módulo 3 - Depois de aumentar as vendas da padaria, Fernando gostaria de atender as sugestões de melhoria dos clientes. Como ele deve lidar com as sugestões?
+	* <p align = "Justify">Módulo 3 - Depois de aumentar as vendas da padaria, Fernando gostaria de atender as sugestões de melhoria dos clientes. Como ele deve lidar com as sugestões?</p>
 	
 		- [ ] Projeto 01 - []()
 		- [ ] Projeto 02 - []()
 
 <br/>
 
-* Bloco de Curso 4 - Database []()..............................🚧 *Em desenvolvimento...* 🚧
+* **Bloco de Ensino 4 - Database []()**..............................🚧 *Em desenvolvimento...* 🚧
 
 <br/>
 
-* Bloco de Curso 5 - Web_Service []()..............................🚧 *Em desenvolvimento...* 🚧
+* **Bloco de Ensino 5 - Web_Service []()**..............................🚧 *Em desenvolvimento...* 🚧
 
 <br/>
 
-* Bloco de Curso 6 - Node_JS []()..............................🚧 *Em desenvolvimento...* 🚧
+* **Bloco de Ensino 6 - Node_JS []()**..............................🚧 *Em desenvolvimento...* 🚧
 
 <br/>
 <br/>
