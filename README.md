@@ -2,7 +2,7 @@
 
 **Sobre**:
 <br/>
-<p align = "Justify">A Softex é uma associação de empresas (sem fins lucrativos) de Tecnologia da Informação e Comunicação (TIC) criada em 8 de novembro de 1994. Foi o sexto núcleo criado no país e atualmente é tido como centro de excelência em tecnologia de software do Recife. Tem como principal missão, incrementar o sistema de negócios de TIC no estado de Pernambuco, promovendo a integração, capacitação e certificação empresarial, apoiando a inserção competitiva das empresas no mercado a fim de aumentar os seus resultados</p>
+<p align = "Justify">A Softex é uma associação de empresas (sem fins lucrativos) de Tecnologia da Informação e Comunicação (TIC) criada em 8 de novembro de 1994. Foi o sexto núcleo criado no país e atualmente é tido como centro de excelência em tecnologia de software do Recife. Tem como principal missão, incrementar o sistema de negócios de TIC no estado de Pernambuco, promovendo a integração, capacitação e certificação empresarial, apoiando a inserção competitiva das empresas no mercado a fim de aumentar os seus resultados.</p>
 
 ## Programa de Formação Acelerada em Programação
 <p align = "Justify">O programa da Softex Recife tem como objetivo formar desenvolvedores em programação nas áreas Front-end e Back-end, aliando conhecimentos teóricos e práticos. No curso de Front-end serão desenvolvidas habilidades para construção em interfaces gráficas (ricas em visual e interação com usuário). Já o curso de Back-end, será desenvolvido habilidades na construção da arquitetura de servidor (que interagem com aplicações web). Ao todo, serão 276 horas de aulas, com um período de 24 semanas, sendo: 180 horas em EAD e 96 horas presencial.</p>
