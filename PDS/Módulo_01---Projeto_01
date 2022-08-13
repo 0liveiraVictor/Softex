@@ -1,0 +1,260 @@
+_________________________________________________FÁBRICA DE COMPUTADORES (FACTORY METHOD)_______________________________________________
+
+Aplique o Factory Method para fabricar computadores, usando como base o exemplo visto de static e parametrizado no hipertexto.
+
+Considere que:
+- os produtos devem implementar uma interface comum;
+- o cliente deve utilizar apenas a fábrica para criar instâncias do tipo abstrato da interface;
+- todo computador deve ter, com getters, os atributos: ram, hdd, cpu e type;
+- há dois tipos de computadores: pc e server;
+- RAM e HD devem estar em GB;
+- CPU deve estar em GHz;
+- através do tipo informado, a fábrica decide qual tipo de computador irá instanciar;
+- quando o método .toString() for aplicado a um computador, ele deve imprimir seus atributos.
+________________________________________________________________________________________________________________________________________
+
+SOLUÇÃO:
+
+A ideia global do problema visou a utilização do 'Factory Method' para construção de computadores. Em linhas gerais, o cliente 
+('Client.java') deveria fazer uso de uma fábrica para criar instâncias do tipo abstrato da interface ('Computer.java') (sem que houvesse 
+declarações de instâncias das classes concretas produtos). 
+
+Tendo em visto que a fábrica deveria decidir diretamente qual tipo de computador instânciar (vide o enunciado), foi conveniente definir 
+o tipo 'concreto' na construção de sua classe (concretecreater) e utilizar um método estático a fim de dispensar possíveis instâncias 
+que a consumissem. Essa classe 'concretecreater', denominada ComputerFactory ('ComputerFactory.java'), foi a base para as classes 
+concretas (concreteproduct) usadas na fabricação dos objetos 'pc' ('Pc.java') e 'server' ('Server.java'). Nesse sentido, a abordagem 
+'fábrica' (para o problema proposto) foi mais adequada ao padrão de projeto 'SIMPLE FACTORY' do que ao 'FACTORY METHOD'. 
+
+Conforme exposto (parágrafo acima), as implementações para a construção da fábrica de computadores (*SIMPLE FACTORY) foram definidas 
+como descrito abaixo:
+
+//package base
+package client;
+
+//import da interface 'Computer' e da classe concreta de tipo fábrica (ComputerFactory)
+import productinterface.Computer;
+import concretecreater.ComputerFactory;
+
+//solicitação do cliente à fábrica de computadores
+public class Client{
+
+    //programa principal (OBS:. cliente não tem acesso as classes concretas de produtos ('Pc' e 'Server')!)
+    public static void main(String args[]){
+
+        //fabricando computador do tipo 'pc'
+        Computer computadorPC = ComputerFactory.createComputer("pc", 1000, 4, 2.4);
+        System.out.println(computadorPC.toString());
+
+        //fabricando computador do tipo 'server'
+        Computer computadorSERVER = ComputerFactory.createComputer("server", 500000, 128, 3.0);
+        System.out.println(computadorSERVER.toString());
+
+    }
+
+}
+****************************************************************************************************************************************
+
+//package base
+package productinterface;
+
+//interface comum aos produtos computadores 'pc' e 'server'
+public interface Computer{
+
+    //assinaturas dos métodos 'getters' para os computadores
+    String getType();
+    int getHdd();
+    int getRam();
+    double getCpu();
+
+    //assinatura do método 'toString'
+    String toString();
+
+}
+****************************************************************************************************************************************
+
+//package base
+package concretecreater;
+
+//import da interface 'Computer' e das classes concretas 'Pc' e 'Server'
+import productinterface.Computer;
+import concreteproduct.*;
+
+//classe concreta 'ComputerFactory' (fábrica de computadores -> gerenciador dos produtos computadores)
+public class ComputerFactory{
+
+    //método estático 'createComputer' responsável pela criação das instâncias (definidas pelo cliente) do tipo abstrato da interface
+    public static Computer createComputer(String type, int hdd, int ram, double cpu){
+
+        if (type == "pc"){
+
+            //criação do objeto da classe concreta 'Pc'
+            return new Pc(type, hdd, ram, cpu);
+
+        } else if(type == "server"){
+
+            //criação do objeto da classe concreta 'Server'
+            return new Server(type, hdd, ram, cpu);
+
+        }
+
+        return null;
+
+    }
+    
+}
+****************************************************************************************************************************************
+
+//package base
+package concreteproduct;
+
+//import da interface 'Computer'
+import productinterface.Computer;
+
+//classe concreta do produto 'Pc'
+public class Pc implements Computer{
+
+    //atributos do computador do tipo 'pc'
+    private String type;
+    private int hdd;
+    private int ram;
+    private double cpu;
+
+    //construtor da classe concreta 'Pc' (método implícito)
+    public Pc(String type, int hdd, int ram, double cpu){
+
+        this.type = type;
+        this.hdd = hdd;
+        this.ram = ram;
+        this.cpu = cpu;
+
+    }
+
+    //método 'get' do atributo 'type'
+    public String getType(){
+
+        return this.type;
+
+    }
+
+    //método 'get' do atributo 'hdd'
+    public int getHdd(){
+
+        return this.hdd;
+
+    }
+    
+    //método 'get' do atributo 'ram'
+    public int getRam(){
+
+        return this.ram;
+
+    }
+
+    //método 'get' do atributo 'cpu'
+    public double getCpu(){
+
+        return this.cpu;
+
+    }
+
+    //método de exibição dos atributos do computador do tipo 'pc'
+    public String toString(){
+
+        return "----------------------FÁBRICA DE COMPUTADORES----------------------\n\n" + "<<< Produto Fabricado -> 'Computador' >>>\n" + "Tipo: " + this.type + "\nArmazenamento HDD (GB): " + String.valueOf(this.hdd) + "\nArmazenamento RAM (GB): " + String.valueOf(this.ram) + "\nFrequência CPU (GHz): " + Double.toString(this.cpu) + "\n\n-------------------------------------------------------------------\n\n";
+    
+    }
+    
+}
+****************************************************************************************************************************************
+
+//package base
+package concreteproduct;
+
+//import da interface 'Computer'
+import productinterface.Computer;
+
+//classe concreta do produto 'Server'
+public class Server implements Computer{
+
+    //atributos do computador do tipo 'server'
+    private String type;
+    private int hdd;
+    private int ram;
+    private double cpu;
+
+    //construtor da classe concreta 'Server' (método implícito)
+    public Server(String type, int hdd, int ram, double cpu){
+
+        this.type = type;
+        this.hdd = hdd;
+        this.ram = ram;
+        this.cpu = cpu;
+
+    }
+
+    //método 'get' do atributo 'type'
+    public String getType(){
+
+        return this.type;
+
+    }
+
+    //método 'get' do atributo 'hdd'
+    public int getHdd(){
+
+        return this.hdd;
+
+    }
+    
+    //método 'get' do atributo 'ram'
+    public int getRam(){
+
+        return this.ram;
+
+    }
+
+    //método 'get' do atributo 'cpu'
+    public double getCpu(){
+
+        return this.cpu;
+
+    }
+
+    //método de exibição dos atributos do computador do tipo 'server'
+    public String toString(){
+
+        return "----------------------FÁBRICA DE COMPUTADORES----------------------\n\n" + "<<< Produto Fabricado -> 'Computador' >>>\n" + "Tipo: " + this.type + "\nArmazenamento HDD (GB): " + String.valueOf(this.hdd) + "\nArmazenamento RAM (GB): " + String.valueOf(this.ram) + "\nFrequência CPU (GHz): " + Double.toString(this.cpu) + "\n\n-------------------------------------------------------------------\n\n";
+    
+    }
+    
+}
+****************************************************************************************************************************************
+
+A imagem 'imagem1' (vide link abaixo) ilustra a saída do código cliente após solicitação para fabricação de um computador do tipo 'pc'
+e 'server':
+
+	imagem1 ---> (https://github.com/0liveiraVictor/Softex/blob/main/PDS/DOC---M%C3%B3dulo_01---Projeto_01/imagem1.png)
+
+
+
+######################################################################################################################################
+######################################################################################################################################
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code Client.java (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/PDS/DOC---M%C3%B3dulo_01---Projeto_01/src/client/Client.java
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code Computer.java (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/PDS/DOC---M%C3%B3dulo_01---Projeto_01/src/productinterface/Computer.java
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code ComputerFactory.java (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/PDS/DOC---M%C3%B3dulo_01---Projeto_01/src/concretecreater/ComputerFactory.java
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code Pc.java (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/PDS/DOC---M%C3%B3dulo_01---Projeto_01/src/concreteproduct/Pc.java
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code Server.java (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/PDS/DOC---M%C3%B3dulo_01---Projeto_01/src/concreteproduct/Server.java
+################## -------------------------------------------------------------------------------------------------------------------
+######################################################################################################################################
+######################################################################################################################################
+________________________________________________________________________________________________________________________________________
