@@ -26,7 +26,7 @@ Ao todo, o curso é dividido em 6 blocos de ensino (cada um organizado em módul
 	3. Utilizando Padrões
 	4. Desenvolvimento Web, Loops e Bibliotecas
 	
-**3. Padrões de Desenvolvimento de Software - (PDS)**
+**3. Padrões de Desenvolvimento de Software - [(PDS)](https://github.com/0liveiraVictor/Softex/tree/main/PDS)**
 <br/><p align = "Justify">**Missão:** *Fernando é dono da padaria "É Docê", que está na família a várias gerações de padeiros. Fernando, atualmente, está sofrendo com a crise inflacionária, por isso resolveu utilizar seus conhecimentos em computação para alavancar sua padaria, tornando assim "É Docê" a padaria mais renomada da região.*</p>
 
 	1. Qual seria a melhor forma de Fernando fazer os bolos para que atenda todos os seus clientes diariamente?
@@ -126,11 +126,11 @@ Ao todo, o curso é dividido em 6 blocos de ensino (cada um organizado em módul
 		
 <br/>
 
-* **Bloco de Ensino 3 - PDS []()**..............................🚧 *Em desenvolvimento...* 🚧
+* **Bloco de Ensino 3 - [PDS](https://github.com/0liveiraVictor/Softex/tree/main/PDS)**..............................🚧 *Em desenvolvimento...* 🚧
 
 	* <p align = "Justify">Módulo 1 - Qual seria a melhor forma de Fernando fazer os bolos para que atenda todos os seus clientes diariamente?</p>
 	
-		- [ ] Projeto 01 - []()
+		- [x] Projeto 01 - [Fábrica de Computadores (Factory Method)](https://github.com/0liveiraVictor/Softex/blob/main/PDS/M%C3%B3dulo_01---Projeto_01)
 		- [ ] Projeto 02 - []() 
 		
 	* <p align = "Justify">Módulo 2 - Fernando conseguiu atender satisfatoriamente os seus clientes. Como ele deve organizar seus trabalhos na loja para aumentar a venda dos outros produtos?</p>
