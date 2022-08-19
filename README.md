@@ -131,7 +131,7 @@ Ao todo, o curso é dividido em 6 blocos de ensino (cada um organizado em módul
 	* <p align = "Justify">Módulo 1 - Qual seria a melhor forma de Fernando fazer os bolos para que atenda todos os seus clientes diariamente?</p>
 	
 		- [x] Projeto 01 - [Fábrica de Computadores (Factory Method)](https://github.com/0liveiraVictor/Softex/blob/main/PDS/M%C3%B3dulo_01---Projeto_01)
-		- [ ] Projeto 02 - []() 
+		- [x] Projeto 02 - [Fábrica de Veículos (Prototype)](https://github.com/0liveiraVictor/Softex/blob/main/PDS/M%C3%B3dulo_01---Projeto_02) 
 		
 	* <p align = "Justify">Módulo 2 - Fernando conseguiu atender satisfatoriamente os seus clientes. Como ele deve organizar seus trabalhos na loja para aumentar a venda dos outros produtos?</p>
 	
