@@ -1,0 +1,330 @@
+________________________________________________APLICAÇÃO DE PADRÃO DE PROJETO (DECORATOR)______________________________________________
+
+Aplique o padrão de projeto decorator para criar um sanduíche de frango assado com pepperoni e queijo mussarela ralado. O projeto deve 
+seguir os seguintes critérios:
+- deve imprimir no console: Sanduíche de Carne, Bacon, QueijoMussarelaRalado custa $7,49.
+- o sanduíche de frango assado custa $4,50.
+- o ingrediente adicional pepperoni custa $0,99.
+- o ingrediente adicional queijo mussarela ralado custa $2,00.
+- crie as classes necessárias: FrangoAssado, Pepperoni e QueijoMussarelaRalado.
+________________________________________________________________________________________________________________________________________
+
+SOLUÇÃO:
+
+Para resolução dessa aplicação ('Aplicativo.java'), de padrão 'Decorator', foram desenvolvidas duas classes abstratas ('Sanduiche.java' e 
+'IngredienteDecorador.java') e três classes concretas ('FrangoAssado.java', 'Pepperoni.java' e 'QueijoMussarelaRalado.java'). A classe
+'FrangoAssado' (sub-classe de 'Sanduiche') foi definida para instância de objetos em que a solicitação do cliente se referiu ao tipo de
+sanduíche pedido. Já as classes 'Pepperoni' e 'QueijoMussarelaRalado' foram definidas como decoradoras de ingredientes do sanduíche
+pedido, sendo então possibilitadas por meio de uma super classe abstrata de decoração 'IngredienteDecorador'.
+
+Isso posto, as implementações para a criação de um sanduíche e seus ingredientes (DECORATOR) foram definidas conforme abaixo:
+
+//pacote base
+package client;
+
+//import da classe abstrata 'Sanduiche' e das classes concretas necessárias para o programa
+import component.Sanduiche;
+import concretecomponent.FrangoAssado;
+import concretedecorator.*;
+
+//definição da classe de aplicação 'Aplicativo'
+public class Aplicativo {
+
+    //método de impressão do pedido do cliente
+    public static void imprimirPedido(Sanduiche pedido){
+
+        System.out.println("PEDIDO: " + pedido.getDescription());
+        System.out.println("CUSTO: $" + pedido.getCost());
+
+    }
+
+    //método de impressão do tipo de sanduíche do cliente
+    public static void imprimirSanduiche(Sanduiche sanduiche){
+
+        System.out.println("\n<<<" + sanduiche.getDescription() + " custa $" + sanduiche.getCost() + ">>>");
+
+    }
+
+    //método de impressão do ingrediente adicional requerido pelo cliente
+    public static void imprimirIngrediente(Sanduiche ingrediente){
+
+        System.out.println("\n<<<Ingrediente adicional '" + ingrediente.getFlavorDescription() + "' custa $" + ingrediente.getFlavorCost() + ">>>");
+        
+    }
+    
+    //programa principal
+    public static void main(String[] args) {
+
+        //construindo o sanduíche e decorando com os ingredientes adicionais
+        Sanduiche sanduiche1 = new FrangoAssado(); //sanduíche de frango assado solicitado pelo cliente
+        Sanduiche sanduiche1_add1 = new Pepperoni(sanduiche1); //adicionando pepperoni no sanduíche
+        Sanduiche sanduiche1_add2 = new QueijoMussarelaRalado(sanduiche1_add1); //adicionando queijo mussarela ralado no sanduíche
+
+        //impressão das solicitações do cliente
+        System.out.println("---------------------------------------------SANDUÍCHES---------------------------------------------\n\n");
+        imprimirPedido(sanduiche1_add2);
+        imprimirSanduiche(sanduiche1);
+        imprimirIngrediente(sanduiche1_add1);
+        imprimirIngrediente(sanduiche1_add2);
+        System.out.println("\n\n----------------------------------------------------------------------------------------------------");
+
+    }
+
+}
+****************************************************************************************************************************************
+
+//pacote base
+package component;
+
+//definição da classe abstrata 'Sanduiche'
+public abstract class Sanduiche {
+
+    //atributo da classe 
+    private String description = "Sanduíche Desconhecido"; 
+    /*a rigor, esse sanduíche desconhecido não será útil no programa, pois não haverá possibilidade de instanciar um objeto dessa classe.*/
+
+    //método 'get' para obter a descrição do sanduíche
+    public String getDescription(){
+
+        return description;
+
+    }
+
+    //método abstrato para obter custo
+    public abstract double getCost();
+
+    //método abstrato para obter sabor (do tipo de sanduíche ou decorador adicionado)
+    public abstract String getFlavorDescription();
+
+    //método abstrato para obter custo (do tipo de sanduíche ou decorador adicionado)
+    public abstract double getFlavorCost();
+    
+}
+****************************************************************************************************************************************
+
+//pacote base
+package concretecomponent;
+
+//import da classe abstrata 'Sanduiche'
+import component.Sanduiche;
+
+//definição da classe concreta 'FrangoAssado'
+public class FrangoAssado extends Sanduiche {
+
+    //propriedades da classe
+    private String flavorDescription = "Sanduíche de Frango Assado";
+    private double flavorCost = 4.50;
+
+    //método 'get' para obter o sabor do tipo de sanduíche
+    @Override
+    public String getFlavorDescription(){
+
+        return flavorDescription;
+
+    }    
+
+    //método 'get' para obter o custo do tipo de sanduíche
+    @Override
+    public double getFlavorCost(){
+
+        return flavorCost;
+
+    }    
+
+    //método 'get' para 'descrição' do sanduíche (funcional quando houver o uso de uma descrição com recursividade)
+    @Override
+    public String getDescription(){
+
+        return flavorDescription;
+
+    }
+
+    //método 'get' para 'custo' do sanduíche (funcional quando houver o uso de um custo com recursividade)
+    @Override
+    public double getCost(){
+
+        return flavorCost;
+
+    }
+    
+}
+****************************************************************************************************************************************
+
+//pacote base
+package decorator;
+
+//import da classe abstrata 'Sanduiche'
+import component.Sanduiche;
+
+//definição da classe abstrata 'IngredienteDecorador'
+public abstract class IngredienteDecorador extends Sanduiche {
+
+    //método abstrato para obter a descrição do sanduíche
+    public abstract String getDescription();
+    
+}
+****************************************************************************************************************************************
+
+//pacote base
+package concretedecorator;
+
+//import das classes abstratas 'Sanduiche' e 'IngredienteDecorador'
+import component.Sanduiche;
+import decorator.IngredienteDecorador;
+
+//definição da classe concreta decoradora 'Pepperoni'
+public class Pepperoni extends IngredienteDecorador {
+
+    //variável de instância 'decorator' apontadora do objeto 'Sanduiche'
+    private final Sanduiche decorator;
+
+    //propriedades de decoração da classe
+    private String flavorDescription = "Pepperoni";
+    private double flavorCost = 0.99;
+
+    //método construtor (o parâmetro recebido é o objeto, tipo 'Sanduiche', a ser decorado)
+    public Pepperoni(Sanduiche objDecorado){
+
+        this.decorator = objDecorado;
+
+    }
+
+    //método 'get' para 'decorator'
+    public Sanduiche getDecorator(){
+
+        return decorator;
+
+    }    
+
+    //método 'get' para obter o sabor do ingrediente adicional 'Pepperoni' do sanduíche
+    @Override
+    public String getFlavorDescription(){
+
+        return flavorDescription;
+
+    }    
+
+    //método 'get' para obter o custo do ingrediente adicional 'Pepperoni' do sanduíche
+    @Override
+    public double getFlavorCost(){
+
+        return flavorCost;
+
+    }    
+
+    //método 'get' para 'descrição' do sanduíche escolhido (método com recursividade)
+    @Override
+    public String getDescription(){
+
+        return decorator.getDescription() + ", " + flavorDescription;
+
+    }
+
+    //método 'get' para adição 'custo' no sanduíche escolhido (método com recursividade)
+    @Override
+    public double getCost(){
+
+        return decorator.getCost() + flavorCost;
+
+    }
+    
+}
+****************************************************************************************************************************************
+
+//pacote base
+package concretedecorator;
+
+//import das classes abstratas 'Sanduiche' e 'IngredienteDecorador'
+import component.Sanduiche;
+import decorator.IngredienteDecorador;
+
+//definição da classe concreta decoradora 'QueijoMussarelaRalado'
+public class QueijoMussarelaRalado extends IngredienteDecorador {
+
+    //variável de instância 'decorator' apontadora do objeto 'Sanduiche'
+    private final Sanduiche decorator;
+
+    //propriedades de decoração da classe
+    private String flavorDescription = "Queijo Mussarela Ralado";
+    private double flavorCost = 2.00;
+
+    //método construtor (o parâmetro recebido é o objeto, tipo 'Sanduiche', a ser decorado)
+    public QueijoMussarelaRalado(Sanduiche objDecorado){
+
+        this.decorator = objDecorado;
+
+    }
+
+    //método 'get' para 'decorator'
+    public Sanduiche getDecorator(){
+
+        return decorator;
+
+    }    
+
+    //método 'get' para obter o sabor do ingrediente adicional 'Queijo Mussarela Ralado' do sanduíche
+    @Override
+    public String getFlavorDescription(){
+
+        return flavorDescription;
+
+    }    
+
+    //método 'get' para obter o custo do ingrediente adicional 'Queijo Mussarela Ralado' do sanduíche
+    @Override
+    public double getFlavorCost(){
+
+        return flavorCost;
+
+    }    
+
+    //método 'get' para 'descrição' do sanduíche escolhido (método com recursividade)
+    @Override
+    public String getDescription(){
+
+        return decorator.getDescription() + ", " + flavorDescription;
+
+    }
+
+    //método 'get' para adição 'custo' no sanduíche escolhido (método com recursividade)
+    @Override
+    public double getCost(){
+
+        return decorator.getCost() + flavorCost;
+
+    }
+    
+}
+****************************************************************************************************************************************
+
+A imagem 'imagem1' (vide link abaixo) ilustra a saída do código de aplicação, em que o cliente solicita seu tipo de sanduíche e os 
+ingredientes adicionais:
+
+	imagem1 ---> (https://github.com/0liveiraVictor/Softex/blob/main/PDS/DOC---M%C3%B3dulo_02---Projeto_01/imagem1.png)
+
+
+
+######################################################################################################################################
+######################################################################################################################################
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code Aplicativo.java (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/PDS/DOC---M%C3%B3dulo_02---Projeto_01/src/client/Aplicativo.java
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code Sanduiche.java (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/PDS/DOC---M%C3%B3dulo_02---Projeto_01/src/component/Sanduiche.java
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code FrangoAssado.java (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/PDS/DOC---M%C3%B3dulo_02---Projeto_01/src/concretecomponent/FrangoAssado.java
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code IngredienteDecorador.java (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/PDS/DOC---M%C3%B3dulo_02---Projeto_01/src/decorator/IngredienteDecorador.java
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code Pepperoni.java (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/PDS/DOC---M%C3%B3dulo_02---Projeto_01/src/concretedecorator/Pepperoni.java
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code QueijoMussarelaRalado.java (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/PDS/DOC---M%C3%B3dulo_02---Projeto_01/src/concretedecorator/QueijoMussarelaRalado.java
+################## -------------------------------------------------------------------------------------------------------------------
+######################################################################################################################################
+######################################################################################################################################
+________________________________________________________________________________________________________________________________________
