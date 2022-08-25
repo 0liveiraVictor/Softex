@@ -1,0 +1,189 @@
+________________________________________________APLICAÇÃO DE PADRÃO DE PROJETO (ADAPTER)________________________________________________
+
+Crie um adaptador que permita que um objeto do tipo Pato seja usado como se fosse um objeto do tipo Galinha.
+
+Siga o exemplo apresentado no Hipertexto 4 e crie as classes AdaptadorPato e AdaptadorPatoDemo para demonstrar o uso da classe 
+AdaptadorPato.
+________________________________________________________________________________________________________________________________________
+
+SOLUÇÃO:
+
+Para resolução da aplicação ('AdaptadorPatoDemo.java') de padrão 'Adapter', foram definidas duas interfaces ('Galinha.java' e 'Pato.java')
+e duas classes concretas ('PatoDomestico.java' e 'AdaptadorPato.java'). As classes 'PatoDomestico' e 'AdaptadorPato' implementaram as 
+interfaces 'Pato' e 'Galinha', respectivamente. No construtor da classe 'AdaptadorPato', o objeto de tipo 'Pato' foi definido como parâmetro
+de entrada a fim de tornar os objetos desse tipo em objetos adaptados de tipo 'Galinha'. Assim sendo, as implementações para a criação do 
+adaptador (ADAPTER) de patos, solicitado no enunciado, seguem descritas abaixo:
+
+//pacote base
+package client;
+
+//import das interfaces 'Galinha' e 'Pato', e das classes concretas 'PatoDomestico' e 'AdaptadorPato'
+import interfaces.Galinha;
+import interfaces.Pato;
+import concretecomponent.PatoDomestico;
+import adapter.AdaptadorPato;
+
+//definição da classe de aplicação 'AdaptadorPatoDemo'
+public class AdaptadorPatoDemo {
+
+    //programa principal
+    public static void main(String[] args) {
+
+        //instancias de objetos de classes concretas que implementam as interfaces 'Galinha' e 'Pato'
+        Pato patoObj = new PatoDomestico();   //instanciando o objeto 'patoObj' do tipo 'Pato'
+        Galinha galinhaObj = new AdaptadorPato(patoObj);   //instanciando o objeto 'galinhaObj', do tipo 'Galinha', a partir do parâmetro 'patoObj'
+
+        //impressão da adaptação gerada
+        System.out.println("-------------------------ADAPTAÇÃO DE UMA PATA EM UMA GALINHA (CENAS DA FALSA GALINHA)-------------------------\n\n");
+        System.out.println("<<< A falsa galinha encena duas ações: 1) Cacarejar e 2) Voar >>>");
+        System.out.println("1ª Cena (Cacarejo) ---> AÇÃO: " + galinhaObj.fazerCocorico());
+        System.out.println("2ª Cena (Voo) ---> AÇÃO: " + galinhaObj.voar());
+        System.out.println("\n___________________________________________________________________________\n");
+        System.out.println("Direção: 'OPS! Nossa atriz não é uma galinha, é na verdade uma PATA!'");
+        System.out.println("___________________________________________________________________________");
+        System.out.println("\n\n---------------------------------------------------------------------------------------------------------------");
+
+    }
+    
+}
+****************************************************************************************************************************************
+
+//pacote base
+package interfaces;
+
+//interface 'Galinha'
+public interface Galinha {
+
+    //assinatura do método 'fazerCocorico'
+    public String fazerCocorico();
+
+    //assinatura do método 'voar'
+    public String voar();
+    
+}
+****************************************************************************************************************************************
+
+//pacote base
+package interfaces;
+
+//interface 'Pato'
+public interface Pato {
+
+    //assinatura do método 'fazerQuaQua'
+    public String fazerQuaQua();
+
+    //assinatura do método 'voar'
+    public String voar();
+    
+}
+****************************************************************************************************************************************
+
+//pacote base
+package concretecomponent;
+
+//import da interface 'Pato'
+import interfaces.Pato;
+
+//definição da classe 'PatoDomestico'
+public class PatoDomestico implements Pato {
+
+    //método construtor
+    public PatoDomestico(){}
+
+    //método 'fazerQuaQua'
+    public String fazerQuaQua(){
+
+        return "'Quááác, Quááác'";
+
+    }
+
+    //método 'voar'
+    public String voar(){
+
+        return "Voo Curto";
+
+    }
+    
+}
+****************************************************************************************************************************************
+
+//pacote base
+package adapter;
+
+//import das interfaces 'Galinha' e 'Pato'
+import interfaces.Galinha;
+import interfaces.Pato;
+
+//definição da classe 'AdaptadorPato'
+public class AdaptadorPato implements Galinha {
+
+    private Pato patoAdaptado;
+
+    //método construtor
+    public AdaptadorPato(Pato pato){
+
+        this.patoAdaptado = pato;
+
+    }
+
+    //método 'get' de 'patoAdaptado'
+    public Pato getPatoAdaptado(){
+
+        return patoAdaptado;
+
+    }
+
+    //método 'fazerCocorico'
+    public String fazerCocorico(){
+
+        return this.patoAdaptado.fazerQuaQua();
+
+    }
+
+    //método 'voar'
+    public String voar(){
+
+        return this.patoAdaptado.voar();
+
+    }
+    
+}
+****************************************************************************************************************************************
+
+Fazendo uma avaliação qualitativa do código de aplicação ('AdaptadorPatoDemo'), nota-se que foram instanciados inicialmente dois objetos,
+'patoObj' (tipo 'Pato') e 'galinhaObj' (tipo 'Galinha'). Em especial, como o objeto 'galinhaObj' foi do tipo 'Galinha', ele assumiu todos 
+os métodos referentes a sua classe base de instância - que nesse caso foram: .fazerCocorico() e .voar(). Entretanto, para esse exemplo em 
+específico, o objeto funcionou como um adaptador aparentemente antagônico, tendo em vista o retorno final ter sido um objeto com 
+características típicas de um pato e não uma galinha (pelo fato da galinha ter feito 'Quááác Quááác' e não cacarejado). Em resumo, a ideia 
+retratada para esse problema é de que o objeto 'galinhaObj' (que de fato é de tipo 'Galinha'), mesmo que apresentando os métodos 
+específicos para o seu tipo, representa apenas uma roupagem para o objeto 'patoObj' do tipo 'Pato'. A analogia direta nos permite dizer 
+que: há um pato vestido de galinha (ou uma pata vestida de galinha). No rigor da nossa realidade dizemos que existe um pato. Entretanto,
+esse mesmo pato pode ser interpretado (ou adaptado) como uma galinha. 
+
+A imagem 'imagem1' (vide link abaixo) ilustra a saída do código de aplicação:
+
+	imagem1 ---> (https://github.com/0liveiraVictor/Softex/blob/main/PDS/DOC---M%C3%B3dulo_02---Projeto_02/imagem1.png)
+
+
+
+######################################################################################################################################
+######################################################################################################################################
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code AdaptadorPatoDemo.java (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/PDS/DOC---M%C3%B3dulo_02---Projeto_02/src/client/AdaptadorPatoDemo.java
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code Galinha.java (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/PDS/DOC---M%C3%B3dulo_02---Projeto_02/src/interfaces/Galinha.java
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code Pato.java (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/PDS/DOC---M%C3%B3dulo_02---Projeto_02/src/interfaces/Pato.java
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code PatoDomestico.java (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/PDS/DOC---M%C3%B3dulo_02---Projeto_02/src/concretecomponent/PatoDomestico.java
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code AdaptadorPato.java (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/PDS/DOC---M%C3%B3dulo_02---Projeto_02/src/adapter/AdaptadorPato.java
+################## -------------------------------------------------------------------------------------------------------------------
+######################################################################################################################################
+######################################################################################################################################
+________________________________________________________________________________________________________________________________________
