@@ -136,7 +136,7 @@ Ao todo, o curso é dividido em 6 blocos de ensino (cada um organizado em módul
 	* <p align = "Justify">Módulo 2 - Fernando conseguiu atender satisfatoriamente os seus clientes. Como ele deve organizar seus trabalhos na loja para aumentar a venda dos outros produtos?</p>
 	
 		- [x] Projeto 01 - [Aplicação de Padrão de Projeto (Decorator)](https://github.com/0liveiraVictor/Softex/blob/main/PDS/M%C3%B3dulo_02---Projeto_01)
-		- [ ] Projeto 02 - []()
+		- [x] Projeto 02 - [Aplicação de Padrão de Projeto (Adapter)](https://github.com/0liveiraVictor/Softex/blob/main/PDS/M%C3%B3dulo_02---Projeto_02)
 		
 	* <p align = "Justify">Módulo 3 - Depois de aumentar as vendas da padaria, Fernando gostaria de atender as sugestões de melhoria dos clientes. Como ele deve lidar com as sugestões?</p>
 	
