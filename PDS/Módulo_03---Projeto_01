@@ -1,0 +1,244 @@
+________________________________________________APLICAÇÃO DE PADRÃO DE PROJETO (STRATEGY)_______________________________________________
+
+Considerando a solução apresentada no Hipertexto 5, aplique o padrão de projeto Strategy para criar uma simples calculadora. Os 
+requisitos para avaliar o projeto são:
+
+- implementar uma interface Strategy com o método abstrato execute(). Deve haver três classes concretas que implementam a Strategy para 
+realizar as operações de Soma, Subtração e Multiplicação de números inteiros;
+- o método execute() deve receber dois números inteiros como parâmetros e retornar o resultado também como número inteiro;
+- como input do usuário, a aplicação deve receber o primeiro valor, depois o segundo e, por último, a operação matemática que deve 
+realizar;
+- no final, a aplicação deve definir qual Strategy será usada, com base na operação informada, e imprimir o resultado da operação.
+________________________________________________________________________________________________________________________________________
+
+SOLUÇÃO:
+
+Para a solução do padrão de projeto em questão ('Strategy') foi utilizado uma interface ('Strategy.java') e três classes concretas 
+implementadoras ('Sum.java', 'Subtraction.java' e 'Multiplication.java'). Na interface 'Strategy' foi definido um método abstrato 
+denominado 'execute', o qual foi implementado em cada uma das classes concretas (referentes as operações matemáticas): soma (classe 
+'Sum'), subtração (classe 'Subtraction') e multiplicação (classe 'Multiplication'). No método 'execute' foram definidos dois parâmetros
+de entrada de tipo inteiro e um retorno de tipo inteiro. A comunicação da aplicação ('Application.java') com as classes concretas foi 
+permitida a partir da classe 'Context' ('Context.java'), a qual apresentou um campo de armazenamento de referência para as classes
+‘estratégias’ (classes das operações matemáticas). A aplicação realizou a leitura de dois números de tipo inteiro (primeiro e segundo 
+valor) e uma string (tipo da operação matemática desejada). Além disso, uma implementação dentro do método estático ('resultado') criado 
+foi responsável por definir qual a estratégia de operação adotada para o cálculo na calculadora. Por fim, baseado na operação definida 
+na aplicação, o resultado foi impresso em tela.
+
+Assim sendo, todas implementações para a criação de uma simples calculadora, a partir do padrão de projeto STRATEGY, estão descritas 
+abaixo:
+
+//pacote base
+package client;
+
+//import das classes 'Context', 'Sum', 'Subtraction', 'Multiplication' e 'Scanner' (para leitura dos dados)
+import context.Context;
+import concretestrategy.Sum;
+import concretestrategy.Subtraction;
+import concretestrategy.Multiplication;
+import java.util.Scanner;
+
+//definição da classe 'Application'
+public class Application {
+
+    //método estático para cálculo de resultado da calculadora (contendo a estratégia adotada pelo cliente)
+    public static int resultado(Context context, int v1, int v2, String op){
+
+        //possíveis estratégias de cálculo adotada pelo cliente (estruturas de repetição melhor direcionam na adoção da estratégia)
+        if("soma".equals(op)){
+
+            context.setStrategy(new Sum());
+
+        } else if("subtração".equals(op)){
+
+            context.setStrategy(new Subtraction());
+
+        } else if("multiplicação".equals(op)){
+
+            context.setStrategy(new Multiplication());
+
+        } else{
+
+            System.out.println("ERRO: Operação de cálculo inválida!");
+
+        }
+
+        //cálculo do resultado após definição da estratégia
+        int resultado = context.execute(v1, v2);
+
+        return  resultado;
+
+    }
+
+    //programa principal
+    public static void main(String[] args) {
+
+        //instanciando um objeto de tipo 'Context' definido como 'calculadora'
+        Context calculadora = new Context();
+
+        //definição de input (para leitura dos dados)
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("--------------------------------------------CALCULADORA--------------------------------------------\n\n");
+
+        //leitura do primeiro valor declarado pelo cliente
+        System.out.print("Digite o PRIMEIRO número: ");
+        int numero1 = input.nextInt();
+
+        //leitura do segundo valor declarado pelo cliente
+        System.out.print("\nDigite o SEGUNDO número: ");
+        int numero2 = input.nextInt();
+
+        //leitura da opção (operação de cálculo) declarado pelo cliente
+        System.out.print("\nDigite 'soma', 'subtração' ou 'multiplicação' para selecionar uma OPERAÇÃO de cálculo: ");
+        String opcao = input.next();
+        input.close();
+
+        //cálculo do resultado final com o método 'resultado'
+        int resultadoFinal = resultado(calculadora, numero1, numero2, opcao);
+
+        //impressão do resultado
+        System.out.println("\n\n\n<<< Resultado da Operação >>> : " + resultadoFinal);
+
+        System.out.println("\n\n---------------------------------------------------------------------------------------------------\n");
+        
+    }
+    
+}
+****************************************************************************************************************************************
+
+//pacote base
+package context;
+
+//import da interface 'Strategy'
+import strategy.Strategy;
+
+//definição da classe 'Context'
+public class Context {
+
+    //atributo 'strategy' do tipo 'Strategy'
+    private Strategy strategy;
+
+    //método 'set' para 'strategy'
+    public void setStrategy(Strategy newStrategy){
+
+        this.strategy = newStrategy;
+
+    }
+
+    //método 'execute'
+    public int execute(int numero1, int numero2){
+
+        return strategy.execute(numero1, numero2);
+
+    }
+
+}
+****************************************************************************************************************************************
+
+//pacote base
+package strategy;
+
+//interface 'Strategy'
+public interface Strategy {
+
+    //assinatura do método abstrato 'execute'
+    public abstract int execute(int v1, int v2);
+    
+}
+****************************************************************************************************************************************
+
+//pacote base
+package concretestrategy;
+
+//import da interface 'Strategy'
+import strategy.Strategy;
+
+//definição da classe 'Sum'
+public class Sum implements Strategy {
+
+    //método 'execute' (soma)
+    public int execute(int v1, int v2){
+
+        int resultado = v1 + v2;
+        return resultado;
+
+    }
+    
+}
+****************************************************************************************************************************************
+
+//pacote base
+package concretestrategy;
+
+//import da interface 'Strategy'
+import strategy.Strategy;
+
+//definição da classe 'Subtraction'
+public class Subtraction implements Strategy {
+
+    //método 'execute' (subtração)
+    public int execute(int v1, int v2){
+
+        int resultado = v1 - v2;
+        return resultado;
+
+    }
+    
+}
+****************************************************************************************************************************************
+
+//pacote base
+package concretestrategy;
+
+//import da interface 'Strategy'
+import strategy.Strategy;
+
+//definição da classe 'Multiplication'
+public class Multiplication implements Strategy {
+
+    //método 'execute' (multiplicação)
+    public int execute(int v1, int v2){
+
+        int resultado = v1 * v2;
+        return resultado;
+
+    }
+
+}
+****************************************************************************************************************************************
+
+As imagens 'imagem1', 'imagem2' e 'imagem3' (vide links abaixo) ilustram exemplos de saída do código de aplicação e essas referem-se, 
+respectivamente, as operações de soma, subtração e multiplicação de uma calculadora:
+
+	imagem1 ---> (https://github.com/0liveiraVictor/Softex/blob/main/PDS/DOC---M%C3%B3dulo_03---Projeto_01/imagem1.png)
+
+	imagem2 ---> (https://github.com/0liveiraVictor/Softex/blob/main/PDS/DOC---M%C3%B3dulo_03---Projeto_01/imagem2.png)
+
+	imagem3 ---> (https://github.com/0liveiraVictor/Softex/blob/main/PDS/DOC---M%C3%B3dulo_03---Projeto_01/imagem3.png)
+
+
+
+######################################################################################################################################
+######################################################################################################################################
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code Application.java (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/PDS/DOC---M%C3%B3dulo_03---Projeto_01/src/client/Application.java
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code Context.java (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/PDS/DOC---M%C3%B3dulo_03---Projeto_01/src/context/Context.java
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code Strategy.java (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/PDS/DOC---M%C3%B3dulo_03---Projeto_01/src/strategy/Strategy.java
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code Sum.java (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/PDS/DOC---M%C3%B3dulo_03---Projeto_01/src/concretestrategy/Sum.java
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code Subtraction.java (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/PDS/DOC---M%C3%B3dulo_03---Projeto_01/src/concretestrategy/Subtraction.java
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code Multiplication.java (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/PDS/DOC---M%C3%B3dulo_03---Projeto_01/src/concretestrategy/Multiplication.java
+################## -------------------------------------------------------------------------------------------------------------------
+######################################################################################################################################
+######################################################################################################################################
+________________________________________________________________________________________________________________________________________
