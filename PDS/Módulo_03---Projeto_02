@@ -1,0 +1,319 @@
+________________________________________________APLICAÇÃO DE PADRÃO DE PROJETO (OBSERVER)_______________________________________________
+
+Aplique o padrão de projeto Observer para criar um simples editor de texto. Considere a solução apresentada no Hipertexto 6 e utilize o 
+código visto para implementar novas classes. Os requisitos para avaliar o projeto são:
+
+- implementar uma subclasse da classe Editor chamada TextEditor;
+- aplicar o método insertLine, que recebe os parâmetros lineNumber e text;
+- inserir o texto na ordem correspondente a lineNumber e deslocar as linhas posteriores se necessário;
+- aplicar o método removeLine, que recebe lineNumber como parâmetro, deleta o texto da linha correspondente e desloca as linhas 
+posteriores se necessário;
+- instanciar um TextEditor e disparar o evento “open”;
+- receber as linhas de texto, que serão inseridas no objeto textEditor, do usuário até que ele envie o texto “EOF”, que não deve ser 
+inserido no objeto textEditor;
+- por fim, o textEditor deve disparar o evento “save” para que o conteúdo seja salvo no arquivo configurado e imprimir todo o conteúdo 
+do arquivo na tela.
+________________________________________________________________________________________________________________________________________
+
+SOLUÇÃO:
+
+Para essa solução de problema, padrão de projeto 'Observer', foram implementadas duas classes concretas para o editor de texto: 'Editor' 
+('Editor.java') e 'TextEditor' ('TextEditor.java'). No 'TextEditor' foram definidos os métodos: 'insertLine', 'removeLine' e
+'notifyObservers', em que os observadores puderam ser adicionados ou removidos das assinaturas de notificação do editor (gerados por 
+eventuais modificações em seu estado). Em 'Editor' foram implementados dois métodos de disparo de eventos: 'openExecute' (disparo do 
+evento "open" e notificação de seus assinantes) e 'saveExecute' (disparo do evento "save" e notificação de seus assinantes). Para os 
+observadores foi construída a classe 'Text' ('Text.java'), o qual implementou a interface 'Observer' ('Observer.java') e o método
+abstrato 'update'. As notificações para cada um dos objetos instânciados de 'Text' se deram a partir do método 'update' e das 
+informações passadas pelos parâmetros: 'event' (tipo de evento assinado) e 'file' (arquivo configurado). Na aplicação foram instânciados 
+objetos de 'Text' para o evento do tipo "open" e objetos de 'Text' para o evento do tipo "save". Todos esses objetos foram inseridos, 
+linha por linha, em seus respectivos eventos de notificação, no editor de texto (via método 'insertLine'). Por fim, os disparos dos
+eventos "open" e "save" foram realizados pelo editor a partir dos métodos 'openExecute' e 'saveExecute', nessa ordem, atualizando cada 
+um dos objetos inscritos em seus respectivos eventos de notificação.
+
+Assim sendo, todas implementações para a criação de um simples editor de texto, a partir do padrão de projeto OBSERVER, estão descritas 
+abaixo:
+
+//pacote base
+package client;
+
+//import das classes 'Editor' e 'Text'
+import editor.Editor;
+import concreteobserver.Text;
+
+//classe 'Application'
+public class Application {
+
+    //programa principal
+    public static void main(String[] args) {
+
+        //instância de um objeto 'Editor' e também (por consequência) de um objeto 'TextEditor'
+        Editor editor = new Editor();
+
+        //instânciando os objetos da classe 'Text' para o evento de notificação "open"
+        Text open1 = new Text("A independência do Brasil aconteceu no dia 7 de setembro de 1822,");
+        Text open2 = new Text("e,");
+        Text open3 = new Text("por meio desse acontecimento,");
+        Text open4 = new Text("o país conquistou a sua emancipação de Portugal.");
+        Text open5 = new Text("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+        Text open6 = new Text("Nesse dia aconteceu o grito da independência,");
+        Text open7 = new Text("realizado às margens do Rio Ipiranga,");
+        Text open8 = new Text("em São Paulo,");
+        Text open9 = new Text("e dado por Pedro de Alcântara (futuro D. Pedro I).");
+        Text open10 = new Text("A independência brasileira foi acompanhada por pequenos conflitos armados,");
+        Text open11 = new Text("localizados principalmente no Nordeste.");
+        Text open12 = new Text("REF: https://escolakids.uol.com.br/historia/independencia-do-brasil.htm");
+        Text open13 = new Text("EOF");     
+
+        //instânciando os objetos da classe 'Text' para o evento de notificação "save"
+        Text save1 = new Text("As pesquisas eleitorais recentes que mostram diminuição na distância entre Luiz Inácio Lula da Silva (PT) e Jair Bolsonaro (PL) indicam uma “reta final acirrada”.");
+        Text save2 = new Text("É o que diz o professor da Fundação Dom Cabral,");
+        Text save3 = new Text("Bruno Carazza,");
+        Text save4 = new Text("em entrevista à CNN.");
+        Text save5 = new Text("REF: https://www.cnnbrasil.com.br/politica/pesquisas-mostram-que-disputa-entre-lula-e-bolsonaro-pode-ter-reta-final-acirrada-diz-especialista/");
+        Text save6 = new Text("EOF");
+
+        //inserindo as linhas de texto, em ordem, para o evento de notificação "open" no objeto 'Editor'
+        editor.editManager.insertLine("open", 1, open1);
+        editor.editManager.insertLine("open", 2, open2);
+        editor.editManager.insertLine("open", 3, open3);
+        editor.editManager.insertLine("open", 4, open4);
+        editor.editManager.insertLine("open", 5, open5);
+        editor.editManager.insertLine("open", 6, open6);
+        editor.editManager.insertLine("open", 7, open7);
+        editor.editManager.insertLine("open", 8, open8);
+        editor.editManager.insertLine("open", 9, open9);
+        editor.editManager.insertLine("open", 10, open10);
+        editor.editManager.insertLine("open", 11, open11);
+        editor.editManager.insertLine("open", 12, open12);
+        editor.editManager.insertLine("open", 13, open13);       
+
+        //removendo, por conveniência, a linha de texto '5' para o evento de notificação "open" no objeto 'Editor' (apenas para testar o método 'removeLine')
+        editor.editManager.removeLine("open", 5);
+
+        //inserindo as linhas de texto, em ordem, para o evento de notificação "save" no objeto 'Editor'
+        editor.editManager.insertLine("save", 1, save1);
+        editor.editManager.insertLine("save", 2, save2);
+        editor.editManager.insertLine("save", 3, save3);
+        editor.editManager.insertLine("save", 4, save4);
+        editor.editManager.insertLine("save", 5, save5);
+        editor.editManager.insertLine("save", 6, save6);
+        
+        try {
+
+            System.out.println("-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+            System.out.println("<<< DISPARO DO EVENTO 'open': >>> \n");
+
+            //disparando o evento "open" e notificando cada um dos objetos que realizaram sua assinatura
+            editor.openExecute("brazilReports.txt");
+            
+            System.out.println("-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+            System.out.println("<<< DISPARO DO EVENTO 'save': >>> \n");
+            
+            //disparando o evento "save" e notificando cada um dos objetos que realizaram sua assinatura
+            editor.saveExecute();
+            
+            System.out.println("-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+
+        } catch (Exception erro) {
+
+            System.out.println("ERRO.");
+
+        }
+        
+    }
+    
+}
+****************************************************************************************************************************************
+
+//pacote base
+package editor;
+
+//import da classe 'TextEditor' e do módulo 'File'
+import editormanager.TextEditor;
+import java.io.File;
+
+//classe 'Editor'
+public class Editor {
+
+    //atributos de 'Editor'
+    public TextEditor editManager;
+    private File file;
+
+    //construtor de 'Editor'
+    public Editor() {
+
+        //instância dos dois modos de disparos de eventos: "open" e "save" (a partir da própria classe 'TextEditor')
+        this.editManager = new TextEditor("open", "save");
+
+    }
+
+    //método para disparo do evento "open" e notificação dos objetos que o assinam
+    public void openExecute(String filePath) {
+
+        this.file = new File(filePath);
+        editManager.notifyObservers("open", file);
+
+    }
+
+    //método para disparo do evento "save" e notificação dos objetos que o assinam
+    public void saveExecute() throws Exception {
+
+        if (this.file != null) {
+
+            editManager.notifyObservers("save", file);
+
+        } else {
+
+            throw new Exception("É necessário, primeiramente, abrir o arquivo.");
+
+        }
+
+    }
+    
+}
+****************************************************************************************************************************************
+
+//pacote base
+package editormanager;
+
+//import da classe 'Text' e dos módulos 'File', 'HashMap' e 'Map'
+import concreteobserver.Text;
+import java.io.File;
+import java.util.HashMap;
+import java.util.Map;
+
+//classe 'TextEditor' (gerenciador da edição de texto)
+public class TextEditor {
+
+    //atributo 'eventWatcher' (observador de eventos)
+    Map<String, Map<Integer, Text>> eventWatcher = new HashMap<>();
+
+    //construtor de 'TextEditor'
+    public TextEditor(String... eventType) {
+
+        for (String event : eventType) {
+
+            this.eventWatcher.put(event, new HashMap<>());
+
+        }
+        
+    }
+
+    //método para inserção de linha no editor de texto
+    public void insertLine(String eventType, Integer lineNumber, Text text) {
+
+        if (!"EOF".equals(text.getText())){
+
+            Map<Integer, Text> observers = eventWatcher.get(eventType);
+            observers.put(lineNumber, text);
+
+        }
+
+    }
+
+    //método para remoção de linha do editor de texto
+    public void removeLine(String eventType, Integer lineNumber) {
+
+        Map<Integer, Text> observers = eventWatcher.get(eventType);
+        observers.remove(lineNumber);
+
+    }
+
+    //método para notificação dos observadores
+    public void notifyObservers(String eventType, File file) {
+
+        Map<Integer, Text> observers = eventWatcher.get(eventType);
+
+        for (Text text : observers.values()) {
+
+            text.update(eventType, file);
+
+        }
+
+    }
+    
+}
+****************************************************************************************************************************************
+
+//pacote base
+package observer;
+
+//import do módulo 'File'
+import java.io.File;
+
+//interface 'Observer'
+public interface Observer {
+
+    //assinatura do método 'update'
+    public abstract void update(String event, File file);
+    
+}
+****************************************************************************************************************************************
+
+//pacote base
+package concreteobserver;
+
+//import da interface 'Observer' e do módulo 'File'
+import observer.Observer;
+import java.io.File;
+
+//classe 'Text'
+public class Text implements Observer {
+
+    //atributo de 'Text'
+    private String text;
+
+    //método 'get' de 'Text'
+    public String getText() {
+
+        return text;
+
+    }
+
+    //construtor de 'Text'
+    public Text(String texto){
+
+        this.text = texto;
+
+    }  
+
+    //método 'update'
+    public void update(String event, File file){
+
+        System.out.println("TEXTO: '" + text + "' CONSTA EM: '/" + file + "' MEDIANTE DISPARO, PELO EDITOR, DO EVENTO >>>>>     '" + event + "'");
+
+    }
+    
+}
+****************************************************************************************************************************************
+
+As imagens 'imagem1' e 'imagem2' (vide links abaixo) ilustram a saída do código de aplicação (referente aos disparos dos eventos "open" 
+e "save" e as notificações de seus objetos assinantes):
+
+	imagem1 ---> (https://github.com/0liveiraVictor/Softex/blob/main/PDS/DOC---M%C3%B3dulo_03---Projeto_02/imagem1.png)
+
+	imagem2 ---> (https://github.com/0liveiraVictor/Softex/blob/main/PDS/DOC---M%C3%B3dulo_03---Projeto_02/imagem2.png)
+
+
+
+######################################################################################################################################
+######################################################################################################################################
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code Application.java (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/PDS/DOC---M%C3%B3dulo_03---Projeto_02/src/client/Application.java
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code Editor.java (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/PDS/DOC---M%C3%B3dulo_03---Projeto_02/src/editor/Editor.java
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code TextEditor.java (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/PDS/DOC---M%C3%B3dulo_03---Projeto_02/src/editormanager/TextEditor.java
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code Observer.java (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/PDS/DOC---M%C3%B3dulo_03---Projeto_02/src/observer/Observer.java
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code Text.java (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/PDS/DOC---M%C3%B3dulo_03---Projeto_02/src/concreteobserver/Text.java
+################## -------------------------------------------------------------------------------------------------------------------
+######################################################################################################################################
+######################################################################################################################################
+________________________________________________________________________________________________________________________________________
