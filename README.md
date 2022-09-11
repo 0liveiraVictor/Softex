@@ -126,7 +126,7 @@ Ao todo, o curso é dividido em 6 blocos de ensino (cada um organizado em módul
 		
 <br/>
 
-* **Bloco de Ensino 3 - [PDS](https://github.com/0liveiraVictor/Softex/tree/main/PDS)**..............................🚧 *Em desenvolvimento...* 🚧
+* **Bloco de Ensino 3 - [PDS](https://github.com/0liveiraVictor/Softex/tree/main/PDS)**
 
 	* <p align = "Justify">Módulo 1 - Qual seria a melhor forma de Fernando fazer os bolos para que atenda todos os seus clientes diariamente?</p>
 	
@@ -141,7 +141,7 @@ Ao todo, o curso é dividido em 6 blocos de ensino (cada um organizado em módul
 	* <p align = "Justify">Módulo 3 - Depois de aumentar as vendas da padaria, Fernando gostaria de atender as sugestões de melhoria dos clientes. Como ele deve lidar com as sugestões?</p>
 	
 		- [x] Projeto 01 - [Aplicação de Padrão de Projeto (Strategy)](https://github.com/0liveiraVictor/Softex/blob/main/PDS/M%C3%B3dulo_03---Projeto_01)
-		- [ ] Projeto 02 - []()
+		- [x] Projeto 02 - [Aplicação de Padrão de Projeto (Observer)](https://github.com/0liveiraVictor/Softex/blob/main/PDS/M%C3%B3dulo_03---Projeto_02)
 
 <br/>
 
