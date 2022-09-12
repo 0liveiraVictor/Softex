@@ -35,7 +35,10 @@ Ao todo, o curso é dividido em 6 blocos de ensino (cada um organizado em módul
 	
 **4. Noções de Banco de Dados - (Database)**
 
-	🚧 Em desenvolvimento... 🚧
+	1. Banco de Dados Relacionais
+	2. Relacionamentos em um Banco de Dados, Aplicação e Validade dos Dados 
+	3. Junções entre Tabelas, Procedures e Functions	
+	4. Segurança de Banco de Dados
 	
 **5. Introdução a Web Services - (Web_Service)**
 
@@ -146,6 +149,30 @@ Ao todo, o curso é dividido em 6 blocos de ensino (cada um organizado em módul
 <br/>
 
 * **Bloco de Ensino 4 - Database []()**..............................🚧 *Em desenvolvimento...* 🚧
+
+	* Módulo 1 - Banco de Dados Relacionais
+	
+		- [ ] Projeto 01 - []()
+		- [ ] Projeto 02 - []()
+		- [ ] Projeto 03 - []()	
+		
+	* Módulo 2 - Relacionamentos em um Banco de Dados, Aplicação e Validade dos Dados
+	
+		- [ ] Projeto 01 - []()
+		- [ ] Projeto 02 - []()
+		- [ ] Projeto 03 - []()
+				
+	* Módulo 3 - Junções entre Tabelas, Procedures e Functions
+	
+		- [ ] Projeto 01 - []()
+		- [ ] Projeto 02 - []()
+		- [ ] Projeto 03 - []()
+		- [ ] Projeto 04 - []()
+		
+	* Módulo 4 - Segurança de Banco de Dados
+	
+		- [ ] Projeto 01 - []()
+		- [ ] Projeto 02 - []()
 
 <br/>
 
