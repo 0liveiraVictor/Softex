@@ -40,11 +40,11 @@ Ao todo, o curso é dividido em 6 blocos de ensino (cada um organizado em módul
 	3. Junções entre Tabelas, Procedures e Functions	
 	4. Segurança de Banco de Dados
 	
-**5. Introdução a Web Services - (Web_Service)**
+**5. Node JS - (Node_JS)**
 
 	🚧 Em desenvolvimento... 🚧
 	
-**6. Node JS - (Node_JS)**
+**6. Introdução a Web Services - (Web_Service)**
 
 	🚧 Em desenvolvimento... 🚧
 
@@ -176,11 +176,11 @@ Ao todo, o curso é dividido em 6 blocos de ensino (cada um organizado em módul
 
 <br/>
 
-* **Bloco de Ensino 5 - Web_Service []()**..............................🚧 *Em desenvolvimento...* 🚧
+* **Bloco de Ensino 5 - Node_JS []()**..............................🚧 *Em desenvolvimento...* 🚧
 
 <br/>
 
-* **Bloco de Ensino 6 - Node_JS []()**..............................🚧 *Em desenvolvimento...* 🚧
+* **Bloco de Ensino 6 - Web_Service []()**..............................🚧 *Em desenvolvimento...* 🚧
 
 <br/>
 <br/>
