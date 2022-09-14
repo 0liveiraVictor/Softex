@@ -1,0 +1,73 @@
+________________________________________________________BANCO DE DADOS E DEFINIÇÕES_____________________________________________________
+
+O Sistema de Gerenciamento de Bancos de Dados é um conjunto de programas que serve para gerenciar um ou mais banco de dados. 
+Defina: dados, banco de dados, modelo de dados, metadados e catálogo de dados.
+________________________________________________________________________________________________________________________________________
+
+SOLUÇÃO:
+
+___Dados___
+
+O dado, em si, é o registro do atributo de um ente, objeto ou fenômeno, em que uma gravação (ou impressão) de caracteres ou símbolos, 
+que tenha um significado em algum documento ou suporte físico, é realizada. Já os dados, compõem um conjunto de vários desses registros.
+
+Outra definição pode ser dada por Heuser (2009), como apresentado pelo Hiperlink 1, em que define 'dado' como sendo um fato registrado 
+do mundo real, o qual possui um significado implícito no contexto de domínio de aplicação.
+----------------------------------------------------------------------------------------------------------------------------------------
+
+___Banco de Dados___
+
+É uma coleção organizada e estrutura de dados que é armazenada em algum meio eletrônico (físico). Os dados dessa coleção estão interligados 
+(relacionados) entre si de alguma forma. Na prática, o banco de dados é um arquivo (com um pequeno conjunto de arquivos) armazenado em 
+uma máquina (local ou remota {servidor}), o qual permite efetuar consultas ('queries') de manipulação e retorno de dados armazenados.
+----------------------------------------------------------------------------------------------------------------------------------------
+
+___Modelo de Dados___
+
+O modelo de dados é um mecanismo que nos permite demonstrar como será arquitetado as estruturas de dados que darão suporte aos processos
+de negócio, como esses dados se organizarão e quais seus relacionamentos pretendidos. Os modelos podem ser dividos em: Conceitual, Lógico 
+e Físico. O modelo conceitual é o de mais alto nível, com envolvimento direto do cliente (foco em discutir os aspectos do negócio). Sua 
+representação é dada pelo diagrama de entidade e relacionamento, em que são identificados todas as entidades e seus relacionamentos. Já 
+o modelo lógico, considera a modelagem realizada no nível conceitual e implementa mais alguns recusos, como: nomenclatura e adequação,
+normalização, integridade referencial, definição das chaves primárias e estrangeiras, ligação entre as tabelas do banco de dados e etc. 
+Por fim, o modelo físico adiciona a avaliação das características e recursos necessários para manipulação e o armazenamento das 
+estruturas dos dados (armazenamento, endereçamento, acesso e alocação física).
+
+Outra definição pode ser dada por Silberschatz (2006), como apresentado pelo Hiperlink 1, o qual afirma que um modelo de dados é uma 
+coleção de ferramentas conceituais para descrever dados, relações de dados, semântica de dados e restrições de consistência. Ou seja, um 
+modelo de dados descreve a estrutura lógica e física de um banco de dados. 
+----------------------------------------------------------------------------------------------------------------------------------------
+
+___Metadados___
+
+São dados que armazenam informações sobre outros dados, permitindo definir sua representação. Esses dados são estruturados e possibilitam
+a descrição, identificação, explicação, localização e, portanto, facilitação na recuperação, uso e gestão de recursos de informação. Um 
+item de um metadado pode informar do que se trata um determinado dado em uma linguagem inteligível para um computador. Em resumo, 
+facilitam o entendimento dos relacionamentos e evidenciam a utilidade das informações dos dados.
+----------------------------------------------------------------------------------------------------------------------------------------
+
+___Catálogo de Dados___
+
+É uma estrutura do SGBD que armazena a definição ou descrição completa dos metadados. O catálogo ou dicionário de dados contém informações 
+como a estrutura de cada arquivo, tipo e formato de armazenamento de cada item de dados, além de restrições.
+----------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+######################################################################################################################################
+######################################################################################################################################
+################## -------------------------------------------------------------------------------------------------------------------
+################## References (Link):
+################## 1: https://pt.wikipedia.org/wiki/Dados
+################## 2: https://softexrecife.joyclass.com
+################## 3: https://dicasdeprogramacao.com.br/o-que-e-um-banco-de-dados/
+################## 4: https://www.youtube.com/watch?v=2E7crqRI1iE&list=PLucm8g_ezqNqUI4Rn5pJbJDYTrd4hW4Z0&index=3
+################## 5: https://pt.wikipedia.org/wiki/Modelagem_de_dados
+################## 6: https://www.luis.blog.br/modelagem-de-dados-modelo-conceitual-modelo-logico-e-fisico.html
+################## 7: https://new.safernet.org.br/content/o-que-s%C3%A3o-os-metadados#
+################## 8: https://www.youtube.com/watch?v=Q_KTYFgvu1s&list=PLucm8g_ezqNqUI4Rn5pJbJDYTrd4hW4Z0&index=5
+################## 9: https://www.youtube.com/watch?v=EmeeCfa9iRk
+################## -------------------------------------------------------------------------------------------------------------------
+######################################################################################################################################
+######################################################################################################################################
+________________________________________________________________________________________________________________________________________
