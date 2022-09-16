@@ -1,0 +1,61 @@
+_____________________________________________PROCESSO DE DESENVOLVIMENTO DE UM BANCO DE DADOS___________________________________________
+
+O desenvolvimento de um projeto de banco de dados passa por fases que são de grande importância para sua implementação. Descreva as 
+etapas desse processo.
+________________________________________________________________________________________________________________________________________
+
+SOLUÇÃO:
+
+O processo de desenvolvimento de um banco de dados é divido em quatro fases, são elas: análise de requisitos, projeto conceitual, projeto
+lógico e projeto físico.
+
+___Etapa 1 - Análise de Requisitos___
+
+Essa é a etapa mais importante de toda a construção do sistema do banco de dados. É nela em que será definida a regra de negócio 
+(estabelecida pelo cliente). Para isso, a comunicação entre o cliente e o desenvolvedor precisa ser clara e objetiva, identificando 
+quais dados serão e os que não serão utilizados, afim de esboçar o processo de construção do banco de dados (de modo global) e desenhar 
+o seu 'minimundo' (regras de negócio atendidas pelo modelo). Todo o sucesso do processo de desenvolvimento do banco (etapas subsequentes) 
+depende diretamente de uma boa elaboração de projeto efetuada na etapa da análise de requesitos; por esse motivo, se deve o seu alto 
+grau de importância.
+----------------------------------------------------------------------------------------------------------------------------------------
+
+___Etapa 2 - Projeto Conceitual___
+
+A etapa conceitual é responsável por especificar os requisitos que foram discutidos, entre o cliente e o desenvolvedor, na etapa 
+anterior. É nesse momento que ocorre a materialidade das regras de negócio solicitadas pelo cliente. A partir do levantamento das 
+informações realizado na análise de requisitos, é gerado um esquema conceitual do banco de dados, em que apresenta uma descrição de alto 
+nível de sua estrutura. Em geral, utiliza-se um recurso denominado Modelo Entidade Relacionamento (MER), o qual representa um diagrama 
+em que são definidos os agentes (entidades) que farão parte da rotina e as relações entre eles (relacionamentos). 
+----------------------------------------------------------------------------------------------------------------------------------------
+
+___Etapa 3 - Projeto Lógico___
+
+A etapa lógica é responsável por mapear os conceitos que foram estabelecidos na etapa conceitual. Nela é criado os modelos internos do 
+banco de dados. Além de conter as informações qualitativas obtidas do projeto conceitual, no projeto lógico é implementado mais detalhes,
+como: tabelas, regras, relacionamentos, metadados dos atributos (tipo, tamanho, obrigatoriedade, ...), visões e etc. É nessa fase que são
+definidos os tipos de dados e os tamanhos de campos que irão armazenar as informações.
+----------------------------------------------------------------------------------------------------------------------------------------
+
+___Etapa 4 - Projeto Físico___
+
+A etapa física é a última parte do projeto de desenvolvimento de um banco de dados. As ações realizadas nessa etapa estão intrínsecamente
+vinculadas à solução do SGBD utilizado para o projeto. Nessa etapa, é definido os detalhes técnicos (físicos) da implementação do banco, 
+como: armazenamento de dados e os scripts de criação dos objetos do banco (tabelas, visões, colunas, funções e etc.). Além disso, as
+regras de segurança também são aplicadas nessa etapa, em que são estabelecidas as permissões de usuário para acesso às informações, bem 
+como, rotinas de backup e restaurações.
+----------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+######################################################################################################################################
+######################################################################################################################################
+################## -------------------------------------------------------------------------------------------------------------------
+################## References (Link):
+################## 1: https://softexrecife.joyclass.com
+################## 2: https://www.impacta.com.br/blog/veja-como-elaborar-um-projeto-de-banco-de-dados/
+################## 3: https://dicasdeprogramacao.com.br/como-criar-um-projeto-de-banco-de-dados/
+################## 4: https://github.com/0liveiraVictor/Softex/blob/main/Database/M%C3%B3dulo_01---Projeto_01
+################## -------------------------------------------------------------------------------------------------------------------
+######################################################################################################################################
+######################################################################################################################################
+________________________________________________________________________________________________________________________________________
