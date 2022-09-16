@@ -28,7 +28,7 @@ O modelo de dados é um mecanismo que nos permite demonstrar como será arquitet
 de negócio, como esses dados se organizarão e quais seus relacionamentos pretendidos. Os modelos podem ser dividos em: Conceitual, Lógico 
 e Físico. O modelo conceitual é o de mais alto nível, com envolvimento direto do cliente (foco em discutir os aspectos do negócio). Sua 
 representação é dada pelo diagrama de entidade e relacionamento, em que são identificados todas as entidades e seus relacionamentos. Já 
-o modelo lógico, considera a modelagem realizada no nível conceitual e implementa mais alguns recusos, como: nomenclatura e adequação,
+o modelo lógico, considera a modelagem realizada no nível conceitual e implementa mais alguns recursos, como: nomenclatura e adequação,
 normalização, integridade referencial, definição das chaves primárias e estrangeiras, ligação entre as tabelas do banco de dados e etc. 
 Por fim, o modelo físico adiciona a avaliação das características e recursos necessários para manipulação e o armazenamento das 
 estruturas dos dados (armazenamento, endereçamento, acesso e alocação física).
