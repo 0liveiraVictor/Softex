@@ -148,12 +148,12 @@ Ao todo, o curso é dividido em 6 blocos de ensino (cada um organizado em módul
 
 <br/>
 
-* **Bloco de Ensino 4 - Database []()**..............................🚧 *Em desenvolvimento...* 🚧
+* **Bloco de Ensino 4 - [Database](https://github.com/0liveiraVictor/Softex/tree/main/Database)**..............................🚧 *Em desenvolvimento...* 🚧
 
 	* Módulo 1 - Banco de Dados Relacionais
 	
 		- [x] Projeto 01 - [Banco de Dados e Definições](https://github.com/0liveiraVictor/Softex/blob/main/Database/M%C3%B3dulo_01---Projeto_01)
-		- [ ] Projeto 02 - []()
+		- [x] Projeto 02 - [Processo de Desenvolvimento de um Banco de Dados](https://github.com/0liveiraVictor/Softex/blob/main/Database/M%C3%B3dulo_01---Projeto_02)
 		- [ ] Projeto 03 - []()	
 		
 	* Módulo 2 - Relacionamentos em um Banco de Dados, Aplicação e Validade dos Dados
