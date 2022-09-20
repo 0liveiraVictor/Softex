@@ -61,7 +61,7 @@ Apresentação:
 ___Forma Normal Boyce-Codd (FNBC)___  
 
 A forma normal de Boyce-Codd tem por base a representação de um esquema de relação em terceira forma normal, em especial, lidando com 
-tabelas com mais de uma chave condidata. Casos em que a 3FN não tratou adequadamente as relações com duas ou mais chaves candidatas,
+tabelas com mais de uma chave candidata. Casos em que a 3FN não tratou adequadamente as relações com duas ou mais chaves candidatas,
 chaves candidatas compostas ou superposição (atributos em comum), é delegada a eliminação dessas anomalias à normalização pela FNBC. 
 
 Apresentação:
