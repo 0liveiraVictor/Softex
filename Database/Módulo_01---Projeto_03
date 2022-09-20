@@ -1,0 +1,89 @@
+__________________________________________________________NORMALIZAÇÃO DE DADOS_________________________________________________________
+
+A normalização de dados é um processo realizado dentro das tabelas para evitar anomalias. Com base no conteúdo e nos links sugeridos do 
+hipertexto 3 do banco de dados I, descreva o processo de normalização citando as formas normais apresentadas.
+________________________________________________________________________________________________________________________________________
+
+SOLUÇÃO:
+
+Projetar um esquema de banco de dados envolve lidar com relações (tabelas) que eventualmente possam apresentar algum tipo de anomalia. 
+Muitas dessas anomalias estão atreladas as atualizações que são efetuadas no banco de dados, tais como: inserção, exclusão e modificação
+dos dados. Dependências parciais e/ou transitivas encontradas nas tabelas, decorrentes de um mal planejamento do banco, geram problemas
+de médio/longo prazo na manutenção desses sistemas. O excesso dos dados armazenados em um mesma tabela, por exemplo, precisa ser 
+desmembrado em partes específicas a fim de organizar a estrutura do banco e prover melhorias no gerenciamento das informações, além de
+minimizar as redundâncias nos dados armazenados. Para isso, o mecanismo adotado para evitar essas anomalias e remover as redundâncias é 
+a normalização do banco de dados. Esse processo foi criado por Codd, em 1972, e posteriormente revisado por Boyce.
+
+Existem alguns tipos de formas normais que são amplamente utilizados na normalização de um banco de dados, os quais podem ser citados:
+1ª Forma Normal, 2ª Forma Normal, 3ª Forma Normal e a Forma Normal Boyce-Codd. Suas definições são descritas abaixo:
+
+___1ª Forma Normal (1FN)___
+
+A primeira forma normal reprova os atributos multivalorados, compostos e suas composições. O domínio de um atributo deve incluir apenas 
+valores atômicos (indivisíveis) e o valor de qualquer atributo em um registro deve ser o único valor do domínio desse atributo.
+
+Apresentação:
+
+* Possuir valores atômicos no domínio de seus atributos
+* Não possuir grupos de atributos repetidos (existência apenas de um dado por coluna nas linhas)
+* Possuir chave primária
+* Não possuir valores multivalorados ou relações aninhadas
+----------------------------------------------------------------------------------------------------------------------------------------
+
+___2ª Forma Normal (2FN)___
+
+A segunda forma normal tem por base a representação de um esquema de relação em primeira forma normal, em especial, com conceito de 
+dependência funcional total. Nesse caso, todos os atributos não-chave do esquema de tabela devem ter dependência direta com a chave 
+primária (PK). No caso em que a PK seja composta, todos os atributos não-chave devem ter dependência com todos os atributos que compõem
+a PK. Em caso de dependências parciais, deve-se gerar novas tabelas com os dados.
+
+Apresentação:
+
+* Estar na primeira forma normal (condição base)
+* Não possuir dependências parciais (em caso de PK composta)
+* Todos os atributos não-chave são funcionalmente dependentes de todas as partes de uma chave primária (em caso de PK composta)
+----------------------------------------------------------------------------------------------------------------------------------------
+
+___3ª Forma Normal (3FN)___
+
+A terceira forma normal tem por base a representação de um esquema de relação em segunda forma normal, em especial, com conceito da não 
+dependência transitiva. Nesse caso, a relação em formato 2FN deverá eliminar todos os atributos não-chave determinados funcionalmente 
+por outro atributo não-chave (ou conjunto). Ou seja, a terceira forma normal não deverá conter dependência transitiva de um atributo 
+não-chave sobre a PK. Em caso de dependência, deve-se decompor e montar uma nova relação (tabela) que inclua os atributos não-chave que 
+determinam funcionalmente outros atributos não-chave. 
+
+Apresentação:
+
+* Estar na segunda forma normal (condição base)
+* Não possuir dependências transitivas
+----------------------------------------------------------------------------------------------------------------------------------------
+
+___Forma Normal Boyce-Codd (FNBC)___  
+
+A forma normal de Boyce-Codd tem por base a representação de um esquema de relação em terceira forma normal, em especial, lidando com 
+tabelas com mais de uma chave condidata. Casos em que a 3FN não tratou adequadamente as relações com duas ou mais chaves candidatas,
+chaves candidatas compostas ou superposição (atributos em comum), é delegada a eliminação dessas anomalias à normalização pela FNBC. 
+
+Apresentação:
+
+* Estar na terceira forma normal (condição base)
+* Chaves candidatas não possuem dependências parciais por outros atributos
+* Únicos determinantes são as chaves candidatas
+----------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+######################################################################################################################################
+######################################################################################################################################
+################## -------------------------------------------------------------------------------------------------------------------
+################## References (Link):
+################## 1: https://softexrecife.joyclass.com
+################## 2: https://www.youtube.com/watch?v=NpG1Xt8LB_c&list=PLucm8g_ezqNoNHU8tjVeHmRGBFnjDIlxD&index=15
+################## 3: https://www.youtube.com/watch?v=eRaAMNjCFYw&list=PLucm8g_ezqNoNHU8tjVeHmRGBFnjDIlxD&index=16
+################## 4: https://www.youtube.com/watch?v=6ER9lWOk-cY&list=PLucm8g_ezqNoNHU8tjVeHmRGBFnjDIlxD&index=17
+################## 5: https://www.youtube.com/watch?v=usA8QKvEHWw&list=PLucm8g_ezqNoNHU8tjVeHmRGBFnjDIlxD&index=18
+################## 6: https://www.youtube.com/watch?v=o6mSiTO-vak&list=PLucm8g_ezqNoNHU8tjVeHmRGBFnjDIlxD&index=19
+################## -------------------------------------------------------------------------------------------------------------------
+######################################################################################################################################
+######################################################################################################################################
+________________________________________________________________________________________________________________________________________
