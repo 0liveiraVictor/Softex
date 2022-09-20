@@ -33,7 +33,7 @@ Ao todo, o curso é dividido em 6 blocos de ensino (cada um organizado em módul
 	2. Fernando conseguiu atender satisfatoriamente os seus clientes. Como ele deve organizar seus trabalhos na loja para aumentar a venda dos outros produtos?
 	3. Depois de aumentar as vendas da padaria, Fernando gostaria de atender as sugestões de melhoria dos clientes. Como ele deve lidar com as sugestões?
 	
-**4. Noções de Banco de Dados - (Database)**
+**4. Noções de Banco de Dados - [(Database)](https://github.com/0liveiraVictor/Softex/tree/main/Database)**
 
 	1. Banco de Dados Relacionais
 	2. Relacionamentos em um Banco de Dados, Aplicação e Validade dos Dados 
