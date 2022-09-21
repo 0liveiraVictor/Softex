@@ -1,0 +1,37 @@
+_____________________________________________________________SGBD E SEUS TIPOS__________________________________________________________
+
+De acordo com o conteúdo estudado, cite exemplos de Sistemas de Bancos de Dados relacionais e não relacionais (NoSQL).
+________________________________________________________________________________________________________________________________________
+
+SOLUÇÃO:
+
+Nas descrições abaixo encontram-se alguns dos sistemas de gerenciamento de banco de dados relacionais e não-relacionais.
+
+___SGBDs Relacionais___
+
+* Oracle - Oracle Corporation (Comercial) - Linguagem PL/SQL
+* SQL Server - Microsoft Corporation (Comercial) - Linguagem T-SQL
+* MySQL - Oracle Corporation (Open Source) - Linguagem SQL
+* PostgreSQL - PostgreSQL Global Development Group (Open Source) - Linguagem PL/pgSQL
+* MariaDB - MariaDB Foundation (Open Source) - Linguagem PL/SQL
+----------------------------------------------------------------------------------------------------------------------------------------
+
+___SGBDs Não-Relacionais___
+
+* MongoDB - MongoDB (Open Source) - Orientação a documentos
+* Amazon DynamoDB - Amazon Corporation (Comercial) - Orientação a documentos e chave-valor
+* Redis - Redis Project Core Team (Open Source) - Orientação a chave-valor
+* Microsoft Azure Cosmos DB - Microsoft Corporation (Comercial) - Orientação a documentos, chave-valor, SGBD gráfico e etc
+----------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+######################################################################################################################################
+######################################################################################################################################
+################## -------------------------------------------------------------------------------------------------------------------
+################## References (Link):
+################## 1: https://db-engines.com/en/
+################## -------------------------------------------------------------------------------------------------------------------
+######################################################################################################################################
+######################################################################################################################################
+________________________________________________________________________________________________________________________________________
