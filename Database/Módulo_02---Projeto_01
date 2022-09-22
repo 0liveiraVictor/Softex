@@ -1,0 +1,60 @@
+________________________________CONSULTA PELAS OPERAÇÕES: SELECT, PROJECT, UNIÃO, INTERSECÇÃO E DIFERENÇA_______________________________
+
+De acordo com os conceitos estudados, exiba os resultados das consultas das operações select, project, união, intersecção e diferença. 
+Siga as instruções com base na tabela apresentada em anexo.
+
+- Mostre as informações apenas dos alunos aprovados. A aprovação é acima de 7,0;
+- Exiba as informações dos alunos do primeiro ano com nota maior ou igual a 8,0;
+- Exiba apenas os nomes e as notas dos alunos;
+- Crie uma tabela PROFESSOR que apresente apenas o primeiro e o último nome do professor;
+- Crie uma tabela ALUNO com o primeiro e o último nome de cada;
+- Mostre o resultado da união entre a tabela ALUNO(PNome, UNome) e a tabela PROFESSOR;
+- Exiba o resultado da intersecção entre a tabela ALUNO(PNome, UNome) e a tabela PROFESSOR;
+- Exiba o resultado da diferença entre a tabela ALUNO(PNome, UNome) e a tabela PROFESSOR. 
+________________________________________________________________________________________________________________________________________
+
+SOLUÇÃO:
+
+* Mostre as informações apenas dos alunos aprovados. A aprovação é acima de 7,0; vide imagem 'imagem1' no link abaixo:
+
+	imagem1 ---> (https://github.com/0liveiraVictor/Softex/blob/main/Database/DOC---M%C3%B3dulo_02---Projeto_01/imagem1.png)
+
+* Exiba as informações dos alunos do primeiro ano com nota maior ou igual a 8,0; vide imagem 'imagem2' no link abaixo:
+
+	imagem2 ---> (https://github.com/0liveiraVictor/Softex/blob/main/Database/DOC---M%C3%B3dulo_02---Projeto_01/imagem2.png)
+
+* Exiba apenas os nomes e as notas dos alunos; vide imagem 'imagem3' no link abaixo:
+
+	imagem3 ---> (https://github.com/0liveiraVictor/Softex/blob/main/Database/DOC---M%C3%B3dulo_02---Projeto_01/imagem3.png)
+
+* Crie uma tabela PROFESSOR que apresente apenas o primeiro e o último nome do professor; vide imagem 'imagem4' no link abaixo:
+
+	imagem4 ---> (https://github.com/0liveiraVictor/Softex/blob/main/Database/DOC---M%C3%B3dulo_02---Projeto_01/imagem4.png)
+
+* Crie uma tabela ALUNO com o primeiro e o último nome de cada; vide imagem 'imagem5' no link abaixo:
+
+	imagem5 ---> (https://github.com/0liveiraVictor/Softex/blob/main/Database/DOC---M%C3%B3dulo_02---Projeto_01/imagem5.png)
+
+* Mostre o resultado da união entre a tabela ALUNO(PNome, UNome) e a tabela PROFESSOR; vide imagem 'imagem6' no link abaixo:
+
+	imagem6 ---> (https://github.com/0liveiraVictor/Softex/blob/main/Database/DOC---M%C3%B3dulo_02---Projeto_01/imagem6.png)
+
+* Exiba o resultado da intersecção entre a tabela ALUNO(PNome, UNome) e a tabela PROFESSOR; vide imagem 'imagem7' no link abaixo:
+
+	imagem7 ---> (https://github.com/0liveiraVictor/Softex/blob/main/Database/DOC---M%C3%B3dulo_02---Projeto_01/imagem7.png)
+
+* Exiba o resultado da diferença entre a tabela ALUNO(PNome, UNome) e a tabela PROFESSOR; vide imagem 'imagem8' no link abaixo: 
+
+	imagem8 ---> (https://github.com/0liveiraVictor/Softex/blob/main/Database/DOC---M%C3%B3dulo_02---Projeto_01/imagem8.png)
+
+
+
+######################################################################################################################################
+######################################################################################################################################
+################## -------------------------------------------------------------------------------------------------------------------
+################## Dataset dataset.ods (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/Database/DOC---M%C3%B3dulo_02---Projeto_01/dataset.ods
+################## -------------------------------------------------------------------------------------------------------------------
+######################################################################################################################################
+######################################################################################################################################
+________________________________________________________________________________________________________________________________________
