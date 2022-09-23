@@ -1,0 +1,69 @@
+_______________________________________________________BANCO DE DADOS 'BIBLIOTECA'______________________________________________________
+
+De acordo com as tabelas, programe um código SQL para gerar a estrutura do banco de dados dessa biblioteca. 
+Siga as instruções: 
+
+1. inclua a coluna DATA_NASCIMENTO na tabela ALUNO do tipo string e de tamanho 10 caracteres; 
+2. altere a coluna TELEFONE para CONTATO e seu tipo de dado para string; 
+3. inclua o campo ISBN na tabela LIVRO, com tamanho de 13 caracteres do tipo inteiro; 
+4. e remova o campo ISBN da tabela LIVRO.
+________________________________________________________________________________________________________________________________________
+
+SOLUÇÃO:
+
+Para a resolução do problema foi implementado o banco de dados 'biblioteca' no SGBD MySQL. Por motivação adicional (treino da linguagem 
+SQL) foram adicionadas todas as tabelas referente a esse banco (exposto previamente pelos hiperlinks do projeto), sendo elas: 'aluno', 
+'emprestimo', 'livro', 'livro_emprestimo' e 'sessao'. O código SQL desenvolvido para criação desse banco ('database_biblioteca.sql') 
+segue nos itens de referências (links) de código ao final do texto.
+
+As imagens 'imagem1' e 'imagem2' são referentes as relações construídas 'aluno' e 'livro', respectivamente (vide links abaixo):
+
+	imagem1 ---> (https://github.com/0liveiraVictor/Softex/blob/main/Database/DOC---M%C3%B3dulo_02---Projeto_03/imagem1.png)
+
+	imagem2 ---> (https://github.com/0liveiraVictor/Softex/blob/main/Database/DOC---M%C3%B3dulo_02---Projeto_03/imagem2.png)
+
+Em relação as alterações solicitadas propriamente pelo problema, nas tabelas 'aluno' e 'livro', foi implementado o código SQL contido no 
+arquivo 'database_biblioteca_modification.sql', o qual segue descrito abaixo:
+
+#fazendo uso do banco de dados 'biblioteca'
+use biblioteca
+
+#incluindo a coluna 'DATA_NASCIMENTO' na tabela 'aluno'
+alter table aluno add DATA_NASCIMENTO varchar(10) not null default '00/00/0000';
+
+#alterando a coluna 'TELEFONE' para 'CONTATO' (tabela 'aluno')
+alter table aluno change column TELEFONE CONTATO varchar(15) not null;
+
+#incluindo o campo 'ISBN' na tabela 'livro'
+alter table livro add ISBN int(13);
+
+#remova o campo 'ISBN' da tabela 'livro'
+alter table livro drop column ISBN;
+----------------------------------------------------------------------------------------------------------------------------------------
+
+A imagem 'imagem3' exibe a inclusão da coluna 'DATA_NASCIMENTO' e modificação da coluna 'TELEFONE' para 'CONTATO', ambas alteradas na 
+tabela 'aluno' (vide link abaixo):
+
+	imagem3 ---> (https://github.com/0liveiraVictor/Softex/blob/main/Database/DOC---M%C3%B3dulo_02---Projeto_03/imagem3.png)
+
+As imagens 'imagem4' e 'imagem5' mostram a inclusão e remoção do campo 'ISBN', nessa ordem, efetuada na tabela 'livro' (vide links 
+abaixo):
+
+	imagem4 ---> (https://github.com/0liveiraVictor/Softex/blob/main/Database/DOC---M%C3%B3dulo_02---Projeto_03/imagem4.png)
+
+	imagem5 ---> (https://github.com/0liveiraVictor/Softex/blob/main/Database/DOC---M%C3%B3dulo_02---Projeto_03/imagem5.png)
+
+
+
+######################################################################################################################################
+######################################################################################################################################
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code database_biblioteca.sql (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/Database/DOC---M%C3%B3dulo_02---Projeto_03/database_biblioteca.sql
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code database_biblioteca_modification.sql (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/Database/DOC---M%C3%B3dulo_02---Projeto_03/database_biblioteca_modification.sql
+################## -------------------------------------------------------------------------------------------------------------------
+######################################################################################################################################
+######################################################################################################################################
+________________________________________________________________________________________________________________________________________
