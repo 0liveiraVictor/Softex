@@ -158,9 +158,9 @@ Ao todo, o curso é dividido em 6 blocos de ensino (cada um organizado em módul
 		
 	* Módulo 2 - Relacionamentos em um Banco de Dados, Aplicação e Validade dos Dados
 	
-		- [ ] Projeto 01 - []()
-		- [ ] Projeto 02 - []()
-		- [ ] Projeto 03 - []()
+		- [x] Projeto 01 - [Consulta pelas Operações: Select, Project, União, Intersecção e Diferença](https://github.com/0liveiraVictor/Softex/blob/main/Database/M%C3%B3dulo_02---Projeto_01)
+		- [x] Projeto 02 - [SGBD e seus Tipos](https://github.com/0liveiraVictor/Softex/blob/main/Database/M%C3%B3dulo_02---Projeto_02)
+		- [x] Projeto 03 - [Banco de Dados 'Biblioteca'](https://github.com/0liveiraVictor/Softex/blob/main/Database/M%C3%B3dulo_02---Projeto_03)
 				
 	* Módulo 3 - Junções entre Tabelas, Procedures e Functions
 	
