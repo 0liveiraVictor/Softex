@@ -74,7 +74,7 @@ insert into aluno(MATRICULA, NOME, TURMA) values (3008, 'Fernanda Mathias', '1M'
 insert into aluno(MATRICULA, NOME, TURMA) values (3009, 'Kerline Pietra', '3M');
 ----------------------------------------------------------------------------------------------------------------------------------------
 
-As imagens 'imagem1' e 'imagem2' (vide links abaixo) ilustram as tabelas 'turma' e 'alunos', nessa ordem, com seus respectivos dados:
+As imagens 'imagem1' e 'imagem2' (vide links abaixo) ilustram as tabelas 'turma' e 'aluno', nessa ordem, com seus respectivos dados:
 
 	imagem1 ---> (https://github.com/0liveiraVictor/Softex/blob/main/Database/DOC---M%C3%B3dulo_03---Projeto_01/imagem1.png)
 
@@ -112,8 +112,8 @@ from turma as T right outer join aluno as A
 on T.COD_TURMA = A.TURMA
 ----------------------------------------------------------------------------------------------------------------------------------------
 
-As imagens 'imagem3', 'imagem4', 'imagem5' e 'imagem6' (vide links abaixo) exibem, seguindo a ordem de solicitação da consulta, os 
-resultados das execuções do código SQL:
+As imagens 'imagem3', 'imagem4', 'imagem5' e 'imagem6' (vide links abaixo) exibem, seguindo a ordem de solicitação da consulta operada, 
+os resultados das execuções de cada JOIN do código SQL:
 
 	imagem3 ---> (https://github.com/0liveiraVictor/Softex/blob/main/Database/DOC---M%C3%B3dulo_03---Projeto_01/imagem3.png)
 
