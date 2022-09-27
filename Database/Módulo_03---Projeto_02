@@ -1,0 +1,72 @@
+_____________________________________________________TRIGGER E EXECUÇÕES AUTOMÁTICAS____________________________________________________
+
+Você deve criar uma tabela para executar uma trigger que relacione algum comando, como: insert, select, delete ou update.
+________________________________________________________________________________________________________________________________________
+
+SOLUÇÃO:
+
+Foi desenvolvido um ilustrativo banco de dados denominado 'infocursos'. Para esse banco foi criado a tabela 'programacao_cursos' e sua 
+trigger, em especial, para o disparo (atualização automática de um dado atributo) em caso de inserção de dados na tabela. O código SQL 
+implementado ('database_inforcursos_add_trigger.sql') está ilustrado abaixo:
+
+#criando o banco de dados 'infocursos'
+create database infocursos;
+
+#fazendo uso do banco de dados 'infocursos'
+use infocursos;
+
+#criando a tabela 'programacao_cursos'
+create table programacao_cursos(
+ID int not null auto_increment,
+NOME varchar(50) not null,
+PRECO decimal(10,2),
+PRECO_DESCONTO decimal(10,2),
+
+primary key(ID)
+);
+
+#trigger para o disparo de atualização automática nos preços descontados dos cursos de programação
+create trigger tr_preco_desconto_programacao_cursos
+before insert on programacao_cursos
+for each row
+set new.PRECO_DESCONTO = (new.PRECO * 0.8);
+---------------------------------------------------------------------------------------------------------------------------------------- 
+
+A imagem 'imagem1' (vide link abaixo) mostra a tabela criada (ainda vazia) e a trigger adicionada (vide o catálogo de dados na aba 
+Triggers da tabela 'programacao_cursos'):
+
+	imagem1 ---> (https://github.com/0liveiraVictor/Softex/blob/main/Database/DOC---M%C3%B3dulo_03---Projeto_02/imagem1.png)
+
+Logo em seguida foram adicionados alguns dados referentes a nomes de cursos de programação e seus respectivos valores (preço); o código
+SQL ('database_inforcursos_data_insert.sql') segue abaixo:
+
+#fazendo uso do banco de dados 'infocursos'
+use infocursos;
+
+#inserindo valores na tabela 'programacao_cursos'
+insert into programacao_cursos(NOME, PRECO) 
+values ('Programación en Lenguaje C: De 0 a Experto', 79.90), 
+('Formação Node.js', 34.90), 
+('Android/iOS com Flutter', 44.90), 
+('Entendendo TypeScript', 39.90);
+---------------------------------------------------------------------------------------------------------------------------------------- 
+
+A imagem 'imagem2' (vide link abaixo) exibe a tabela com todos os dados de cada curso, incluindo os dados de preço com desconto
+(calculado automaticamente pelo disparo da trigger):
+
+	imagem2 ---> (https://github.com/0liveiraVictor/Softex/blob/main/Database/DOC---M%C3%B3dulo_03---Projeto_02/imagem2.png)
+
+
+
+######################################################################################################################################
+######################################################################################################################################
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code database_inforcursos_add_trigger.sql (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/Database/DOC---M%C3%B3dulo_03---Projeto_02/database_inforcursos_add_trigger.sql
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code database_inforcursos_data_insert.sql (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/Database/DOC---M%C3%B3dulo_03---Projeto_02/database_inforcursos_data_insert.sql
+################## -------------------------------------------------------------------------------------------------------------------
+######################################################################################################################################
+######################################################################################################################################
+________________________________________________________________________________________________________________________________________
