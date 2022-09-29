@@ -33,7 +33,7 @@ in data_compra date,
 out qtd_total int
 )
 begin
-	select sum(C.QUANTIDADE) into qtd_total
+    select sum(C.QUANTIDADE) into qtd_total
     from compra as C
     where C.DATA_OPER = data_compra;
 end;
