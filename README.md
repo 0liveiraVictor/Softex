@@ -166,7 +166,7 @@ Ao todo, o curso é dividido em 6 blocos de ensino (cada um organizado em módul
 	
 		- [x] Projeto 01 - [Banco de Dados e Comandos Joins](https://github.com/0liveiraVictor/Softex/blob/main/Database/M%C3%B3dulo_03---Projeto_01)
 		- [x] Projeto 02 - [Trigger e Execuções Automáticas](https://github.com/0liveiraVictor/Softex/blob/main/Database/M%C3%B3dulo_03---Projeto_02)
-		- [ ] Projeto 03 - []()
+		- [x] Projeto 03 - [Rotina 'Procedure' de um Banco de Dados](https://github.com/0liveiraVictor/Softex/blob/main/Database/M%C3%B3dulo_03---Projeto_03)
 		- [ ] Projeto 04 - []()
 		
 	* Módulo 4 - Segurança de Banco de Dados
