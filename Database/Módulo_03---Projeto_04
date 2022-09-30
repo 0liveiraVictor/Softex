@@ -1,0 +1,63 @@
+__________________________________________________ROTINA 'FUNCTION' DE UM BANCO DE DADOS________________________________________________
+
+Crie uma função que some todos os clientes cadastrados em uma loja durante um dia.
+________________________________________________________________________________________________________________________________________
+
+SOLUÇÃO:
+
+Para a criação de uma função de soma dos clientes cadastrados em um loja (durante um dia), seria necessário a criação de um código SQL 
+em tempo de execução (parâmetros da função com atualização de data). De modo geral, isso só seria possível através de um comando 
+chamado 'prepare', o qual é executado apenas em procedimentos de armazenamentos (e não em funções). Como alternativa ao problema, mas 
+não totalmente convincente, foi implementado a função (de modo direto) 'count' em uma consulta com filtro de data a fim de contabilizar 
+os clientes cadastrados em uma loja durante o dia. O banco de dados utilizado foi o mesmo do projeto anterior ('Módulo_03---Projeto_03' 
+- vide link mais abaixo). O código SQL abaixo ('database_loja_functions.sql') descreve a implementação desenvolvida:
+
+#fazendo uso do banco de dados 'loja'
+use loja;
+
+#criando a tabela 'cliente'
+create table cliente(
+ID int auto_increment,
+NOME varchar(50),
+DATA_REGISTRO date,
+
+primary key(ID)
+);
+
+#inserindo dados na tabela 'cliente'
+insert into cliente(ID, NOME, DATA_REGISTRO) values(1, 'Valdemar Costa', "2022-09-27");
+insert into cliente(NOME, DATA_REGISTRO) values('Bianca Andrade', "2022-09-27");
+insert into cliente(NOME, DATA_REGISTRO) values('Sérgio Jota', "2022-09-27");
+insert into cliente(NOME, DATA_REGISTRO) values('Pedro Leal', "2022-09-28");
+insert into cliente(NOME, DATA_REGISTRO) values('Carlos Bianco', "2022-09-28");
+insert into cliente(NOME, DATA_REGISTRO) values('Priscila Knauf', "2022-09-30");
+insert into cliente(NOME, DATA_REGISTRO) values('Jorge Barbara', "2022-09-30");
+insert into cliente(NOME, DATA_REGISTRO) values('Gabriel Lucas', "2022-09-30");
+insert into cliente(NOME, DATA_REGISTRO) values('Danilo Lins', "2022-09-30");
+
+#utilização da função 'count' para somatização dos clientes registrado na loja em um único dia
+select count(ID) as TOTAL_CLIENTES_DIARIO from cliente
+where DATA_REGISTRO = "2022-09-30";
+----------------------------------------------------------------------------------------------------------------------------------------
+
+As imagens 'imagem1' e 'imagem2' (vide links abaixo) ilustram a tabela 'cliente' e o resultado da consulta para o total de clientes 
+registrados em um determinada dia, respectivamente:
+
+	imagem1 ---> (https://github.com/0liveiraVictor/Softex/blob/main/Database/DOC---M%C3%B3dulo_03---Projeto_04/imagem1.png)
+
+	imagem2 ---> (https://github.com/0liveiraVictor/Softex/blob/main/Database/DOC---M%C3%B3dulo_03---Projeto_04/imagem2.png)
+
+
+
+######################################################################################################################################
+######################################################################################################################################
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code database_loja_functions.sql (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/Database/DOC---M%C3%B3dulo_03---Projeto_04/database_loja_functions.sql
+################## -------------------------------------------------------------------------------------------------------------------
+################## Módulo_03---Projeto_03 (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/Database/M%C3%B3dulo_03---Projeto_03
+################## -------------------------------------------------------------------------------------------------------------------
+######################################################################################################################################
+######################################################################################################################################
+________________________________________________________________________________________________________________________________________
