@@ -1,0 +1,41 @@
+__________________________________________________PILARES DA SEGURANÇA EM BANCO DE DADOS________________________________________________
+
+Após uma varredura rápida no sistema da sua empresa, foi identificada a necessidade de melhorar a segurança dos dados. Por isso, você 
+deve desenvolver um novo banco de dados. Explique quais são os pilares da segurança de dados que devem ser seguidos.
+________________________________________________________________________________________________________________________________________
+
+SOLUÇÃO:
+
+Os três pilares básicos que envolvem a segurança em um banco de dados são: integridade, disponibilidade e confiabilidade.
+
+A integridade tem sua especificação dada pela falta de variação entre duas instâncias ou atualizações consecutivas de um dado registro, 
+indicando que suas informações estão livres de erros. Sua estrutura se relaciona intrínsecamente com o controle de modificações do 
+sistema e a capacidade de preservação do dado no próprio banco (por todo seu ciclo de vida), desde o momento de sua concepção, 
+manutenção até a sua exclusão.
+
+A disponibilidade se relaciona com o tempo e a acessibilidade aos dados e sistemas utilizados. É necessário, para quem atua diretamente 
+com o banco, ter livre acesso aos dados (ações de adição, manipulação, exclusão, consulta e etc.). As tomadas de decisão, realizadas 
+atualmente por empresas de grande porte, são baseadas e guiadas pelos dados (informações comerciais), os quais as auxiliam em suas 
+comunicações internas e externas no mercado. A indisponibilidade desses dados pode resultar em sérios prejuízos para elas, prejudicando 
+no desenvolvimento de suas atividades e consequentemente resultando em perda de vendas. Portanto, para isso é indispensável que essas 
+empresas garantam mecanismos para manter seus dados sempre disponíveis.
+
+A confiabilidade está vinculada as políticas de gerenciamento das informações internas de uma empresa. Para garantir esse pilar é 
+necessário implementar um conjunto de procedimentos e estratégias que auxiliam a corporação a gerir suas informações. Nesse contexto,
+mecanismos de imposição de restrições sobre quem tem acesso ao dado ocorre, visando sempre o cuidado com os dados confidenciais dos 
+clientes e dos colaboradores da empresa.
+
+
+
+######################################################################################################################################
+######################################################################################################################################
+################## -------------------------------------------------------------------------------------------------------------------
+################## References (Link):
+################## 1: https://softexrecife.joyclass.com
+################## 2: https://www.astera.com/pt/type/blog/data-integrity-in-a-database/
+################## 3: https://www.telium.com.br/blog/confidencialidade-integridade-e-disponibilidade-os-tres-pilares-da-seguranca-da-informacao
+################## 4: https://it-eam.com/como-o-monitoramento-de-informacoes-tem-melhorado-a-confiabilidade-dos-dados/#:~:text=O%20que%20%C3%A9%20a%20confiabilidade,informa%C3%A7%C3%B5es%20particulares%20de%20cada%20organiza%C3%A7%C3%A3o.
+################## -------------------------------------------------------------------------------------------------------------------
+######################################################################################################################################
+######################################################################################################################################
+________________________________________________________________________________________________________________________________________
