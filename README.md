@@ -148,7 +148,7 @@ Ao todo, o curso é dividido em 6 blocos de ensino (cada um organizado em módul
 
 <br/>
 
-* **Bloco de Ensino 4 - [Database](https://github.com/0liveiraVictor/Softex/tree/main/Database)**..............................🚧 *Em desenvolvimento...* 🚧
+* **Bloco de Ensino 4 - [Database](https://github.com/0liveiraVictor/Softex/tree/main/Database)**
 
 	* Módulo 1 - Banco de Dados Relacionais
 	
@@ -167,12 +167,12 @@ Ao todo, o curso é dividido em 6 blocos de ensino (cada um organizado em módul
 		- [x] Projeto 01 - [Banco de Dados e Comandos Joins](https://github.com/0liveiraVictor/Softex/blob/main/Database/M%C3%B3dulo_03---Projeto_01)
 		- [x] Projeto 02 - [Trigger e Execuções Automáticas](https://github.com/0liveiraVictor/Softex/blob/main/Database/M%C3%B3dulo_03---Projeto_02)
 		- [x] Projeto 03 - [Rotina 'Procedure' de um Banco de Dados](https://github.com/0liveiraVictor/Softex/blob/main/Database/M%C3%B3dulo_03---Projeto_03)
-		- [ ] Projeto 04 - []()
+		- [x] Projeto 04 - [Rotina 'Function' de um Banco de Dados](https://github.com/0liveiraVictor/Softex/blob/main/Database/M%C3%B3dulo_03---Projeto_04)
 		
 	* Módulo 4 - Segurança de Banco de Dados
 	
-		- [ ] Projeto 01 - []()
-		- [ ] Projeto 02 - []()
+		- [x] Projeto 01 - [Pilares da Segurança em Banco de Dados](https://github.com/0liveiraVictor/Softex/blob/main/Database/M%C3%B3dulo_04---Projeto_01)
+		- [x] Projeto 02 - [Política de Segurança no Uso de Senhas](https://github.com/0liveiraVictor/Softex/blob/main/Database/M%C3%B3dulo_04---Projeto_02)
 
 <br/>
 
