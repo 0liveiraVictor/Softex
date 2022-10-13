@@ -1,0 +1,81 @@
+________________________________________________________PROTOCOLO CLIENTE-SERVIDOR______________________________________________________
+
+Com base nos vídeos 1 e 2, explique como a web funciona a partir do ponto de vista do protocolo cliente servidor. Crie o começo de um 
+projeto em node.js, usando o npm e informe os comandos utilizados.
+________________________________________________________________________________________________________________________________________
+
+SOLUÇÃO:
+
+O conceito cliente-servidor está atrelado ao modelo de comunicação que vincula vários dispositivos informáticos através de uma rede. 
+Nesse contexto, o cliente realiza solicitações de serviços ao servidor, enquanto esse torna-se responsável por atender aos requisitos 
+solicitados. Dada essa dinâmica, esse procedimento de comunicação ocorre a partir de um protocolo denominado 'HyperText Transport 
+Protocol' (HTTP), em que as transferências de mensagens (sub-documentos) entre os dispositivos comunicantes efetivamente acontece. 
+Como um padrão de comunicação de acesso de programas, aplicativos e dispositivos a uma rede, destaca-se o 'Transmission Control Protocol' 
+(TCP). O TCP é usado na transmissão do protocolo HTTP, o qual estabelece uma conexão entre uma origem e um destino (encontradas via 
+endereço IP de cada dispositivo), que permanece ativa até o início da comunicação. É esse protocolo que nos permitem acessar páginas
+web e obter informações das mais diversas fontes, como por exemplo: visualizar um vídeo (requisição de dados no servidor do youtube), 
+acessar redes sociais (envio de dados na aba de login e resposta do servidor do facebook, instagram, tiktok e etc), pesquisar uma imagem
+(solicitação de arquivos de imagem no servidor da google) e etc.
+
+Em relação ao projeto node.js foi utilizado, para exemplificação do problema, uma implementação de conexão com o SGBD MySQL realizada
+anteriormente no Módulo_04---Projeto_04 do curso de Javascript. A princípio, o objetivo da atual atividade foi apenas ilustrar o uso do 
+módulo 'sequelize' (contido no npm). Para todos os efeitos, algumas modificações foram realizadas e a implementação que segue abaixo 
+descreve a conexão feita com o banco de dados:  
+
+//carregando o 'Sequelize' a partir do pacote instalado <npm i sequelize mysql2>
+const Sequelize = require('sequelize');
+
+/*instanciando o objeto 'sequelize' a partir da classe carregada 'Sequelize' e passando como parâmetros
+('nome_do_banco_de_dados', 'usuario_de_acesso', 'senha_de_acesso', {opções})*/
+const sequelize = new Sequelize('cadastro', 'root', '4M00pQ3Y2n', {
+
+    //{opções} -> {dialect: 'SGBD', host: 'localizacao', port: nº_de_porta}
+    dialect: 'mysql',
+    host: 'localhost',
+    port: 3306
+
+})
+
+//função 'authenticate' (verificação de conexão ao banco de dados)
+sequelize.authenticate().then(function(){
+
+    console.log('\n-------------------------------------------------------------------------------------------------');
+    console.log('Conexão com o banco de dados efetuada com sucesso!');
+    console.log('-------------------------------------------------------------------------------------------------\n');
+
+   //tratamento em caso de falha na conexão 
+}).catch(function(error){
+
+    console.log('\n-------------------------------------------------------------------------------------------------');
+    console.log(`Falha na conexão com o banco de dados! ERRO >>> ${error}`);
+    console.log('-------------------------------------------------------------------------------------------------\n');
+
+})
+
+//exportando o objeto sequelize
+module.exports = sequelize;
+----------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+######################################################################################################################################
+######################################################################################################################################
+################## -------------------------------------------------------------------------------------------------------------------
+################## Módulo_04---Projeto_04 (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/JavaScript/M%C3%B3dulo_04---Projeto_04
+################## -------------------------------------------------------------------------------------------------------------------
+######################################################################################################################################
+######################################################################################################################################
+
+######################################################################################################################################
+######################################################################################################################################
+################## -------------------------------------------------------------------------------------------------------------------
+################## References (Link):
+################## 1: https://softexrecife.joyclass.com
+################## 2: https://conceito.de/cliente-servidor
+################## 3: https://www.hostgator.com.br/blog/o-que-e-protocolo-http/
+################## 4: https://www.hostgator.com.br/blog/o-que-e-protocolo-tcp-ip/?gclid=Cj0KCQjwzLCVBhD3ARIsAPKYTcTjG2S5-73OKUY6H6nNlGwedAPUNtO7o2X-6MgmOhgf3LXnOP31OuQaAr7ZEALw_wcB
+################## -------------------------------------------------------------------------------------------------------------------
+######################################################################################################################################
+######################################################################################################################################
+________________________________________________________________________________________________________________________________________
