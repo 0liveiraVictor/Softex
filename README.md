@@ -40,7 +40,7 @@ Ao todo, o curso é dividido em 6 blocos de ensino (cada um organizado em módul
 	3. Junções entre Tabelas, Procedures e Functions	
 	4. Segurança de Banco de Dados
 	
-**5. Node JS - (Node_JS)[]()**
+**5. Node JS - [(Node_JS)](https://github.com/0liveiraVictor/Softex/tree/main/Node_JS)**
 <br/><p align = "Justify">**Missão:** *Você trabalha como estagiário em uma pequena empresa de construção de imóveis em uma cidade do interior. Para melhorar o número de vendas, você tem uma ideia de fazer um aplicativo mobile. Desenvolva o backend do aplicativo.*</p>
 
 	1. Visando mostrar ao seu chefe que você sabe fazer o aplicativo, você marcou uma reunião com ele para apresentar como você estruturou as rotas de comunicação com o aplicativo. Como você faria essa explicação?
@@ -179,11 +179,11 @@ Ao todo, o curso é dividido em 6 blocos de ensino (cada um organizado em módul
 
 <br/>
 
-* **Bloco de Ensino 5 - Node_JS []()**..............................🚧 *Em desenvolvimento...* 🚧
+* **Bloco de Ensino 5 - [Node_JS](https://github.com/0liveiraVictor/Softex/tree/main/Node_JS)**
 
 	* <p align = "Justify">Módulo 1 - Visando mostrar ao seu chefe que você sabe fazer o aplicativo, você marcou uma reunião com ele para apresentar como você estruturou as rotas de comunicação com o aplicativo. Como você faria essa explicação?</p>
 	
-		- [ ] Projeto 01 - []()
+		- [x] Projeto 01 - [Protocolo Cliente-Servidor](https://github.com/0liveiraVictor/Softex/blob/main/Node_JS/M%C3%B3dulo_01---Projeto_01)
 		
 	* <p align = "Justify">Módulo 2 - Agora você precisa colocar a mão na massa para fazer todas as infraestruturas necessárias para rodar o projeto, depois disso explicar para seu chefe quais são os planos para o fazer rodar. Como você agiria nessa situação?</p>
 	
