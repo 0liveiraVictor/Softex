@@ -204,4 +204,10 @@ Ao todo, o curso é dividido em 6 blocos de ensino (cada um organizado em módul
 <br/>
 <br/>
 
-![Softex](https://user-images.githubusercontent.com/106946476/178136181-818bbd6d-731b-4515-aad9-e89084899371.png)
+<p align="left">
+	<a href="https://softexrecife.org.br/"> 
+    		<img src="https://user-images.githubusercontent.com/106946476/178136181-818bbd6d-731b-4515-aad9-e89084899371.png" />
+	</a>
+</p>
+
+
