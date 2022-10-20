@@ -1,0 +1,57 @@
+______________________________________________________________REQUISIÇÕES HTTP__________________________________________________________
+
+Sem usar bibliotecas, crie um projeto simples em Node.js que seja capaz de responder requisições HTTP. Explique como rodar e testar.
+________________________________________________________________________________________________________________________________________
+
+SOLUÇÃO:
+
+Foi criado um pequeno código para demonstrar as requisições e respostas definidas em um servidor local (biblioteca 'http'). O caso 
+tratato foi bastante simplista e mostra uma resposta comum a todas as requisições efetuadas pelo cliente. Abaixo, segue o código criado
+('server.js'):
+
+//importação da biblioteca 'http' do nodejs
+const {createServer} = require("http");
+
+//variável principal do servidor
+const server = createServer();
+
+//configuração da porta de acesso do servidor
+const portAcess = process.env.PORT || 4004;
+
+//'listener' para qualquer requisição web do servidor | resultado: resposta!
+server.on("request", (request, response)=>{
+
+    //resposta da solicitação realizada
+    response.end("<<< Resposta para a requisição solicitada pelo cliente! >>>")
+
+});
+
+server.listen(portAcess, ()=>{
+
+    //impressão no console da execução do servidor
+    console.log(`-------------------------------------------------------------------------------------`); 
+    console.log(`A inicialização do servidor foi executada na porta ${portAcess}.`);
+    console.log(`http://localhost:${portAcess}`);
+    console.log(`-------------------------------------------------------------------------------------`);
+
+});
+----------------------------------------------------------------------------------------------------------------------------------------
+
+A imagem imagem1 (vide link) exibe a execução da inicialização do servidor e sua URL base, e a imagem imagem2 (vide link) mostra o teste 
+feito para verificar se o servidor local está operando (via navegador Google Chrome):
+
+	imagem1 ---> (https://github.com/0liveiraVictor/Softex/blob/main/Node_JS/DOC---M%C3%B3dulo_02---Projeto_01/imagem1.png)
+
+	imagem2 ---> (https://github.com/0liveiraVictor/Softex/blob/main/Node_JS/DOC---M%C3%B3dulo_02---Projeto_01/imagem2.png)
+
+
+
+######################################################################################################################################
+######################################################################################################################################
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code server.js (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/Node_JS/DOC---M%C3%B3dulo_02---Projeto_01/server.js
+################## -------------------------------------------------------------------------------------------------------------------
+######################################################################################################################################
+######################################################################################################################################
+________________________________________________________________________________________________________________________________________
