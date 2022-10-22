@@ -15,6 +15,7 @@ server.on("request", (request, response)=>{
 
 });
 
+//conexão de acesso ao servidor
 server.listen(portAcess, ()=>{
 
     //impressão no console da execução do servidor
