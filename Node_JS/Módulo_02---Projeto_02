@@ -1,0 +1,84 @@
+__________________________________________________REQUISIÇÕES HTTP GET E POST COM EXPRESS_______________________________________________
+
+Usando o Express, crie um código Node.JS, que deve receber requisições HTTP GET e POST. Depois, coloque o servidor para rodar na porta 
+8080.
+________________________________________________________________________________________________________________________________________
+
+SOLUÇÃO:
+
+Fazendo uso do módulo 'express' foi desenvolvido um código ('main_server.js') de recebimento de requisições http 'get' e 'post'. O 
+servidor para esse programa foi inicializado na porta 8080. Abaixo, segue o código criado:
+
+//importação da biblioteca 'express'
+const express = require("express");
+
+//variável principal do servidor
+const server = express();
+
+//definição da porta de acesso do servidor
+const portAcess = 8080;
+
+//requisição 'http get' com uso de placeholder 'req.params'
+server.get('/rota/:nome/:sobrenome', (request, response)=>{
+
+    const name = request.params.nome;
+    const lastName = request.params.sobrenome;
+
+    //resposta da solicitação realizada pelo cliente
+    response.send("<<< Resposta para a requisição HTTP 'get' solicitada pelo cliente (com uso de placeholder 'req.params') >>>" + `<h1> <<< Seja Bem-Vindo ${name} ${lastName} >>> </h1>`);
+
+})
+
+//requisição 'http get'
+server.get('/rota', (request, response)=>{
+
+    //resposta da solicitação realizada pelo cliente
+    response.send("<<< Resposta para a requisição HTTP 'get' solicitada pelo cliente! >>>");
+
+})
+
+//requisição 'http post'
+server.post('/rota', (request, response)=>{
+
+    //resposta da solicitação realizada pelo cliente
+    response.send("<<< Resposta para a requisição HTTP 'post' solicitada pelo cliente! >>>");
+
+})
+
+//conexão de acesso ao servidor
+server.listen(portAcess, ()=>{
+
+    //impressão no console da execução do servidor
+    console.log(`-------------------------------------------------------------------------------------`); 
+    console.log(`A inicialização do servidor foi executada na porta ${portAcess}.`);
+    console.log(`URL: http://localhost:${portAcess}`);
+    console.log(`-------------------------------------------------------------------------------------`);
+
+});
+----------------------------------------------------------------------------------------------------------------------------------------
+
+Em relação ao programa, foram desenvolvidas duas requisições do tipo http 'get' e uma do tipo 'post'. A primeira requisição 'get' 
+apresentava o uso de placeholder 'request.params' (com retorno de boas-vindas ao cliente) e a segunda requisição apresentava uma rota 
+simples com uma resposta genérica. De modo análogo ao último retorno 'get', a requisição 'post' apresentava também uma rota simples e 
+uma resposta genérica.
+
+As imagens imagem1, imagem2 e imagem3 (vide links) exibem, respectivamente, os resultados da primeira requisição 'get', segunda 
+requisição 'get' e a única requisição 'post':
+
+	imagem1 ---> (https://github.com/0liveiraVictor/Softex/blob/main/Node_JS/DOC---M%C3%B3dulo_02---Projeto_02/imagem1.png)
+
+	imagem2 ---> (https://github.com/0liveiraVictor/Softex/blob/main/Node_JS/DOC---M%C3%B3dulo_02---Projeto_02/imagem2.png)
+
+	imagem3 ---> (https://github.com/0liveiraVictor/Softex/blob/main/Node_JS/DOC---M%C3%B3dulo_02---Projeto_02/imagem3.png)
+
+
+
+######################################################################################################################################
+######################################################################################################################################
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code main_server.js (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/Node_JS/DOC---M%C3%B3dulo_02---Projeto_02/main_server.js
+################## -------------------------------------------------------------------------------------------------------------------
+######################################################################################################################################
+######################################################################################################################################
+________________________________________________________________________________________________________________________________________
