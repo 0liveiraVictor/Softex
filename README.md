@@ -188,7 +188,7 @@ Ao todo, o curso é dividido em 6 blocos de ensino (cada um organizado em módul
 	* <p align = "Justify">Módulo 2 - Agora você precisa colocar a mão na massa para fazer todas as infraestruturas necessárias para rodar o projeto, depois disso explicar para seu chefe quais são os planos para o fazer rodar. Como você agiria nessa situação?</p>
 	
 		- [x] Projeto 01 - [Requisições HTTP](https://github.com/0liveiraVictor/Softex/blob/main/Node_JS/M%C3%B3dulo_02---Projeto_01)
-		- [ ] Projeto 02 - []()
+		- [x] Projeto 02 - [Requisições HTTP Get e Post com Express](https://github.com/0liveiraVictor/Softex/blob/main/Node_JS/M%C3%B3dulo_02---Projeto_02)
 		- [ ] Projeto 03 - []()
 		
 	* <p align = "Justify">Módulo 3 - Seu chefe pediu que você implementasse a API o mais rápido possível, pois ficou ansioso para ver o aplicativo funcionando. Como você iria implementar?</p>
