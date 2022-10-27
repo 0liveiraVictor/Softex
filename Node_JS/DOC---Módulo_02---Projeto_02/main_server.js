@@ -7,7 +7,7 @@ const server = express();
 //definição da porta de acesso do servidor
 const portAcess = 8080;
 
-//requisição 'http get' com uso de placeholder 'req.params'
+//requisição 'http get' com uso de placeholder 'request.params'
 server.get('/rota/:nome/:sobrenome', (request, response)=>{
 
     const name = request.params.nome;
