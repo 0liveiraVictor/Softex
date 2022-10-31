@@ -1,0 +1,91 @@
+_________________________________________________________TIPOS DE REQUISIÇÕES HTTP______________________________________________________
+
+Crie um código Node.JS usando a biblioteca Express. Nele, você deve receber quatro tipos de requisições e responder cada uma com strings 
+diferentes. Por fim, explique como rodar o código.
+________________________________________________________________________________________________________________________________________
+
+SOLUÇÃO:
+
+Um código ('server.js') foi desenvolvido, em nodejs, usando a biblioteca 'Express', para receber quatro tipos de requisições HTTP 
+distintas, sendo elas: 'get', 'post', 'put' e 'delete'. As respostas dessas requisições foram dadas com diferentes strings, sendo
+apresentadas de modo particular a cada requisição. O código abaixo descreve o servidor criado:
+
+//importação da biblioteca 'express'
+const express = require("express");
+
+//variável principal do servidor
+const server = express();
+
+//definição da porta de acesso do servidor
+const portAcess = 3479;
+
+//requisição 'get'
+server.get('/', (request, response)=>{
+
+    //resposta da solicitação requisitada pelo cliente
+    return response.send("<h1>Requisição HTTP do tipo 'get'</h1>" + "<h2>Solicitando Dados | Lendo Dados</h2>");
+
+});
+
+//requisição 'post'
+server.post('/', (request, response)=>{
+
+    //resposta da solicitação requisitada pelo cliente
+    return response.send("<h1>Requisição HTTP do tipo 'post'</h1>" + "<h2>Criando Entidades | Editando Entidades | Enviando Dados</h2>");
+
+});
+
+//requisição 'put'
+server.put('/', (request, response)=>{
+
+    //resposta da solicitação requisitada pelo cliente
+    return response.send("<h1>Requisição HTTP do tipo 'put'</h1>" + "<h2>Atualizando Dados | Substituindo Recursos</h2>");
+
+});
+
+//requisição 'delete'
+server.delete('/', (request, response)=>{
+
+    //resposta da solicitação requisitada pelo cliente
+    return response.send("<h1>Requisição HTTP do tipo 'delete'</h1>" + "<h2>Excluindo Entidades</h2>");
+
+});
+
+//conexão de acesso ao servidor
+server.listen(portAcess, ()=>{
+
+    //impressão no console da "ligação" do servidor
+    console.log(`-------------------------------------------------------------------------------------`); 
+    console.log(`A inicialização do servidor foi executada na porta ${portAcess}.`);
+    console.log(`URL: http://localhost:${portAcess}`);
+    console.log(`-------------------------------------------------------------------------------------`);
+
+});
+----------------------------------------------------------------------------------------------------------------------------------------
+
+Em relação ao programa, as diferentes strings (construídas nas respostas das requisições) fizeram menção as particularidades de cada 
+método. O 'get' foi referente à solicitação e leitura de dados; o 'post' foi referente à criação e edição de entidade, e atualização de 
+dados; o 'put' foi referente à atualização de dados e substituição de recursos; o 'delete' foi referente à exclusão de dados.
+
+As imagens imagem1, imagem2, imagem3 e imagem4 (vide links) exibem as respostas das requisições 'get', 'post', 'put' e 'delete', nessa
+ordem:
+
+	imagem1 ---> (https://github.com/0liveiraVictor/Softex/blob/main/Node_JS/DOC---M%C3%B3dulo_03---Projeto_01/imagem1.png)
+
+	imagem2 ---> (https://github.com/0liveiraVictor/Softex/blob/main/Node_JS/DOC---M%C3%B3dulo_03---Projeto_01/imagem2.png)
+
+	imagem3 ---> (https://github.com/0liveiraVictor/Softex/blob/main/Node_JS/DOC---M%C3%B3dulo_03---Projeto_01/imagem3.png)
+
+	imagem4 ---> (https://github.com/0liveiraVictor/Softex/blob/main/Node_JS/DOC---M%C3%B3dulo_03---Projeto_01/imagem4.png)
+
+
+
+######################################################################################################################################
+######################################################################################################################################
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code server.js (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/Node_JS/DOC---M%C3%B3dulo_03---Projeto_01/server.js
+################## -------------------------------------------------------------------------------------------------------------------
+######################################################################################################################################
+######################################################################################################################################
+________________________________________________________________________________________________________________________________________
