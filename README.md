@@ -49,7 +49,10 @@ Ao todo, o curso é dividido em 6 blocos de ensino (cada um organizado em módul
 	
 **6. Introdução a Web Services - (Web_Service)**
 
-	🚧 Em desenvolvimento... 🚧
+	1. Conceituar o que é a web e seus serviços
+	2. Definir, aplicar e implementar modelos conceituais de Serviços Web: SOAP/HTTP/REST
+	3. Conceituar e implementar os modelos REST e RESTful	
+	4. WebService Server
 
 <br/>
 
@@ -199,6 +202,30 @@ Ao todo, o curso é dividido em 6 blocos de ensino (cada um organizado em módul
 <br/>
 
 * **Bloco de Ensino 6 - Web_Service []()**..............................🚧 *Em desenvolvimento...* 🚧
+
+	* Módulo 1 - Conceituar o que é a web e seus serviços
+	
+		- [ ] Projeto 01 - []()
+		
+	* Módulo 2 - Definir, aplicar e implementar modelos conceituais de Serviços Web: SOAP/HTTP/REST
+	
+		- [ ] Projeto 01 - []()
+		- [ ] Projeto 02 - []()
+		- [ ] Projeto 03 - []()
+		
+	* Módulo 3 - Conceituar e implementar os modelos REST e RESTful
+	
+		- [ ] Projeto 01 - []()
+		- [ ] Projeto 02 - []()
+		
+	* Módulo 4 - WebService Server
+	
+		- [ ] Projeto 01 - []()
+		- [ ] Projeto 02 - []()
+		- [ ] Projeto 03 - []()
+		
+		
+
 
 <br/>
 <br/>
