@@ -47,7 +47,7 @@ Ao todo, o curso é dividido em 6 blocos de ensino (cada um organizado em módul
 	2. Agora você precisa colocar a mão na massa para fazer todas as infraestruturas necessárias para rodar o projeto, depois disso explicar para seu chefe quais são os planos para o fazer rodar. Como você agiria nessa situação?
 	3. Seu chefe pediu que você implementasse a API o mais rápido possível, pois ficou ansioso para ver o aplicativo funcionando. Como você iria implementar?
 	
-**6. Introdução a Web Services - (Web_Service)**
+**6. Introdução a Web Services - (Web_Services)**
 
 	1. Conceituar o que é a web e seus serviços
 	2. Definir, aplicar e implementar modelos conceituais de Serviços Web: SOAP/HTTP/REST
@@ -201,7 +201,7 @@ Ao todo, o curso é dividido em 6 blocos de ensino (cada um organizado em módul
 
 <br/>
 
-* **Bloco de Ensino 6 - Web_Service []()**..............................🚧 *Em desenvolvimento...* 🚧
+* **Bloco de Ensino 6 - Web_Services []()**..............................🚧 *Em desenvolvimento...* 🚧
 
 	* Módulo 1 - Conceituar o que é a web e seus serviços
 	
