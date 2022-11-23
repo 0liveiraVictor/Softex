@@ -1,0 +1,80 @@
+______________________________________________ESTRUTURA DO WEB SERVICE NA COMUNICAÇÃO SOAP______________________________________________
+
+Uma empresa precisa se comunicar com outras para enviar informações pessoais sobre seus clientes, como nome, endereço e número de 
+telefone. É importante garantir a segurança desses dados e se preocupar com quem eles são compartilhados. Para isso, crie a estrutura de 
+um web service, que demonstra exemplos de comunicação SOAP (requisição e resposta em xmls) e explique como ele funciona.
+________________________________________________________________________________________________________________________________________
+
+SOLUÇÃO:
+
+Para o problema proposto foi desenvolvido, por razões de compreensão de conteúdo, uma pequena estrutura de um web service com exemplos 
+de comunicação SOAP (requisição e resposta). Nesse contexto, empresas precisam se comunicar com uma empresa principal (corporação) e 
+obter os dados pessoais dos clientes dela. Mediante isso, tem-se que o serviço web desenvolvido apresentou um arquivo xml para realização 
+da requisição desses dados ('request.xml') (por parte das empresas) e outro arquivo xml para envio da resposta ('response.xml') (por 
+parte da corporação). A estrutura da requisição e resposta do web service é exibida abaixo, nessa ordem:
+
+<!--
+    *********************** REQUEST - REQUISIÇÃO *********************** 
+    
+    empresas solicitam, por meio do 'cpf', dados cadastrais dos clientes de uma dada corporação
+    e.g. 'Saturno Technology' (nome fictício da corporação)
+-->
+
+POST /webservices/consultaCliente HTTP/1.1
+Host: www.saturnotechnology.com
+Content-Type: application/soap+xml; charset=utf-8
+Content-Length: nnn
+
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body xmlns:m="http://www.saturnotechnology.com/webservices/consultaCliente">
+    <m:consultaClienteRequest>
+        <m:cpf>89700514064</m:cpf>
+    </m:consultaClienteRequest>
+  </soap:Body>
+</soap:Envelope>
+----------------------------------------------------------------------------------------------------------------------------------------
+
+<!--
+    *********************** RESPONSE - RESPOSTA ***********************
+    
+    a corporação responde (as empresas solicitantes dos dados cadastrais dos clientes) com informações 
+    sobre: nome, endereço e número de telefone
+    OBS:. nome, endereco e telefone estão com dados fictícios
+-->
+
+HTTP/1.1 200 OK
+Content-Type: application/soap+xml; charset=utf-8
+Content-Length: nnn
+
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body xmlns:m="http://www.saturnotechnology.com/webservices/consultaCliente">
+    <m:consultaClienteResponse>
+        <m:nome>Danilo José Clemente Alves dos Santos Carneiro</m:nome>
+        <m:endereco>Rua Dr. José Paracampos, Guararapes, CEP: 63033-060</m:endereco>
+        <m:telefone>88987512264</m:telefone>
+    </m:consultaClienteResponse>
+  </soap:Body>
+</soap:Envelope>
+----------------------------------------------------------------------------------------------------------------------------------------
+
+A solicitação dos dados pessoais dos clientes, por parte das empresas, ocorre após a indicação do dado 'cpf' (de um cliente específico).
+Essa solicitação ocorre na requisição feita pela url: http://www.saturnotechnology.com/webservices/consultaCliente (fazendo uso do 
+método HTTP POST). Como resposta da solicitação, a corporação, por meio do web service, envia os dados: nome, endereço e número de 
+telefone do cliente a empresa solicitante.   
+
+
+
+######################################################################################################################################
+######################################################################################################################################
+################## -------------------------------------------------------------------------------------------------------------------
+################## xml request file (request.xml) (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/Web_Services/DOC---M%C3%B3dulo_01---Projeto_01/request.xml
+################## -------------------------------------------------------------------------------------------------------------------
+################## xml response file (response.xml) (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/Web_Services/DOC---M%C3%B3dulo_01---Projeto_01/response.xml
+################## -------------------------------------------------------------------------------------------------------------------
+######################################################################################################################################
+######################################################################################################################################
+________________________________________________________________________________________________________________________________________
