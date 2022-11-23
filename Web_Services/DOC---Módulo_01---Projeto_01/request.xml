@@ -1,0 +1,20 @@
+<!--
+    *********************** REQUEST - REQUISIÇÃO *********************** 
+    
+    empresas solicitam, por meio do 'cpf', dados cadastrais dos clientes de uma dada corporação
+    e.g. 'Saturno Technology' (nome fictício da corporação)
+-->
+
+POST /webservices/consultaCliente HTTP/1.1
+Host: www.saturnotechnology.com
+Content-Type: application/soap+xml; charset=utf-8
+Content-Length: nnn
+
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body xmlns:m="http://www.saturnotechnology.com/webservices/consultaCliente">
+    <m:consultaClienteRequest>
+        <m:cpf>89700514064</m:cpf>
+    </m:consultaClienteRequest>
+  </soap:Body>
+</soap:Envelope>
