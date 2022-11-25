@@ -1,0 +1,114 @@
+_____________________________________________FUNCIONALIDADE DOS MÉTODOS HTTP E O PADRÃO WSDL____________________________________________
+
+Faça um projeto explicando como funcionam os métodos HTTP com exemplos de requisições, sua utilização e em qual momento cada um dos 
+métodos devem ser utilizados. Além disso, descreva o que é WSDL, seu significado e sua função.
+________________________________________________________________________________________________________________________________________
+
+SOLUÇÃO:
+
+O HTTP é um protocolo de comunicação web que controla e possibilita a conexão e troca de dados entre dois sistemas computacionais 
+distintos (baseados no modelo cliente-servidor). Esse protocolo é uma convenção de regras e padrões em que pauta seu funcionamento por 
+meio da chamada requisição-resposta; de um lado, o solicitante ou cliente (através do navegador) requere um determinado dado, e do 
+outro, o computador (ou servidor) retorna a informação solicitada (caso exista e seja encontrada).
+
+Os métodos disponíveis do protocolo HTTP são: POST, GET, PUT e DELETE (análogo ao CRUD), além de OPTIONS, HEAD, TRACE, CONNECT e PATCH.
+O método POST é utilizado quando queremos criar um recurso; nesse caso, os dados são passados (enviados) pelo corpo da requisição. O 
+método GET permite ao cliente solicitar a representação de um recurso, que pode ser retornado como um arquivo em um formato .html, .xml,
+.json e etc. O método PUT requisita que um recurso seja "salvo" na URI fornecida; no caso em que o recurso já existe, ele deve ser 
+atualizado, caso contrário, ele poderá ser criado. O método DELETE é responsável por excluir um recurso específico. O método OPTIONS
+retorna os métodos HTTP que são suportados pelo servidor especificado na URL. O método HEAD retorna apenas os cabeçalhos de uma resposta
+do servidor. O método TRACE devolve a requisição recebida para que o cliente verifique se houveram mudanças e/ou adições feitas por 
+servidores intermediários. O método CONNECT converte a requisição de conexão para um túnel TCP/IP transparente, comumente para facilitar 
+comunicação criptografada com SSL (HTTPS) através de um proxy HTTP não criptografado. E por fim, o método PATCH é utilizado para aplicar
+atualizações parciais em um recurso.
+
+Para que um servidor web tenha uma estrutura minimamente funcional, ele deverá apresentar ao menos os métodos GET e HEAD. Entretanto,
+de modo geral, boa parte das aplicações web não se restringe apenas a esses dois métodos e fazem uso também, com frequência, dos métodos 
+POST, PUT e DELETE. Um exemplo simples dessas requisições pode ser visualizado em um projeto anterior do curso de NodeJS 
+(Módulo_03---Projeto_01), em que requisições com os métodos HTTP POST, GET, PUT e DELETE podem ser solicitadas e suas respostas retornam
+diferentes strings. O código está exibido abaixo:
+
+//importação da biblioteca 'express'
+const express = require("express");
+
+//variável principal do servidor
+const server = express();
+
+//definição da porta de acesso do servidor
+const portAcess = 3479;
+
+//requisição 'get'
+server.get('/', (request, response)=>{
+
+    //resposta da solicitação requisitada pelo cliente
+    return response.send("<h1>Requisição HTTP do tipo 'get'</h1>" + "<h2>Solicitando Dados | Lendo Dados</h2>");
+
+});
+
+//requisição 'post'
+server.post('/', (request, response)=>{
+
+    //resposta da solicitação requisitada pelo cliente
+    return response.send("<h1>Requisição HTTP do tipo 'post'</h1>" + "<h2>Criando Entidades | Editando Entidades | Enviando Dados</h2>");
+
+});
+
+//requisição 'put'
+server.put('/', (request, response)=>{
+
+    //resposta da solicitação requisitada pelo cliente
+    return response.send("<h1>Requisição HTTP do tipo 'put'</h1>" + "<h2>Atualizando Dados | Substituindo Recursos</h2>");
+
+});
+
+//requisição 'delete'
+server.delete('/', (request, response)=>{
+
+    //resposta da solicitação requisitada pelo cliente
+    return response.send("<h1>Requisição HTTP do tipo 'delete'</h1>" + "<h2>Excluindo Entidades</h2>");
+
+});
+
+//conexão de acesso ao servidor
+server.listen(portAcess, ()=>{
+
+    //impressão no console da "ligação" do servidor
+    console.log(`-------------------------------------------------------------------------------------`); 
+    console.log(`A inicialização do servidor foi executada na porta ${portAcess}.`);
+    console.log(`URL: http://localhost:${portAcess}`);
+    console.log(`-------------------------------------------------------------------------------------`);
+
+});
+----------------------------------------------------------------------------------------------------------------------------------------
+
+Em relação ao WSDL (Web Services Description Language), tem-se que esse padrão é uma linguagem baseada em formato .xml utilizada para 
+descrever um Web Service (como se fosse um 'contrato de um serviço') que, em si, recorre ao protocolo SOAP/RCP. Esse documento, escrito 
+em .xml, além de descrever o serviço também descreve como acessá-lo e quais seus métodos disponibilizados. É por meio desse padrão que 
+se informa ao cliente como cada serviço em um endpoint deve ser invocado: quais os parâmetros de envio, quais os parâmetros de retorno 
+e os tipos de dados de todos esses parâmetros. Em resumo, o WSDL tem uma estrutura funcional de uma interface de acesso ao Web Service 
+e o protocolo de comunicação, em geral SOAP, é usado para realizar as trocas de mensagens entre a aplicação e o próprio Web Service.
+
+
+
+######################################################################################################################################
+######################################################################################################################################
+################## -------------------------------------------------------------------------------------------------------------------
+################## Módulo_03---Projeto_01 (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/Node_JS/M%C3%B3dulo_03---Projeto_01
+################## -------------------------------------------------------------------------------------------------------------------
+######################################################################################################################################
+######################################################################################################################################
+
+######################################################################################################################################
+######################################################################################################################################
+################## -------------------------------------------------------------------------------------------------------------------
+################## References (Link):
+################## 1: https://tecnoblog.net/responde/o-que-e-http/
+################## 2: http://gabsferreira.com/os-metodos-http-e-a-diferenca-entre-eles/
+################## 3: https://pt.stackoverflow.com/questions/9419/quais-s%C3%A3o-os-m%C3%A9todos-de-requisi%C3%A7%C3%A3o-http-e-qual-%C3%A9-a-diferen%C3%A7a-entre-eles
+################## 4: https://pt.wikipedia.org/wiki/Web_Services_Description_Language 
+################## 5: https://pt.stackoverflow.com/questions/29116/o-que-%C3%A9-wsdl-web-services-description-language
+################## -------------------------------------------------------------------------------------------------------------------
+######################################################################################################################################
+######################################################################################################################################
+________________________________________________________________________________________________________________________________________
