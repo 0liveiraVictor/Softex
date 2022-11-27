@@ -209,7 +209,7 @@ Ao todo, o curso é dividido em 6 blocos de ensino (cada um organizado em módul
 		
 	* Módulo 2 - Definir, aplicar e implementar modelos conceituais de Serviços Web: SOAP/HTTP/REST
 	
-		- [ ] Projeto 01 - []()
+		- [x] Projeto 01 - [Funcionalidade dos Métodos HTTP e o Padrão WSDL](https://github.com/0liveiraVictor/Softex/blob/main/Web_Services/M%C3%B3dulo_02---Projeto_01)
 		- [ ] Projeto 02 - []()
 		- [ ] Projeto 03 - []()
 		
