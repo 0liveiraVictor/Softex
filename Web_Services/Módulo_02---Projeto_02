@@ -1,0 +1,143 @@
+_____________________________________________________SERVIDOR SOAP EM UM SERVIÇO WEB____________________________________________________
+
+Crie um servidor SOAP simples usando Java, disponibilize endpoints (métodos) e crie, no mínimo, quatro deles. Por fim, coloque para 
+rodar na porta 8080.
+________________________________________________________________________________________________________________________________________
+
+SOLUÇÃO:
+
+Foi desenvolvido um pequeno servidor SOAP de um Web Service (em Java) com quatro serviços (métodos) comuns de um estabelecimento (loja).
+Os serviços foram referentes a 'verificação dos dados de registro do cliente' (mediante disponibilização do parâmetro 'CPF'), 
+'verificação dos produtos solicitadas na loja' (mediante disponibilização do parâmetro 'número de pedido'), 'verificação do valor final 
+da compra' (mediante disponibilização do parâmetro 'número de pedido') e 'verificação se o cliente atual é um novo cliente' (mediante 
+disponibilização do parâmetro 'CPF'). Para a problemática, a interface (SEI), implementação (SIB) e publicação (Publisher) do serviço 
+foram separadas e estão definidas pela interface e classes dos arquivos: 'Store.java', 'StoreImp.java' e 'StorePublisher.java', 
+respectivamente. As estruturas do algoritmos seguem abaixo:
+
+/**
+ *  
+ * Service Endpoint Interface (SEI) 
+ */
+
+//pacote base
+package soapserver;
+
+/**
+ *
+ * @author victoroliveira
+ */
+
+import javax.jws.WebService;   //import do pacote 'jws.WebService' e uso de annotation @WebService 
+import javax.jws.WebMethod;   //import do pacote 'jws.WebMethod' e uso de annotation @WebMethod
+import javax.jws.soap.SOAPBinding;   //import do pacote 'jws.soap.SOAPBinding' e uso de annotation @SOAPBinding
+import javax.jws.soap.SOAPBinding.Style;   //import do pacote 'jws.soap.SOAPBinding' e uso de annotation @SOAPBinding com parâmetro 'style'
+
+@WebService   //@WebService indica a classificação de tipo 'Web Service'
+@SOAPBinding(style = Style.RPC)   //@SOAPBinding é a indicação do serviço de tipo 'SOAP'
+public interface Store {   //interface 'Store'
+
+    //@WebMethod sempre é relativo a uma operação do serviço 'Web'
+    @WebMethod String registrationData(String customerCPF);
+    @WebMethod String products(int orderNumber);
+    @WebMethod double finalValue(int orderNumber);
+    @WebMethod boolean newCustomer(String customerCPF);
+    
+};
+----------------------------------------------------------------------------------------------------------------------------------------
+
+/**
+ *  
+ * Service Implementation Bean (SIB)
+ */
+
+//pacote base
+package soapserver;
+
+/**
+ *
+ * @author victoroliveira
+ */
+
+import javax.jws.WebService;   //import do pacote 'jws.WebService' e uso de annotation @WebService
+
+@WebService(endpointInterface = "Store")   //@WebService indica a classificação de tipo 'Web Service'
+public class StoreImp implements Store {   //classe 'StoreImp'
+
+    @Override
+    public String registrationData(String customerCPF){
+
+        return "Nome: Victor Oliveira" + " | CPF: " + customerCPF;
+
+    };
+
+    @Override
+    public String products(int orderNumber){
+
+        return "Produtos: " + "Geladeira, " + "Armário, " + "Guarda-Roupa";
+
+    };
+
+    @Override
+    public double finalValue(int orderNumber){
+
+        return 4025.89;
+
+    };
+
+    @Override
+    public boolean newCustomer(String customerCPF){
+
+        return false;
+
+    };
+    
+};
+----------------------------------------------------------------------------------------------------------------------------------------
+
+/**
+ * 
+ * Publisher
+ */
+
+//pacote base
+package soapserver;
+
+/**
+ *
+ * @author victoroliveira
+ */
+
+import javax.xml.ws.Endpoint;   //import para publicação do serviço em um servidor
+
+//classe para publicação do 'Web Service'
+public class StorePublisher {
+
+    //função principal
+    public static void main(String[] args) {
+        
+        String URL = "http://127.0.0.1:8080/soapserver";   //URL do servidor SOAP definido na porta 8080
+        StoreImp Store = new StoreImp();   //instância da classe StoreImp
+        Endpoint.publish(URL, Store);   //publicação do serviço 'Web Service'
+
+    };
+    
+};
+----------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+######################################################################################################################################
+######################################################################################################################################
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code Store.java (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/Web_Services/DOC---M%C3%B3dulo_02---Projeto_02/src/soapserver/Store.java
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code StoreImp.java (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/Web_Services/DOC---M%C3%B3dulo_02---Projeto_02/src/soapserver/StoreImp.java
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code StorePublisher.java (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/Web_Services/DOC---M%C3%B3dulo_02---Projeto_02/src/soapserver/StorePublisher.java
+################## -------------------------------------------------------------------------------------------------------------------
+######################################################################################################################################
+######################################################################################################################################
+________________________________________________________________________________________________________________________________________
