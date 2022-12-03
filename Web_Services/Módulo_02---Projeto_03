@@ -1,0 +1,57 @@
+__________________________________________________________REGRAS DE UMA API REST________________________________________________________
+
+Explique quais são as seis regras de uma API REST.
+________________________________________________________________________________________________________________________________________
+
+SOLUÇÃO:
+
+Os conceitos da arquitetura REST foram submetidos ao trabalho de doutorado de Roy Fielding nos anos 2000, sendo suas seis regras de 
+composição pautadas nos seguintes tópicos: stateless (sem estado), cliente-servidor, interface uniforme, armazenamento em cache, 
+sistema em camadas e código sob demanda.
+
+A regra STATELESS significa 'sem estado' ou que o servidor não precisa saber nada sobre o estado em que o cliente se encontra e 
+vice-versa. Tanto o servidor quanto o cliente podem compreender qualquer mensagem recebida, mesmo que não tenha visto mensagens 
+anteriores. Isso ocorre devido o sistema não utilizar comando, mas o que se define como 'substantivos da web', os quais descrevem 
+qualquer arquivo que se precise armazenar ou usar.
+
+A regra CLIENTE-SERVIDOR auxilia na separação de responsabilidades entre a interface de usuário e o armazenamento dos dados. Essa 
+separação das 'preocupações' é o princípio por trás da relação cliente-servidor. Desde que as partes saibam o formato das mensagens com 
+a qual a outra parte recebe (após envio), as mensagens podem ser mantidas modulares e separadas. Esse contexto de separação permite
+otimizar a flexibilidade da interface em várias plataformas, melhorando a escalabilidade, além de tornar mais simples os elementos do
+servidor (que podem evoluir de forma independente).
+
+A regra INTERFACE UNIFORME é o que diferencia a arquitetura REST das outras. A ideia base é separar o cliente do servidor por meio 
+dessa interface, permitindo a evolução independente do aplicativo sem ter os serviços, modelos ou ações do aplicativo firmemente 
+acoplados à própria camada da API. Essa interface permite que o cliente se comunique com o servidor em uma linguagem única, independente 
+da arquitetura do back-end. Entretanto, a interposição dessa regra exige que sejam necessárias múltiplas restrições de comportamento dos 
+componentes, tais como: identificação de recursos, manipulação de recursos por meio de representações, mensagens auto-descritivas e 
+hipermídia.
+
+A regra ARMAZENAMENTO EM CACHE requer que as informações contidas em uma dada resposta a uma solicitação sejam definidas como 
+cacheáveis ou não cacheáveis. Ou seja, caso haja disponibilização para armazenamento em cache, é possível a reutilização (por parte do 
+cliente) dos dados em uma atividade similar (em outro momento futuro). Isso auxilia na eliminação de interações desnecessárias com os 
+recursos (parcialmente ou completamente), melhorando a eficiência, escalabilidade e desempenho do sistema. 
+
+A regra SISTEMA EM CAMADAS é constituída por camadas que seguem uma ordem hierárquica com o intuito de melhorar o desempenho do 
+sistema. Dessa forma, é possível restringir o comportamento dos elementos, de modo que cada camada 'enxergue' apenas a camada com a 
+qual está interagindo momentaneamente. Isso possibilita independência entre as camadas do sistema, evitando possíveis modificações em 
+camadas não ligadas a outras camadas que foram previamente alteradas. 
+
+E por fim, a regra CÓDIGO SOB DEMANDA é uma regra opcional que permite que o código ou applets sejam transmitidos por meio da API para
+uso dentro do aplicativo. De maneira sucinta, a restrição cria um aplicativo inteligente que não depende mais da própria estrutura de
+código.
+
+
+
+######################################################################################################################################
+######################################################################################################################################
+################## -------------------------------------------------------------------------------------------------------------------
+################## References (Link):
+################## 1: https://softexrecife.joyclass.com
+################## 2: https://www.alura.com.br/artigos/rest-conceito-e-fundamentos?gclid=Cj0KCQjw06OTBhC_ARIsAAU1yOVIFk4AvkXfJC2xW_hOkz8gSEO2nUc9sTbgJfmX01yN4hQd1qhDmj0aAjptEALw_wcB
+################## 3: https://rockcontent.com/br/blog/rest/#:~:text=Stateless,se%20encontra%20e%20vice%2Dversa.
+################## 4: https://www.mulesoft.com/pt/resources/api/what-is-rest-api-design
+################## -------------------------------------------------------------------------------------------------------------------
+######################################################################################################################################
+######################################################################################################################################
+________________________________________________________________________________________________________________________________________
