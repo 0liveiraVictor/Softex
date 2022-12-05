@@ -181,7 +181,7 @@ server.listen(portAcess, ()=>{
 });
 ----------------------------------------------------------------------------------------------------------------------------------------
 
-As imagens imagem1, imagem2, imagem3, imagem4, imagem5, imagem6 (vide links) exibem as respostas das requisições 'get', 'post', 'put', 
+As imagens imagem1, imagem2, imagem3, imagem4, imagem5 e imagem6 (vide links) exibem as respostas das requisições 'get', 'post', 'put', 
 'delete' e 'all' no software Insomnia, não necessariamente nessa ordem:
 
 	imagem1 ---> (https://github.com/0liveiraVictor/Softex/blob/main/Node_JS/DOC---M%C3%B3dulo_03---Projeto_02/imagem1.png)
