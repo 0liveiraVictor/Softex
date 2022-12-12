@@ -1,0 +1,51 @@
+______________________________________________________NODEJS E A BIBLIOTECA EXPRESS_____________________________________________________
+
+Utilizando o Node.JS e a biblioteca Express, crie um projeto inicial que tenha uma página com o texto “Hello World”.
+________________________________________________________________________________________________________________________________________
+
+SOLUÇÃO:
+
+Utilizando o 'nodejs' e a biblioteca 'Express' foi desenvolvido um pequeno projeto para exibição de uma página com o texto “Hello World”.
+Para essa problemática foi utilizado apenas o verbo de requisição 'get', em que exibe uma página com o recurso textual. O código do 
+servidor (helloWorld.js) criado está descrito abaixo:
+
+const express = require('express'); //importação da biblioteca 'express'
+const app = express(); //variável principal da aplicação
+const portAcess = 1728; //definição da porta de acesso do servidor
+
+// ------------------------------ Rota 'get' para 'Hello World' ------------------------------
+app.get('/', (request, response)=>{
+
+    //retorno da solicitação efetuada na requisição cliente
+    return response.send('<h3>Hello World</h3>')
+
+});
+
+// ------------------------------ Acesso à conexão ------------------------------
+//conexão de acesso ao servidor
+app.listen(portAcess, ()=>{
+
+    //impressão no console da "ligação" do servidor
+    console.log('-------------------------------------------------------------------------------------'); 
+    console.log(`A inicialização do servidor foi executada na porta ${portAcess}.`);
+    console.log(`URL: http://localhost:${portAcess}`);
+    console.log('-------------------------------------------------------------------------------------');
+
+});
+----------------------------------------------------------------------------------------------------------------------------------------
+
+A imagem 'imagem1' (vide link abaixo) exibe a resposta da requisição 'get' solicitada pelo cliente:
+
+    imagem1 ---> (https://github.com/0liveiraVictor/Softex/blob/main/Web_Services/DOC---M%C3%B3dulo_04---Projeto_01/imagem1.png)
+
+
+
+######################################################################################################################################
+######################################################################################################################################
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code helloWorld.js (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/Web_Services/DOC---M%C3%B3dulo_04---Projeto_01/helloWorld.js
+################## -------------------------------------------------------------------------------------------------------------------
+######################################################################################################################################
+######################################################################################################################################
+________________________________________________________________________________________________________________________________________
