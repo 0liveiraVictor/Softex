@@ -216,7 +216,7 @@ Ao todo, o curso é dividido em 6 blocos de ensino (cada um organizado em módul
 	* Módulo 3 - Conceituar e implementar os modelos REST e RESTful
 	
 		- [x] Projeto 01 - [CRUD Básico para Obtenção de Recursos](https://github.com/0liveiraVictor/Softex/blob/main/Web_Services/M%C3%B3dulo_03---Projeto_01)
-		- [ ] Projeto 02 - []()
+		- [x] Projeto 02 - [CRUD de um Sistema de Dados de Alunos de Escolas](https://github.com/0liveiraVictor/Softex/blob/main/Web_Services/M%C3%B3dulo_03---Projeto_02)
 		
 	* Módulo 4 - WebService Server
 	
