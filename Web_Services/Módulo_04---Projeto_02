@@ -1,0 +1,444 @@
+___________________________________________CRUD, CONTROLLER PARA ROTAS E PERSISTÊNCIA DE DADOS__________________________________________
+
+No Node.js, faça o código de um controller que deve implementar os quatro pontos do CRUD, como no exemplo apresentado no hipertexto. No 
+entanto, ao invés de salvar na memória, utilize um banco de sua escolha para a persistência dos dados.
+________________________________________________________________________________________________________________________________________
+
+SOLUÇÃO:
+
+Foi desenvolvido um projeto de uma aplicação ('server.js') para implementar um CRUD de dados de estudantes, tais como: registro, nome, 
+nota e aprovação (V ou F, baseado na nota média - maior ou igual a 7). As operações do CRUD realizadas foram pautadas nos métodos CREATE 
+(post), READ (get), UPDATE (put) e DELETE (delete). Além das operações do CRUD, o código apresenta as respostas para as requisições com 
+diferentes status HTTP. A estrutura do projeto foi dividida seguindo o modelo de arquitetura MVP, em que foi organizada em estrutura de 
+rotas de serviço, configuração e credenciais do banco de dados (SGBD MySQL), migrations para construção das tabelas no banco de dados, 
+models e controllers. Os códigos que seguem abaixo fazem referência a cada uma das estruturas construídas na aplicação:
+
+>>> src/server.js <<<
+
+const express = require('express'); //importação do módulo 'express'
+const routes = require('./routes/router.js');   //importação do arquivo 'router.js'
+
+const cookieParser = require('cookie-parser');  //importação do pacote 'cookie-parser'
+const cors = require('cors');   //importação do pacote 'cors'
+
+require('./database/index.js'); //importação do banco de dados para o servidor
+
+const serverPort = 1044;    //configuração da porta do servidor
+
+const app = express();  //variável da aplicação (configuração do 'server')
+
+app.use(cookieParser());    //uso do 'cookie-parser' na aplicação
+app.use(cors());    //uso do 'cors' na aplicação
+app.use(express.json());    //configurando o servidor para que requisições possam ser interpretadas como JSON
+app.use(routes);    //inscrição das rotas no 'server' da aplicação
+
+//conexão de acesso ao servidor
+app.listen(serverPort, () => {
+
+    //impressão no console da "ligação" do servidor
+    console.log('-------------------------------------------------------------------');
+    console.log(`Servidor inicializado! | Execução na porta: ${serverPort}.`);
+    console.log(`URL: localhost:${serverPort}`);
+    console.log('-------------------------------------------------------------------');
+
+});
+********************************************************************************************************************************
+
+>>> src/routes/router.js <<<
+
+const express = require('express'); //importação do módulo 'express'
+const router = express.Router();    //uso do pacote 'Router' do 'express'
+const StudentController = require('../controllers/StudentController.js'); //importação do arquivo 'StudentController.js'
+
+router.get('/', StudentController.index);   //rota raiz da aplicação
+router.get('/students', StudentController.findAll); //rota de busca para listar os dados de todos os estudantes
+router.get('/student/:position', StudentController.findById);   //rota de busca para listar os dados de um estudante em específico
+router.post('/student/add', StudentController.store);   //rota de armazenamento de dados de um novo estudante 
+router.put('/student/edit/:position', StudentController.updateById);    //rota de atualização de dados de um estudante em específico
+router.delete('/student/del/:position', StudentController.deleteById);  //rota de deleção de dados de um estudante em específico
+router.all('*', StudentController.all); //rota de informação, em caso de erro de sintaxe no envio de URL
+
+module.exports = router;
+********************************************************************************************************************************
+
+>>> src/config/database.js <<<
+
+module.exports = {
+
+    dialect: 'mysql',
+    host: 'localhost',
+    port: '3306',
+    username: 'root',
+    password: '******', //senha ocultada
+    database: 'project',
+    define: {
+        timestamps: false,
+        underscored: true
+    }
+    
+};
+********************************************************************************************************************************
+
+>>> src/database/index.js <<<
+
+const Sequelize = require('sequelize'); //importação do módulo 'sequelize'
+const dbConfig = require('../config/database.js');  //importação do arquivo de configuração do SGBD MySQL 'database.js'
+const Student = require('../models/Student.js');    //importação do arquivo de Models 'Student.js'
+
+const connection = new Sequelize(dbConfig); //estabelecendo conexão com o banco de dados a partir do arquivo de configuração
+
+Student.init(connection);   //configurando o model 'Student' com a conexão do bando de dados
+
+module.exports = connection;
+********************************************************************************************************************************
+
+>>> src/database/migrations/20221224043550-create-student.js <<<
+
+'use strict';
+
+/** @type {import('sequelize-cli').Migration} */
+module.exports = {
+  async up (queryInterface, Sequelize) {
+    
+    return await queryInterface.createTable('student', {
+
+      id: {
+        type: Sequelize.INTEGER,
+        autoIncrement: true,
+        allowNull: false,
+        primaryKey: true
+      },
+
+      registration:{
+        type: Sequelize.INTEGER,
+        allowNull: false
+      },
+
+      name: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+
+      note: {
+        type: Sequelize.FLOAT,
+        allowNull: false
+      },
+
+      approval: {
+        type: Sequelize.BOOLEAN,
+        allowNull: false
+      }
+
+    });
+
+  },
+
+  async down (queryInterface, Sequelize) {
+    /**
+     * Add reverting commands here.
+     *
+     * Example:
+     * await queryInterface.dropTable('users');
+     */
+  }
+};
+********************************************************************************************************************************
+
+>>> .sequelizerc (ARQUIVO DE CONFIGURAÇÃO - OCULTO) <<<
+
+const path = require('path');   //importação do módulo 'path'
+
+module.exports = {
+
+    config: path.resolve(__dirname, 'src', 'config', 'database.js'),    //caminho de configuração do banco de dados
+    'migrations-path': path.resolve(__dirname, 'src', 'database', 'migrations') //caminho das 'migrations' do banco de dados
+    
+};
+********************************************************************************************************************************
+
+>>> src/models/Student.js <<<
+
+const {Model, DataTypes} = require('sequelize');    //importação do pacote 'Model' e 'DataTypes' do módulo 'sequelize'
+
+//definição da classe (Model) Student
+class Student extends Model {
+
+    //método de construção do 'Model'
+    static init(sequelize){
+
+        super.init({
+
+            //dados (colunas) da migration student criada no banco de dados
+            registration: DataTypes.INTEGER,
+            name: DataTypes.STRING,
+            note: DataTypes.FLOAT,
+            approval: DataTypes.BOOLEAN
+
+        }, {sequelize});
+
+    };
+
+};
+
+module.exports = Student;
+********************************************************************************************************************************
+
+>>> src/controllers/StudentController.js <<<
+
+const Student = require('../models/Student.js');    //importação do arquivo 'Student.js'
+
+module.exports = {
+
+    //--------------------- método de visualização da rota raiz ---------------------
+    async index(request, response){
+
+        try{
+            
+            return response.status(200).send('Rota Raiz em Funcionamento!');
+    
+        } catch(erro){
+            
+            return response.status(400).send(`Erro: ${erro}`);
+    
+        }
+        
+    },
+
+    //--------------------- método de visualização dos dados de todos os estudantes ---------------------
+    async findAll(request, response){
+
+        try{
+            
+            const resultStudent = await Student.findAll();
+            
+            return response.status(200).json({
+
+                Status: 'Registros encontrados!',
+                Students_all: resultStudent
+
+            });
+    
+        } catch(erro){
+            
+            return response.status(400).send(`Erro: ${erro}`);
+    
+        }
+
+    },
+
+    //--------------------- método de visualização de dados de um estudante em específico (pelo identificador 'position') --------------------- 
+    async findById(request, response){
+
+        try{
+            
+            const id = request.params.position;
+    
+            const resultStudent = await Student.findAll({
+    
+                where: {
+                    id: id
+                }
+    
+            });
+            
+            return response.status(200).json({
+
+                Status: `Estudante encontrado! | Registro: ${id}ª posição.`,
+                Student_id: resultStudent
+
+            });
+    
+        } catch(erro){
+            
+            return response.status(400).send(`Erro: ${erro}`);
+    
+        }
+
+    },
+
+    //--------------------- método de armazemanto de dados de um novo estudante --------------------- 
+    async store(request, response){
+
+        try{
+
+            const {registration, name, note, approval} = request.body;
+
+            const resultStudent = await Student.create({
+                registration, 
+                name, 
+                note, 
+                approval
+            });
+            
+            return response.status(201).json({
+
+                Status: 'Estudante registrado com sucesso!',
+                Student_add: resultStudent
+    
+            });
+    
+        } catch(erro){
+            
+            return response.status(400).send(`Erro: ${erro}`);
+    
+        }
+
+    },
+
+    //--------------------- método de atualização de dados de um estudante em específico (pelo identificador 'position') --------------------- 
+    async updateById(request, response){
+
+        try{
+
+            const id = request.params.position;
+
+            const {registration, name, note, approval} = request.body;
+
+            const student = await Student.update({
+
+                registration, 
+                name, 
+                note, 
+                approval
+
+            }, {
+
+                where: {
+                    id: id
+                }
+
+            });
+
+            const resultStudent = await Student.findAll({
+    
+                where: {
+                    id: id
+                }
+    
+            });
+            
+            return response.status(200).json({
+    
+                Status: `${id}º estudante atualizado com sucesso!`,
+                Student_update: resultStudent
+    
+            });            
+    
+        } catch(erro){
+            
+            return response.status(400).send(`Erro: ${erro}`);
+    
+        }
+
+    },
+ 
+    //--------------------- método de deleção de dados de um estudante em específico (pelo identificador 'position') --------------------- 
+    async deleteById(request, response){
+
+        try{
+            
+            const id = request.params.position;
+    
+            await Student.destroy({
+    
+                where: {
+                    id: id
+                }
+    
+            });
+
+            const resultStudent = await Student.findAll();
+
+            return response.status(200).json({
+    
+                Status: `Estudante deletado com sucesso!`,
+                Student_all: resultStudent
+    
+            });
+    
+        } catch(erro){
+            
+            return response.status(400).send(`Erro: ${erro}`);
+    
+        }
+
+    },
+
+    //--------------------- método de tratamento de erros --------------------- 
+    async all(request, response){
+
+        try{
+            
+            return response.status(404).send('<h2>Página não encontrada!</h2>');
+        
+        } catch(erro){
+            
+            return response.status(400).send(`Erro: ${erro}`);
+        
+        }
+        
+    }
+
+};
+----------------------------------------------------------------------------------------------------------------------------------------
+
+As imagens imagem1, imagem2, imagem3, imagem4, imagem5, imagem6, imagem7, imagem8 e imagem9 (vide links) exibem a conexão estabelecida 
+no servidor (via VSCode), os retornos das operações do CRUD referentes as requisições HTTP 'get', 'post', 'put' e 'delete' solicitadas 
+pelo cliente (no software Insomnia) e os dados de todos os estudantes no SGBD MySQL, não necessariamente nessa ordem:
+
+    imagem1 ---> (https://github.com/0liveiraVictor/Softex/blob/main/Web_Services/DOC---M%C3%B3dulo_04---Projeto_02/img/imagem1.png)
+                  [exibição da inicialização do servidor na porta 1044 (via VSCode)]
+
+    imagem2 ---> (https://github.com/0liveiraVictor/Softex/blob/main/Web_Services/DOC---M%C3%B3dulo_04---Projeto_02/img/imagem2.png)
+                  [exibição da informação dada na requisição da rota raiz da aplicação - READ (HTTP 'get')]
+
+    imagem3 ---> (https://github.com/0liveiraVictor/Softex/blob/main/Web_Services/DOC---M%C3%B3dulo_04---Projeto_02/img/imagem3.png)
+                  [exibição dos dados de todos os estudantes registrados no banco de dados (10 registros prévios) - READ (HTTP 'get')]
+
+    imagem4 ---> (https://github.com/0liveiraVictor/Softex/blob/main/Web_Services/DOC---M%C3%B3dulo_04---Projeto_02/img/imagem4.png)
+                  [exibição dos dados do estudante registrado na 8ª posição no banco de dados - READ (HTTP 'get')]
+
+    imagem5 ---> (https://github.com/0liveiraVictor/Softex/blob/main/Web_Services/DOC---M%C3%B3dulo_04---Projeto_02/img/imagem5.png)
+                  [registro dos dados de um novo estudante no banco de dados (11º aluno) - CREATE (HTTP 'post')]
+
+    imagem6 ---> (https://github.com/0liveiraVictor/Softex/blob/main/Web_Services/DOC---M%C3%B3dulo_04---Projeto_02/img/imagem6.png)
+                  [atualização dos dados do estudante registrado na 8ª posição (alteração do nº de registro e nome) - UPDATE (HTTP 'put')]
+
+    imagem7 ---> (https://github.com/0liveiraVictor/Softex/blob/main/Web_Services/DOC---M%C3%B3dulo_04---Projeto_02/img/imagem7.png)
+                  [deleção dos dados do estudante registrado na 9ª posição - DELETE (HTTP 'delete')]
+
+    imagem8 ---> (https://github.com/0liveiraVictor/Softex/blob/main/Web_Services/DOC---M%C3%B3dulo_04---Projeto_02/img/imagem8.png)
+                  [nova exibição dos dados de todos os estudantes registrados no banco de dados (com todas as alterações realizadas) - READ (HTTP 'get')]
+
+    imagem9 ---> (https://github.com/0liveiraVictor/Softex/blob/main/Web_Services/DOC---M%C3%B3dulo_04---Projeto_02/img/imagem9.png)
+                  [exibição dos dados de todos os estudantes registrados no banco de dados (via SGBD MySQL) - READ (SELECT * FROM)]
+
+
+
+######################################################################################################################################
+######################################################################################################################################
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code server.js (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/Web_Services/DOC---M%C3%B3dulo_04---Projeto_02/src/server.js
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code router.js (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/Web_Services/DOC---M%C3%B3dulo_04---Projeto_02/src/routes/router.js
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code database.js (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/Web_Services/DOC---M%C3%B3dulo_04---Projeto_02/src/config/database.js
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code index.js (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/Web_Services/DOC---M%C3%B3dulo_04---Projeto_02/src/database/index.js
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code 20221224043550-create-student.js (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/Web_Services/DOC---M%C3%B3dulo_04---Projeto_02/src/database/migrations/20221224043550-create-student.js
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code Student.js (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/Web_Services/DOC---M%C3%B3dulo_04---Projeto_02/src/models/Student.js
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code StudentController.js (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/Web_Services/DOC---M%C3%B3dulo_04---Projeto_02/src/controllers/StudentController.js
+################## -------------------------------------------------------------------------------------------------------------------
+######################################################################################################################################
+######################################################################################################################################
+________________________________________________________________________________________________________________________________________
