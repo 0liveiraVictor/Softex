@@ -1,0 +1,20 @@
+{
+  "name": "doc_modulo04_projeto03",
+  "version": "1.0.0",
+  "description": "Projeto de uma API Simples",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "project": "nodemon src/server.js"
+  },
+  "author": "Victor Oliveira",
+  "license": "ISC",
+  "dependencies": {
+    "@ngneat/falso": "^6.3.2",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20",
+    "yarn": "^1.22.19"
+  }
+}
