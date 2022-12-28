@@ -1,0 +1,216 @@
+_______________________________________________________________API SIMPLES______________________________________________________________
+
+Crie um web service usando o Node.js e o framework Express. Nele, desenvolva duas rotas HTTP com comunicação via JSON.
+________________________________________________________________________________________________________________________________________
+
+SOLUÇÃO:
+
+Foi desenvolvido um projeto de uma aplicação ('server.js') em que duas rotas HTTP ('get' e 'post') com comunicação via JSON foram 
+criadas. O método 'post' (CREATE) visou realizar a criação (automática, via lib '@ngneat-falso') e gravação de dados de 'user', tais 
+como: nome completo, endereço (rua, cidade, código postal, município e país), nome de usuário e email. Já o método 'get' (READ) 
+objetivou fazer, em uma das rotas, a busca da lista dos dados dos usuários registrados e, em outra rota, buscar os dados de usuários 
+específicos. Além dessas operações com esses dois métodos, o código apresentou as respostas para as requisições com diferentes status 
+HTTP. A estrutura do projeto foi dividida seguindo o modelo de arquitetura MVC, em que foi organizada em estrutura de rotas de serviço, 
+credenciais do banco de dados (uma lista {array}) e controllers. Os códigos que seguem abaixo fazem referência a cada uma das 
+estruturas construídas na aplicação:
+
+>>> src/server.js <<<
+
+const express = require('express'); //importação do módulo 'express'
+const cookieParser = require('cookie-parser');  //importação do pacote 'cookie-parser'
+const cors = require('cors');   //importação do pacote 'cors'
+
+const routes = require('./routes/router');  //importação do arquivo 'router.js'
+
+const serverPort = 8080;    //configuração da porta do servidor
+
+const appServer = express();    //variável da aplicação (configuração do 'server')
+appServer.use(cookieParser());  //uso do 'cookie-parser' na aplicação
+appServer.use(cors());  //uso do 'cors' na aplicação
+appServer.use(express.json());  //configurando o servidor para que requisições possam ser interpretadas como JSON
+appServer.use(routes);  //inscrição das rotas no 'server' da aplicação
+
+//conexão de acesso ao servidor
+appServer.listen(serverPort, () => {
+
+    //impressão no console da "ligação" do servidor
+    console.log('------------------------------------------------------------------------------');
+    console.log('Conexão com servidor inicializada com sucesso!');
+    console.log(`URL do serviço: localhost:${serverPort}`);
+    console.log('------------------------------------------------------------------------------');
+
+});
+********************************************************************************************************************************
+
+>>> src/routes/router.js <<<
+
+const express = require('express'); //importação do módulo 'express'
+const router = express.Router();    //uso do pacote 'Router' do 'express'
+
+const UserController = require('../controllers/UserController');    //importação do arquivo 'UserController.js'
+
+router.get('/', UserController.index);  //rota raiz da aplicação
+router.post('/user/add', UserController.store); //rota de armazenamento de dados de um novo usuário
+router.get('/user/list', UserController.findAll);   //rota de busca para listar os dados de todos os usuários
+router.get('/user/:id', UserController.findId); //rota de busca para listar os dados de um usuário em específico
+
+module.exports = router;
+********************************************************************************************************************************
+
+>>> src/controllers/UserController.js <<<
+
+const dbLista = require('../database/db.js');   //importação do arquivo 'db.js'
+const falso = require('@ngneat/falso'); //importação do pacote 'falso'
+
+module.exports = {
+    
+    //--------------------- método de visualização da rota raiz ---------------------
+    async index(request, response){
+
+        try{
+            
+            return response.status(200).send('<h1>--- ROTA RAIZ DO PROJETO DE UMA API SIMPLES ---</h1>' + '</br></br><h2>* Use a rota "/user/add" (HTTP POST) para criar (automaticamente) dados de um novo usuário.</h2>' + '<h2>* Use a rota "/user/list" (HTTP GET) para listar os dados de todos os usuários já existentes.</h2>' + '<h2>* Use a rota "/user/{nº}" (HTTP GET) para buscar os dados de um usuário, em específico, já existente.</h2>');
+
+        } catch(error){
+
+            return response.status(400).send(`Error: ${error}`);
+
+        }
+
+    },
+
+    //--------------------- método de armazemanto de dados de um novo usuário --------------------- 
+    async store(request, response){
+
+        try{
+
+            const user = ({
+
+                id: dbLista.length + 1,
+                fullName: falso.randFullName(),
+                address: falso.randAddress(),
+                username: falso.randUserName(),
+                email: falso.randEmail()
+
+            });
+
+            dbLista.push(user);
+            
+            return response.status(201).json({
+
+                Status: 'Usuário criado com sucesso!',
+                User_add: user
+                
+            });
+
+        } catch(error){
+
+            return response.status(400).send(`Error: ${error}`);
+
+        }
+
+    },
+
+    //--------------------- método de visualização dos dados de todos os usuários ---------------------
+    async findAll(request, response){
+
+        try{
+            
+            return response.status(200).json({
+
+                Status: 'Registro de usuários encontrado com sucesso!',
+                User_all: dbLista
+
+            });
+            
+        } catch(error){
+
+            return response.status(400).send(`Error: ${error}`);
+
+        }
+
+    },
+
+    //--------------------- método de visualização de dados de um usuário em específico (pelo identificador 'id') --------------------- 
+    async findId(request, response){
+
+        try{
+
+            const id = request.params.id;
+
+            if(id <= 0 || id > dbLista.length){
+
+                return response.status(404).send('<h3>Usuário não registrado!</h3>');
+
+            } else{
+
+                const user = dbLista[id - 1];
+
+                return response.status(200).json({
+
+                    Status:`Usuário ({id} = {${id}}) encontrado com sucesso!`,
+                    User_id: user
+
+                });
+
+            }     
+            
+        } catch(error){
+
+            return response.status(400).send(`Error: ${error}`);
+
+        }
+
+    }
+
+};
+********************************************************************************************************************************
+
+>>> src/database/db.js <<<
+
+dbLista = []; //banco de dados
+
+module.exports = dbLista;
+----------------------------------------------------------------------------------------------------------------------------------------
+
+As imagens imagem1, imagem2, imagem3, imagem4, imagem5, imagem6 (vide links e descrições) exibem os retornos das operações das 
+requisições HTTP 'get' e 'post' solicitadas pelo cliente (no software Insomnia):
+
+    imagem1 ---> (https://github.com/0liveiraVictor/Softex/blob/main/Web_Services/DOC---M%C3%B3dulo_04---Projeto_03/img/imagem1.png)
+                  [exibição da rota raiz do serviço da aplicação - READ (HTTP 'get')]
+
+    imagem2 ---> (https://github.com/0liveiraVictor/Softex/blob/main/Web_Services/DOC---M%C3%B3dulo_04---Projeto_03/img/imagem2.png)
+                  [registro dos dados de um novo 'user' (1º usuário) - CREATE (HTTP 'post')]
+
+    imagem3 ---> (https://github.com/0liveiraVictor/Softex/blob/main/Web_Services/DOC---M%C3%B3dulo_04---Projeto_03/img/imagem3.png)
+                  [registro dos dados de um novo 'user' (3º usuário) - CREATE (HTTP 'post')]
+
+    imagem4 ---> (https://github.com/0liveiraVictor/Softex/blob/main/Web_Services/DOC---M%C3%B3dulo_04---Projeto_03/img/imagem4.png)
+                  [exibição dos dados de registro de todos os usuários do banco de dados - READ (HTTP 'get')]
+
+    imagem5 ---> (https://github.com/0liveiraVictor/Softex/blob/main/Web_Services/DOC---M%C3%B3dulo_04---Projeto_03/img/imagem5.png)
+                  [tentativa de exibição dos dados de registro de um 4º 'user' (Usuário não registrado!) - READ (HTTP 'get')]
+
+    imagem6 ---> (https://github.com/0liveiraVictor/Softex/blob/main/Web_Services/DOC---M%C3%B3dulo_04---Projeto_03/img/imagem6.png)
+                  [exibição dos dados de registro de um 'user' específico (3º usuário) - READ (HTTP 'get')]
+
+
+
+######################################################################################################################################
+######################################################################################################################################
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code server.js (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/Web_Services/DOC---M%C3%B3dulo_04---Projeto_03/src/server.js
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code router.js (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/Web_Services/DOC---M%C3%B3dulo_04---Projeto_03/src/routes/router.js
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code UserController.js (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/Web_Services/DOC---M%C3%B3dulo_04---Projeto_03/src/controllers/UserController.js
+################## -------------------------------------------------------------------------------------------------------------------
+################## Full code db.js (Link):
+################## https://github.com/0liveiraVictor/Softex/blob/main/Web_Services/DOC---M%C3%B3dulo_04---Projeto_03/src/database/db.js
+################## -------------------------------------------------------------------------------------------------------------------
+######################################################################################################################################
+######################################################################################################################################
+________________________________________________________________________________________________________________________________________
