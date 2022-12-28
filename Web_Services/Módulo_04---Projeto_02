@@ -9,7 +9,7 @@ SOLUÇÃO:
 Foi desenvolvido um projeto de uma aplicação ('server.js') para implementar um CRUD de dados de estudantes, tais como: registro, nome, 
 nota e aprovação (V ou F, baseado na nota média - maior ou igual a 7). As operações do CRUD realizadas foram pautadas nos métodos CREATE 
 (post), READ (get), UPDATE (put) e DELETE (delete). Além das operações do CRUD, o código apresenta as respostas para as requisições com 
-diferentes status HTTP. A estrutura do projeto foi dividida seguindo o modelo de arquitetura MVP, em que foi organizada em estrutura de 
+diferentes status HTTP. A estrutura do projeto foi dividida seguindo o modelo de arquitetura MVC, em que foi organizada em estrutura de 
 rotas de serviço, configuração e credenciais do banco de dados (SGBD MySQL), migrations para construção das tabelas no banco de dados, 
 models e controllers. Os códigos que seguem abaixo fazem referência a cada uma das estruturas construídas na aplicação:
 
