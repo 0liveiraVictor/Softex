@@ -221,7 +221,7 @@ Ao todo, o curso é dividido em 6 blocos de ensino (cada um organizado em módul
 	* Módulo 4 - WebService Server
 	
 		- [x] Projeto 01 - [NodeJS e a Biblioteca Express](https://github.com/0liveiraVictor/Softex/blob/main/Web_Services/M%C3%B3dulo_04---Projeto_01)
-		- [ ] Projeto 02 - []()
+		- [x] Projeto 02 - [CRUD, Controllers para Rotas e Persistência de Dados](https://github.com/0liveiraVictor/Softex/blob/main/Web_Services/M%C3%B3dulo_04---Projeto_02)
 		- [ ] Projeto 03 - []()
 		
 		
