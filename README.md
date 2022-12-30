@@ -1,8 +1,19 @@
+<p align="right">
+	<a href="https://softexrecife.org.br/"> 
+    		<img height= "110" width="110" src="https://user-images.githubusercontent.com/106946476/178136181-818bbd6d-731b-4515-aad9-e89084899371.png" />
+	</a> 
+</p>
+
 # [Softex Recife](http://www.softexrecife.org.br/)
+
+
 
 **Sobre**:
 <br/>
 <p align = "Justify">A Softex é uma associação de empresas (sem fins lucrativos) de Tecnologia da Informação e Comunicação (TIC) criada em 8 de novembro de 1994. Foi o sexto núcleo criado no país e atualmente é tido como centro de excelência em tecnologia de software do Recife. Tem como principal missão, incrementar o sistema de negócios de TIC no estado de Pernambuco, promovendo a integração, capacitação e certificação empresarial, apoiando a inserção competitiva das empresas no mercado a fim de aumentar os seus resultados.</p>
+
+
+
 
 ## Programa de Formação Acelerada em Programação
 <p align = "Justify">O programa da Softex Recife tem como objetivo formar desenvolvedores em programação nas áreas Front-end e Back-end, aliando conhecimentos teóricos e práticos. No curso de Front-end serão desenvolvidas habilidades para construção em interfaces gráficas (ricas em visual e interação com usuário). Já o curso de Back-end, será desenvolvido habilidades na construção da arquitetura de servidor (que interagem com aplicações web). Ao todo, serão 276 horas de aulas, com um período de 24 semanas, sendo: 180 horas em EAD e 96 horas presencial.</p>
@@ -223,18 +234,25 @@ Ao todo, o curso é dividido em 6 blocos de ensino (cada um organizado em módul
 		- [x] Projeto 01 - [NodeJS e a Biblioteca Express](https://github.com/0liveiraVictor/Softex/blob/main/Web_Services/M%C3%B3dulo_04---Projeto_01)
 		- [x] Projeto 02 - [CRUD, Controllers para Rotas e Persistência de Dados](https://github.com/0liveiraVictor/Softex/blob/main/Web_Services/M%C3%B3dulo_04---Projeto_02)
 		- [x] Projeto 03 - [API Simples](https://github.com/0liveiraVictor/Softex/blob/main/Web_Services/M%C3%B3dulo_04---Projeto_03)
-		
-		
-
 
 <br/>
+
+***
+
+**> > > > > > > > > > > > > > > > > > > > > > > > > > Certificação Desenvolvedor BackEnd < < < < < < < < < < < < < < < < < < < < < < < < < <**
+	
+***
 <br/>
 <br/>
 
-<p align="left">
-	<a href="https://softexrecife.org.br/"> 
-    		<img src="https://user-images.githubusercontent.com/106946476/178136181-818bbd6d-731b-4515-aad9-e89084899371.png" />
+<p align="center">
+	<a href="https://softexrecife.joyclass.com/certificate?hash=2061151527780835a61d760d4cfb92ec667941f8fcb5"> 
+    		<img  height= "455" width="645" src="https://user-images.githubusercontent.com/106946476/210033830-fd884d60-c4be-43fa-a848-4ea2271ac206.png" />
 	</a>
 </p>
 
-
+<p align="center">
+	<a href="https://softexrecife.joyclass.com/certificate?hash=2061151527780835a61d760d4cfb92ec667941f8fcb5"> 
+    		<img  height= "455" width="645" src="https://user-images.githubusercontent.com/106946476/210033960-6c1e24ef-a91d-435c-92ea-114639f25d9b.png" />
+	</a>
+</p>
