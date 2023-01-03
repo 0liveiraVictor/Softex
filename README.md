@@ -239,7 +239,7 @@ Ao todo, o curso é dividido em 6 blocos de ensino (cada um organizado em módul
 
 ***
 
-**> > > > > > > > > > > > > > > > > > > > > > > > > > Certificação Desenvolvedor BackEnd < < < < < < < < < < < < < < < < < < < < < < < < < <**
+**> > > > > > > > > > > > > > > > > > > Certificação Desenvolvedor BackEnd < < < < < < < < < < < < < < < < < < <**
 	
 ***
 <br/>
