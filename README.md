@@ -247,12 +247,12 @@ Ao todo, o curso é dividido em 6 blocos de ensino (cada um organizado em módul
 
 <p align="center">
 	<a href="https://softexrecife.joyclass.com/certificate?hash=2061151527780835a61d760d4cfb92ec667941f8fcb5"> 
-    		<img  height= "455" width="645" src="https://user-images.githubusercontent.com/106946476/210033830-fd884d60-c4be-43fa-a848-4ea2271ac206.png" />
+    		<img  height= "455" width="645" src="https://user-images.githubusercontent.com/106946476/221084559-4b2c1cd3-fb9d-40e2-90d0-633f5e2edc00.png" />
 	</a>
 </p>
 
 <p align="center">
 	<a href="https://softexrecife.joyclass.com/certificate?hash=2061151527780835a61d760d4cfb92ec667941f8fcb5"> 
-    		<img  height= "455" width="645" src="https://user-images.githubusercontent.com/106946476/210033960-6c1e24ef-a91d-435c-92ea-114639f25d9b.png" />
+    		<img  height= "455" width="645" src="https://user-images.githubusercontent.com/106946476/221084713-7f46d120-685f-41f3-b917-c8542221b04f.png" />
 	</a>
 </p>
